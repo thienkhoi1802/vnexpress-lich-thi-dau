@@ -1,0 +1,22 @@
+response: [
+{
+player: {
+id: 386828
+name: "Lamine Yamal"
+firstname: "Lamine"
+lastname: "Yamal Nasraoui Ebana"
+age: 19
+birth: {
+date: "2007-07-13"
+place: "Mataró"
+country: "Spain"
+}
+nationality: "Spain"
+height: "179"
+weight: "72"
+number: 10
+position: "Attacker"
+photo: "https://media.api-sports.io/football/players/386828.png"
+}
+}
+]

@@ -1,0 +1,13 @@
+HTML-PC
+HTML-PC.zip
+_backup
+_removed
+*.pptx
+*.xlsx
+*.xlxs
+*.jpeg
+*.jpg
+.deploy-pack.tgz
+node_modules
+*.bat
+lich-thi-dau-html

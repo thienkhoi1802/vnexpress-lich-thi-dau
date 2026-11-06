@@ -1,0 +1,461 @@
+{
+  "usage": {
+    "light": "Logo tĩnh cho nền sáng (mode Light). Dùng cho app, tài liệu, nơi không chạy CSS.",
+    "dark": "Logo tĩnh cho nền tối (mode Dark).",
+    "themeable": "Logo dùng biến CSS --vds-* (cần vds.css), tự đổi theo theme. Trên web gọi theo tên: <i data-vds-logo=\"{name}\"></i>. Khi dùng qua <img>, hiển thị bản Light."
+  },
+  "logos": [
+    {
+      "name": "AppIcon__International",
+      "figmaVariant": "App=International",
+      "width": 32,
+      "height": 32,
+      "themed": false,
+      "tokens": [],
+      "files": {
+        "light": "logos/light/AppIcon__International.svg",
+        "dark": "logos/dark/AppIcon__International.svg",
+        "themeable": "logos/themeable/AppIcon__International.svg"
+      }
+    },
+    {
+      "name": "AppIcon__Marathon",
+      "figmaVariant": "App=Marathon",
+      "width": 32,
+      "height": 32,
+      "themed": false,
+      "tokens": [],
+      "files": {
+        "light": "logos/light/AppIcon__Marathon.svg",
+        "dark": "logos/dark/AppIcon__Marathon.svg",
+        "themeable": "logos/themeable/AppIcon__Marathon.svg"
+      }
+    },
+    {
+      "name": "AppIcon__NgoiSao",
+      "figmaVariant": "App=Ngôi Sao",
+      "width": 32,
+      "height": 32,
+      "themed": false,
+      "tokens": [],
+      "files": {
+        "light": "logos/light/AppIcon__NgoiSao.svg",
+        "dark": "logos/dark/AppIcon__NgoiSao.svg",
+        "themeable": "logos/themeable/AppIcon__NgoiSao.svg"
+      }
+    },
+    {
+      "name": "AppIcon__vRace",
+      "figmaVariant": "App=vRace",
+      "width": 32,
+      "height": 32,
+      "themed": false,
+      "tokens": [],
+      "files": {
+        "light": "logos/light/AppIcon__vRace.svg",
+        "dark": "logos/dark/AppIcon__vRace.svg",
+        "themeable": "logos/themeable/AppIcon__vRace.svg"
+      }
+    },
+    {
+      "name": "Logo__FPTOnline",
+      "figmaVariant": "Property 1=Default",
+      "width": 121,
+      "height": 44,
+      "themed": true,
+      "tokens": [
+        "component/logo/fpt/3",
+        "component/logo/fpt/2",
+        "component/logo/fpt/1",
+        "component/logo/fpt/4"
+      ],
+      "files": {
+        "light": "logos/light/Logo__FPTOnline.svg",
+        "dark": "logos/dark/Logo__FPTOnline.svg",
+        "themeable": "logos/themeable/Logo__FPTOnline.svg"
+      }
+    },
+    {
+      "name": "Logo__NgoiSao",
+      "figmaVariant": "Property 1=Default",
+      "width": 147,
+      "height": 60,
+      "themed": false,
+      "tokens": [],
+      "files": {
+        "light": "logos/light/Logo__NgoiSao.svg",
+        "dark": "logos/dark/Logo__NgoiSao.svg",
+        "themeable": "logos/themeable/Logo__NgoiSao.svg"
+      }
+    },
+    {
+      "name": "Logo__SmartAds",
+      "figmaVariant": "Property 1=Default",
+      "width": 120,
+      "height": 32,
+      "themed": false,
+      "tokens": [],
+      "files": {
+        "light": "logos/light/Logo__SmartAds.svg",
+        "dark": "logos/dark/Logo__SmartAds.svg",
+        "themeable": "logos/themeable/Logo__SmartAds.svg"
+      }
+    },
+    {
+      "name": "Logo__ThirdParty__Apple",
+      "figmaVariant": "Company=Apple",
+      "width": 32,
+      "height": 32,
+      "themed": true,
+      "tokens": [
+        "component/logo/3rd-party/apple/regular"
+      ],
+      "files": {
+        "light": "logos/light/Logo__ThirdParty__Apple.svg",
+        "dark": "logos/dark/Logo__ThirdParty__Apple.svg",
+        "themeable": "logos/themeable/Logo__ThirdParty__Apple.svg"
+      }
+    },
+    {
+      "name": "Logo__ThirdParty__Apple-Inverted",
+      "figmaVariant": "Company=Apple (inverted)",
+      "width": 32,
+      "height": 32,
+      "themed": true,
+      "tokens": [
+        "component/logo/3rd-party/apple/inverted"
+      ],
+      "files": {
+        "light": "logos/light/Logo__ThirdParty__Apple-Inverted.svg",
+        "dark": "logos/dark/Logo__ThirdParty__Apple-Inverted.svg",
+        "themeable": "logos/themeable/Logo__ThirdParty__Apple-Inverted.svg"
+      }
+    },
+    {
+      "name": "Logo__ThirdParty__Facebook",
+      "figmaVariant": "Company=Facebook",
+      "width": 32,
+      "height": 32,
+      "themed": false,
+      "tokens": [
+        "component/logo/3rd-party/facebook/1",
+        "component/logo/3rd-party/facebook/2"
+      ],
+      "files": {
+        "light": "logos/light/Logo__ThirdParty__Facebook.svg",
+        "dark": "logos/dark/Logo__ThirdParty__Facebook.svg",
+        "themeable": "logos/themeable/Logo__ThirdParty__Facebook.svg"
+      }
+    },
+    {
+      "name": "Logo__ThirdParty__Google",
+      "figmaVariant": "Company=Google",
+      "width": 32,
+      "height": 32,
+      "themed": false,
+      "tokens": [
+        "component/logo/3rd-party/google/4",
+        "component/logo/3rd-party/google/3",
+        "component/logo/3rd-party/google/2",
+        "component/logo/3rd-party/google/1"
+      ],
+      "files": {
+        "light": "logos/light/Logo__ThirdParty__Google.svg",
+        "dark": "logos/dark/Logo__ThirdParty__Google.svg",
+        "themeable": "logos/themeable/Logo__ThirdParty__Google.svg"
+      }
+    },
+    {
+      "name": "Logo__TiaSang__Dark",
+      "figmaVariant": "Theme=Dark",
+      "width": 138,
+      "height": 45,
+      "themed": false,
+      "tokens": [],
+      "files": {
+        "light": "logos/light/Logo__TiaSang__Dark.svg",
+        "dark": "logos/dark/Logo__TiaSang__Dark.svg",
+        "themeable": "logos/themeable/Logo__TiaSang__Dark.svg"
+      }
+    },
+    {
+      "name": "Logo__TiaSang__Light",
+      "figmaVariant": "Theme=Light",
+      "width": 138,
+      "height": 45,
+      "themed": false,
+      "tokens": [],
+      "files": {
+        "light": "logos/light/Logo__TiaSang__Light.svg",
+        "dark": "logos/dark/Logo__TiaSang__Light.svg",
+        "themeable": "logos/themeable/Logo__TiaSang__Light.svg"
+      }
+    },
+    {
+      "name": "Logo__VnExpressInternational",
+      "figmaVariant": "Property 1=Default",
+      "width": 150,
+      "height": 40,
+      "themed": true,
+      "tokens": [
+        "component/logo/vnexpress/standard/secondary",
+        "component/logo/vnexpress/standard/primary",
+        "component/logo/vnexpress/negative",
+        "component/logo/vnexpress/standard/tertiary"
+      ],
+      "files": {
+        "light": "logos/light/Logo__VnExpressInternational.svg",
+        "dark": "logos/dark/Logo__VnExpressInternational.svg",
+        "themeable": "logos/themeable/Logo__VnExpressInternational.svg"
+      }
+    },
+    {
+      "name": "Logo__VnExpress__Inverted",
+      "figmaVariant": "Appearance=Inverted, Tagline=False",
+      "width": 150,
+      "height": 28,
+      "themed": true,
+      "tokens": [
+        "component/logo/vnexpress/mono/inverted"
+      ],
+      "files": {
+        "light": "logos/light/Logo__VnExpress__Inverted.svg",
+        "dark": "logos/dark/Logo__VnExpress__Inverted.svg",
+        "themeable": "logos/themeable/Logo__VnExpress__Inverted.svg"
+      }
+    },
+    {
+      "name": "Logo__VnExpress__Inverted__Tagline",
+      "figmaVariant": "Appearance=Inverted, Tagline=True",
+      "width": 150,
+      "height": 42,
+      "themed": true,
+      "tokens": [
+        "component/logo/vnexpress/mono/inverted"
+      ],
+      "files": {
+        "light": "logos/light/Logo__VnExpress__Inverted__Tagline.svg",
+        "dark": "logos/dark/Logo__VnExpress__Inverted__Tagline.svg",
+        "themeable": "logos/themeable/Logo__VnExpress__Inverted__Tagline.svg"
+      }
+    },
+    {
+      "name": "Logo__VnExpress__Logomark__Greyscale",
+      "figmaVariant": "Subtracted=False, Type=Greyscale",
+      "width": 32,
+      "height": 32,
+      "themed": true,
+      "tokens": [
+        "component/logo/vnexpress/greyscale",
+        "component/logo/vnexpress/negative"
+      ],
+      "files": {
+        "light": "logos/light/Logo__VnExpress__Logomark__Greyscale.svg",
+        "dark": "logos/dark/Logo__VnExpress__Logomark__Greyscale.svg",
+        "themeable": "logos/themeable/Logo__VnExpress__Logomark__Greyscale.svg"
+      }
+    },
+    {
+      "name": "Logo__VnExpress__Logomark__Greyscale-Subtracted",
+      "figmaVariant": "Subtracted=True, Type=Greyscale",
+      "width": 32,
+      "height": 32,
+      "themed": true,
+      "tokens": [
+        "component/logo/vnexpress/greyscale"
+      ],
+      "files": {
+        "light": "logos/light/Logo__VnExpress__Logomark__Greyscale-Subtracted.svg",
+        "dark": "logos/dark/Logo__VnExpress__Logomark__Greyscale-Subtracted.svg",
+        "themeable": "logos/themeable/Logo__VnExpress__Logomark__Greyscale-Subtracted.svg"
+      }
+    },
+    {
+      "name": "Logo__VnExpress__Logomark__OnColor-Subtracted",
+      "figmaVariant": "Subtracted=True, Type=On color",
+      "width": 32,
+      "height": 32,
+      "themed": true,
+      "tokens": [
+        "component/logo/vnexpress/mono/inverted"
+      ],
+      "files": {
+        "light": "logos/light/Logo__VnExpress__Logomark__OnColor-Subtracted.svg",
+        "dark": "logos/dark/Logo__VnExpress__Logomark__OnColor-Subtracted.svg",
+        "themeable": "logos/themeable/Logo__VnExpress__Logomark__OnColor-Subtracted.svg"
+      }
+    },
+    {
+      "name": "Logo__VnExpress__Logomark__Standard",
+      "figmaVariant": "Subtracted=False, Type=Standard",
+      "width": 32,
+      "height": 32,
+      "themed": true,
+      "tokens": [
+        "component/logo/vnexpress/standard/primary",
+        "component/logo/vnexpress/negative"
+      ],
+      "files": {
+        "light": "logos/light/Logo__VnExpress__Logomark__Standard.svg",
+        "dark": "logos/dark/Logo__VnExpress__Logomark__Standard.svg",
+        "themeable": "logos/themeable/Logo__VnExpress__Logomark__Standard.svg"
+      }
+    },
+    {
+      "name": "Logo__VnExpress__Logomark__Standard-Subtracted",
+      "figmaVariant": "Subtracted=True, Type=Standard",
+      "width": 32,
+      "height": 32,
+      "themed": true,
+      "tokens": [
+        "component/logo/vnexpress/standard/primary"
+      ],
+      "files": {
+        "light": "logos/light/Logo__VnExpress__Logomark__Standard-Subtracted.svg",
+        "dark": "logos/dark/Logo__VnExpress__Logomark__Standard-Subtracted.svg",
+        "themeable": "logos/themeable/Logo__VnExpress__Logomark__Standard-Subtracted.svg"
+      }
+    },
+    {
+      "name": "Logo__VnExpress__OnColor",
+      "figmaVariant": "Appearance=On color, Tagline=False",
+      "width": 150,
+      "height": 28,
+      "themed": false,
+      "tokens": [
+        "icon/fill/on-color/regular"
+      ],
+      "files": {
+        "light": "logos/light/Logo__VnExpress__OnColor.svg",
+        "dark": "logos/dark/Logo__VnExpress__OnColor.svg",
+        "themeable": "logos/themeable/Logo__VnExpress__OnColor.svg"
+      }
+    },
+    {
+      "name": "Logo__VnExpress__OnColor__Tagline",
+      "figmaVariant": "Appearance=On color, Tagline=True",
+      "width": 150,
+      "height": 42,
+      "themed": false,
+      "tokens": [
+        "icon/fill/on-color/regular"
+      ],
+      "files": {
+        "light": "logos/light/Logo__VnExpress__OnColor__Tagline.svg",
+        "dark": "logos/dark/Logo__VnExpress__OnColor__Tagline.svg",
+        "themeable": "logos/themeable/Logo__VnExpress__OnColor__Tagline.svg"
+      }
+    },
+    {
+      "name": "Logo__VnExpress__Standard",
+      "figmaVariant": "Appearance=Standard, Tagline=False",
+      "width": 150,
+      "height": 28,
+      "themed": true,
+      "tokens": [
+        "component/logo/vnexpress/standard/secondary",
+        "component/logo/vnexpress/standard/primary",
+        "component/logo/vnexpress/negative"
+      ],
+      "files": {
+        "light": "logos/light/Logo__VnExpress__Standard.svg",
+        "dark": "logos/dark/Logo__VnExpress__Standard.svg",
+        "themeable": "logos/themeable/Logo__VnExpress__Standard.svg"
+      }
+    },
+    {
+      "name": "Logo__VnExpress__Standard__Tagline",
+      "figmaVariant": "Appearance=Standard, Tagline=True",
+      "width": 150,
+      "height": 42,
+      "themed": true,
+      "tokens": [
+        "component/logo/vnexpress/standard/secondary",
+        "component/logo/vnexpress/standard/primary",
+        "component/logo/vnexpress/negative"
+      ],
+      "files": {
+        "light": "logos/light/Logo__VnExpress__Standard__Tagline.svg",
+        "dark": "logos/dark/Logo__VnExpress__Standard__Tagline.svg",
+        "themeable": "logos/themeable/Logo__VnExpress__Standard__Tagline.svg"
+      }
+    },
+    {
+      "name": "Logo__eClick",
+      "figmaVariant": "Property 1=Default",
+      "width": 114,
+      "height": 60,
+      "themed": true,
+      "tokens": [
+        "component/logo/fpt/4",
+        "component/logo/fpt/3",
+        "component/logo/fpt/2",
+        "component/logo/fpt/1",
+        "component/logo/1st-party/eclick/3",
+        "component/logo/1st-party/eclick/2",
+        "component/logo/1st-party/eclick/1"
+      ],
+      "files": {
+        "light": "logos/light/Logo__eClick.svg",
+        "dark": "logos/dark/Logo__eClick.svg",
+        "themeable": "logos/themeable/Logo__eClick.svg"
+      }
+    },
+    {
+      "name": "Logo__eClick__Logomark",
+      "figmaVariant": "Property 1=Default",
+      "width": 32,
+      "height": 32,
+      "themed": true,
+      "tokens": [
+        "component/logo/1st-party/eclick/1"
+      ],
+      "files": {
+        "light": "logos/light/Logo__eClick__Logomark.svg",
+        "dark": "logos/dark/Logo__eClick__Logomark.svg",
+        "themeable": "logos/themeable/Logo__eClick__Logomark.svg"
+      }
+    },
+    {
+      "name": "Logo__vneGO__Dark",
+      "figmaVariant": "Theme=Dark",
+      "width": 110,
+      "height": 28,
+      "themed": false,
+      "tokens": [],
+      "files": {
+        "light": "logos/light/Logo__vneGO__Dark.svg",
+        "dark": "logos/dark/Logo__vneGO__Dark.svg",
+        "themeable": "logos/themeable/Logo__vneGO__Dark.svg"
+      }
+    },
+    {
+      "name": "Logo__vneGO__Light",
+      "figmaVariant": "Theme=Light",
+      "width": 110,
+      "height": 28,
+      "themed": false,
+      "tokens": [],
+      "files": {
+        "light": "logos/light/Logo__vneGO__Light.svg",
+        "dark": "logos/dark/Logo__vneGO__Light.svg",
+        "themeable": "logos/themeable/Logo__vneGO__Light.svg"
+      }
+    },
+    {
+      "name": "Logo__vneGO__OnColor",
+      "figmaVariant": "Theme=On Color",
+      "width": 110,
+      "height": 28,
+      "themed": false,
+      "tokens": [
+        "color/white/alpha-080"
+      ],
+      "files": {
+        "light": "logos/light/Logo__vneGO__OnColor.svg",
+        "dark": "logos/dark/Logo__vneGO__OnColor.svg",
+        "themeable": "logos/themeable/Logo__vneGO__OnColor.svg"
+      }
+    }
+  ]
+}

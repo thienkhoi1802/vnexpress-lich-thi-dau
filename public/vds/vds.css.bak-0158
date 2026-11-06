@@ -1,0 +1,1946 @@
+/**
+ * VnExpress Design System — design tokens
+ * Tự sinh từ packages/tokens/figma — KHÔNG sửa tay. Chạy `npm run build -w @vnexpress/tokens`.
+ */
+
+:root {
+  --vds-color-accent-100: #f6c9d6;
+  --vds-color-accent-200: #efacc1;
+  --vds-color-accent-300: #e68fad;
+  --vds-color-accent-300-alpha-020: #e68fad33;
+  --vds-color-accent-400: #db7499;
+  --vds-color-accent-500: #cf5d85;
+  --vds-color-accent-600: #c14872;
+  --vds-color-accent-700: #b13460;
+  --vds-color-accent-700-alpha-010: #b134601a;
+  --vds-color-accent-700-alpha-050: #b1346080;
+  --vds-color-accent-800: #9f224e;
+  --vds-color-accent-900: #7a1c45;
+  --vds-color-accent-1000: #430012;
+  --vds-color-accent-050: #fce6eb;
+  --vds-color-accent-bright: #df4670;
+  --vds-color-black: #000000;
+  --vds-color-black-alpha-003: #00000008;
+  --vds-color-black-alpha-006: #0000000f;
+  --vds-color-black-alpha-010: #0000001a;
+  --vds-color-black-alpha-015: #00000026;
+  --vds-color-black-alpha-020: #00000033;
+  --vds-color-black-alpha-030: #0000004d;
+  --vds-color-black-alpha-040: #00000066;
+  --vds-color-black-alpha-050: #00000080;
+  --vds-color-black-alpha-060: #00000099;
+  --vds-color-black-alpha-070: #000000b2;
+  --vds-color-black-alpha-080: #000000cc;
+  --vds-color-white: #ffffff;
+  --vds-color-white-alpha-003: #ffffff08;
+  --vds-color-white-alpha-006: #ffffff0f;
+  --vds-color-white-alpha-010: #ffffff1a;
+  --vds-color-white-alpha-015: #ffffff26;
+  --vds-color-white-alpha-020: #ffffff33;
+  --vds-color-white-alpha-030: #ffffff4d;
+  --vds-color-white-alpha-040: #ffffff66;
+  --vds-color-white-alpha-050: #ffffff80;
+  --vds-color-white-alpha-060: #ffffff99;
+  --vds-color-white-alpha-070: #ffffffb2;
+  --vds-color-white-alpha-080: #ffffffcc;
+  --vds-color-white-alpha-081: #ffffffcf;
+  --vds-color-white-alpha-088: #ffffffe0;
+  --vds-color-white-alpha-093: #ffffffed;
+  --vds-color-neutral-100: #e1e1e1;
+  --vds-color-neutral-200: #d6d6d6;
+  --vds-color-neutral-300: #c4c4c4;
+  --vds-color-neutral-400: #b1b1b1;
+  --vds-color-neutral-500: #9f9f9f;
+  --vds-color-neutral-600: #7f7f7f;
+  --vds-color-neutral-650: #6b6b6b;
+  --vds-color-neutral-700: #5f5f5f;
+  --vds-color-neutral-800: #404040;
+  --vds-color-neutral-900: #202020;
+  --vds-color-neutral-050: #fafafa;
+  --vds-color-neutral-060: #f3f3f3;
+  --vds-color-neutral-080: #ececec;
+  --vds-color-support-100: #cbdaed;
+  --vds-color-support-200: #aec5e1;
+  --vds-color-support-300: #92afd3;
+  --vds-color-support-400: #779ac4;
+  --vds-color-support-500: #5e84b3;
+  --vds-color-support-600: #466fa1;
+  --vds-color-support-700: #365983;
+  --vds-color-support-800: #274263;
+  --vds-color-support-900: #192c43;
+  --vds-color-support-050: #eaf0f8;
+  --vds-color-support-bright: #4394f6;
+  --vds-color-dark-450: #7e8084;
+  --vds-color-dark-500: #727479;
+  --vds-color-dark-550: #66696d;
+  --vds-color-dark-600: #5b5d62;
+  --vds-color-dark-650: #4f5257;
+  --vds-color-dark-700: #43464c;
+  --vds-color-dark-750: #373b41;
+  --vds-color-dark-800: #2c2f35;
+  --vds-color-dark-850: #20242a;
+  --vds-color-dark-900: #0d1013;
+  --vds-color-dark-alpha-020: #0d101333;
+  --vds-color-seashell-100: #faebde;
+  --vds-color-seashell-200: #f5e0ce;
+  --vds-color-seashell-300: #efd6c0;
+  --vds-color-seashell-400: #e8cbb3;
+  --vds-color-seashell-500: #dfc1a7;
+  --vds-color-seashell-600: #d5b79d;
+  --vds-color-seashell-700: #c7a588;
+  --vds-color-seashell-800: #b89374;
+  --vds-color-seashell-900: #a78261;
+  --vds-color-seashell-050: #fff7f0;
+  --vds-color-blue-100: #d0eaf9;
+  --vds-color-blue-150: #b9e0f6;
+  --vds-color-blue-400: #4cbbed;
+  --vds-color-blue-600: #0590de;
+  --vds-color-blue-700: #0471ae;
+  --vds-color-blue-800: #03517d;
+  --vds-color-blue-900: #02324d;
+  --vds-color-blue-050: #e6f4fc;
+  --vds-color-green-100: #d5eddc;
+  --vds-color-green-150: #c2e5cc;
+  --vds-color-green-400: #62c078;
+  --vds-color-green-600: #24a148;
+  --vds-color-green-700: #1c7e38;
+  --vds-color-green-800: #145b29;
+  --vds-color-green-900: #0c3819;
+  --vds-color-green-050: #e9f6ed;
+  --vds-color-orange-100: #fce8da;
+  --vds-color-orange-150: #faddc8;
+  --vds-color-orange-400: #f3a670;
+  --vds-color-orange-600: #ee853b;
+  --vds-color-orange-700: #ba682e;
+  --vds-color-orange-800: #864b21;
+  --vds-color-orange-900: #522e14;
+  --vds-color-orange-050: #fdf3eb;
+  --vds-color-gold-100: #fff5e7;
+  --vds-color-gold-200: #fcdfa9;
+  --vds-color-gold-400: #f6ce6f;
+  --vds-color-gold-600: #ecc138;
+  --vds-color-gold-700: #b89e28;
+  --vds-color-gold-800: #827519;
+  --vds-color-gold-900: #4b460d;
+  --vds-color-red-100: #f8d4d6;
+  --vds-color-red-150: #f5c0c3;
+  --vds-color-red-300: #ea7e84;
+  --vds-color-red-400: #e45b62;
+  --vds-color-red-600: #da1e28;
+  --vds-color-red-700: #aa181f;
+  --vds-color-red-800: #7b1117;
+  --vds-color-red-900: #4b0a0e;
+  --vds-color-red-050: #fbe9ea;
+  --vds-color-purple-tint: #f5edf9;
+  --vds-color-purple-bright: #e19bff;
+  --vds-color-purple-shade: #a44ec9;
+  --vds-color-magenta-tint: #f9ecf3;
+  --vds-color-magenta-bright: #ff7ac3;
+  --vds-color-magenta-shade: #c04488;
+  --vds-color-paper: #fcfaf6;
+  --vds-dimension-100: 8px;
+  --vds-dimension-150: 12px;
+  --vds-dimension-200: 16px;
+  --vds-dimension-300: 24px;
+  --vds-dimension-350: 28px;
+  --vds-dimension-400: 32px;
+  --vds-dimension-500: 40px;
+  --vds-dimension-550: 44px;
+  --vds-dimension-600: 48px;
+  --vds-dimension-700: 56px;
+  --vds-dimension-800: 64px;
+  --vds-dimension-900: 72px;
+  --vds-dimension-1000: 80px;
+  --vds-dimension-4500: 360px;
+  --vds-dimension-000: 0px;
+  --vds-dimension-025: 2px;
+  --vds-dimension-050: 4px;
+  --vds-typography-font-sans-serif-100: "Arial", sans-serif;
+  --vds-typography-font-sans-serif-200: "Roboto", sans-serif;
+  --vds-typography-font-sans-serif-300: "Merriweather Sans", sans-serif;
+  --vds-typography-font-sans-serif-400: "Inter", sans-serif;
+  --vds-typography-font-slab-100: "Breakers Slab", serif;
+  --vds-typography-font-slab-200: "Roboto Slab", serif;
+  --vds-typography-font-serif-100: "Merriweather", serif;
+  --vds-typography-font-mono-100: "Roboto Mono", monospace;
+  --vds-typography-font-size-100: 12px;
+  --vds-typography-font-size-200: 13px;
+  --vds-typography-font-size-300: 14px;
+  --vds-typography-font-size-400: 15px;
+  --vds-typography-font-size-500: 16px;
+  --vds-typography-font-size-600: 17px;
+  --vds-typography-font-size-700: 18px;
+  --vds-typography-font-size-800: 19px;
+  --vds-typography-font-size-900: 20px;
+  --vds-typography-font-size-1000: 21px;
+  --vds-typography-font-size-1100: 22px;
+  --vds-typography-font-size-1200: 24px;
+  --vds-typography-font-size-1300: 28px;
+  --vds-typography-font-size-1400: 32px;
+  --vds-typography-font-size-1500: 36px;
+  --vds-typography-font-size-050: 10px;
+  --vds-typography-font-weight-regular: 400;
+  --vds-typography-font-weight-medium: 500;
+  --vds-typography-font-weight-semi-bold: 600;
+  --vds-typography-font-weight-bold: 700;
+  --vds-typography-font-weight-extra-bold: 800;
+  --vds-typography-font-weight-black: 900;
+  --vds-typography-line-height-100: 140%;
+  --vds-typography-line-height-200: 150%;
+  --vds-typography-line-height-300: 160%;
+  --vds-typography-line-height-400: 180%;
+  --vds-typography-line-height-000: 100%;
+  --vds-typography-letter-spacing-000: 0px;
+  --vds-surface-100: var(--vds-color-neutral-050);
+  --vds-surface-200: var(--vds-color-neutral-060);
+  --vds-surface-300: var(--vds-color-neutral-080);
+  --vds-surface-000: var(--vds-color-white);
+  --vds-surface-paper-000: var(--vds-color-paper);
+  --vds-surface-dark-000: var(--vds-color-black);
+  --vds-surface-special-A: var(--vds-color-seashell-050);
+  --vds-surface-special-B: #e68fad0d;
+  --vds-surface-info: var(--vds-color-blue-050);
+  --vds-surface-positive: var(--vds-color-green-050);
+  --vds-surface-warning: var(--vds-color-orange-050);
+  --vds-surface-negative: var(--vds-color-red-050);
+  --vds-surface-accent: var(--vds-color-accent-050);
+  --vds-surface-support: var(--vds-color-support-050);
+  --vds-surface-input-rest: var(--vds-color-black-alpha-006);
+  --vds-surface-input-accent-selected: var(--vds-color-accent-700-alpha-010);
+  --vds-surface-input-support-selected: var(--vds-color-support-600);
+  --vds-surface-input-positive-selected: var(--vds-color-green-600);
+  --vds-surface-input-negative-selected: var(--vds-color-red-600);
+  --vds-text-regular: var(--vds-color-neutral-900);
+  --vds-text-regular-lighter: var(--vds-color-neutral-700);
+  --vds-text-subdued: var(--vds-color-neutral-600);
+  --vds-text-subdued-lighter: var(--vds-color-neutral-500);
+  --vds-text-strong: var(--vds-color-black);
+  --vds-text-article-title: var(--vds-color-neutral-900);
+  --vds-text-article-lead: var(--vds-color-neutral-700);
+  --vds-text-article-paragraph: var(--vds-color-neutral-800);
+  --vds-text-article-caption: var(--vds-color-neutral-600);
+  --vds-text-on-color-regular: var(--vds-color-white-alpha-088);
+  --vds-text-on-color-regular-lighter: var(--vds-color-white-alpha-070);
+  --vds-text-on-color-subdued: var(--vds-color-white-alpha-050);
+  --vds-text-on-color-subdued-lighter: var(--vds-color-white-alpha-030);
+  --vds-text-on-color-strong: var(--vds-color-white-alpha-093);
+  --vds-text-on-color-alternative: var(--vds-color-white-alpha-088);
+  --vds-text-on-white: var(--vds-color-dark-900);
+  --vds-text-accent-regular: var(--vds-color-accent-700);
+  --vds-text-accent-strong: var(--vds-color-accent-700);
+  --vds-text-accent-alternative: var(--vds-color-accent-700);
+  --vds-text-support-regular: var(--vds-color-support-700);
+  --vds-text-support-alternative: var(--vds-color-support-700);
+  --vds-text-link-regular: var(--vds-color-blue-700);
+  --vds-text-link-strong: var(--vds-color-blue-700);
+  --vds-text-info-regular: var(--vds-color-blue-700);
+  --vds-text-info-alternative: var(--vds-color-blue-700);
+  --vds-text-positive-regular: var(--vds-color-green-700);
+  --vds-text-positive-alternative: var(--vds-color-green-700);
+  --vds-text-warning-regular: var(--vds-color-orange-800);
+  --vds-text-warning-alternative: var(--vds-color-orange-800);
+  --vds-text-negative-regular: var(--vds-color-red-600);
+  --vds-text-negative-alternative: var(--vds-color-red-700);
+  --vds-text-extreme-regular: var(--vds-color-purple-shade);
+  --vds-text-extreme-alternative: var(--vds-color-purple-shade);
+  --vds-border-subdued-lighter: var(--vds-color-black-alpha-006);
+  --vds-border-subdued: var(--vds-color-black-alpha-015);
+  --vds-border-regular: var(--vds-color-black-alpha-040);
+  --vds-border-strong: var(--vds-color-black-alpha-060);
+  --vds-border-accent-subdued: var(--vds-color-accent-400);
+  --vds-border-accent-regular: var(--vds-color-accent-600);
+  --vds-border-accent-strong: var(--vds-color-accent-800);
+  --vds-border-support-regular: var(--vds-color-support-600);
+  --vds-border-on-color-regular: var(--vds-color-white-alpha-080);
+  --vds-border-info-regular: var(--vds-color-blue-600);
+  --vds-border-positive-regular: var(--vds-color-green-600);
+  --vds-border-warning-regular: var(--vds-color-orange-600);
+  --vds-border-negative-regular: var(--vds-color-red-600);
+  --vds-border-focus: var(--vds-color-blue-600);
+  --vds-icon-fill-subdued: var(--vds-color-neutral-400);
+  --vds-icon-fill-regular: var(--vds-color-neutral-600);
+  --vds-icon-fill-strong: var(--vds-color-neutral-700);
+  --vds-icon-fill-on-color-regular: var(--vds-color-white-alpha-088);
+  --vds-icon-fill-on-color-subdued: var(--vds-color-white-alpha-070);
+  --vds-icon-fill-on-color-subdued-lighter: var(--vds-color-white-alpha-030);
+  --vds-icon-fill-on-color-alternative: var(--vds-color-white-alpha-080);
+  --vds-icon-fill-accent-regular: var(--vds-color-accent-500);
+  --vds-icon-fill-accent-strong: var(--vds-color-accent-700);
+  --vds-icon-fill-accent-alternative: var(--vds-color-accent-700);
+  --vds-icon-fill-link-regular: var(--vds-color-blue-600);
+  --vds-icon-fill-link-strong: var(--vds-color-blue-700);
+  --vds-icon-fill-info-regular: var(--vds-color-blue-600);
+  --vds-icon-fill-info-subdued: var(--vds-color-blue-400);
+  --vds-icon-fill-positive-regular: var(--vds-color-green-600);
+  --vds-icon-fill-positive-subdued: var(--vds-color-green-400);
+  --vds-icon-fill-warning-regular: var(--vds-color-orange-600);
+  --vds-icon-fill-warning-subdued: var(--vds-color-orange-400);
+  --vds-icon-fill-negative-regular: var(--vds-color-red-600);
+  --vds-icon-fill-negative-subdued: var(--vds-color-red-400);
+  --vds-icon-fill-on-white: var(--vds-color-dark-900);
+  --vds-icon-background-regular: var(--vds-color-black-alpha-010);
+  --vds-icon-background-on-image-regular: var(--vds-color-black-alpha-020);
+  --vds-icon-background-on-image-strong: var(--vds-color-black-alpha-050);
+  --vds-icon-background-on-color-regular: var(--vds-color-white-alpha-020);
+  --vds-icon-background-on-color-subdued: var(--vds-color-white-alpha-010);
+  --vds-icon-background-on-color-strong: var(--vds-color-white-alpha-050);
+  --vds-icon-background-on-color-solid: var(--vds-color-white);
+  --vds-icon-background-contrast: var(--vds-color-black-alpha-080);
+  --vds-icon-background-accent-rest: var(--vds-color-accent-300-alpha-020);
+  --vds-icon-background-accent-selected: var(--vds-color-accent-300-alpha-020);
+  --vds-icon-background-accent-strong-rest: var(--vds-color-accent-700);
+  --vds-icon-background-accent-strong-hover: var(--vds-color-accent-800);
+  --vds-icon-background-accent-strong-pressed: var(--vds-color-accent-900);
+  --vds-component-live-fill: var(--vds-color-accent-bright);
+  --vds-component-article-bar-gradient-mask-stop-000: #ffffff00;
+  --vds-component-article-bar-gradient-mask-stop-100: var(--vds-color-white);
+  --vds-component-avatar-text: var(--vds-color-neutral-600);
+  --vds-component-avatar-surface-enabled: var(--vds-color-neutral-100);
+  --vds-component-badge-fill: var(--vds-color-support-600);
+  --vds-component-button-surface-rest-regular: var(--vds-color-neutral-060);
+  --vds-component-button-surface-rest-subdued: var(--vds-color-neutral-050);
+  --vds-component-button-surface-selected-a: var(--vds-color-black-alpha-010);
+  --vds-component-button-surface-selected-b: var(--vds-surface-input-accent-selected);
+  --vds-component-button-surface-overlay-rest: var(--vds-color-black-alpha-010);
+  --vds-component-button-surface-accent-rest: var(--vds-color-accent-700);
+  --vds-component-button-surface-accent-subdued-rest: #b134601a;
+  --vds-component-button-surface-support-rest: var(--vds-color-support-600);
+  --vds-component-button-surface-info-contained-rest: var(--vds-color-blue-100);
+  --vds-component-button-surface-positive-contained-rest: var(--vds-color-green-100);
+  --vds-component-button-surface-warning-contained-rest: var(--vds-color-orange-100);
+  --vds-component-button-surface-negative-contained-rest: var(--vds-color-red-100);
+  --vds-component-button-border-regular: var(--vds-color-neutral-500);
+  --vds-component-button-border-subdued: var(--vds-color-neutral-200);
+  --vds-component-button-touch-surface-selected: var(--vds-color-neutral-060);
+  --vds-component-button-on-image-rest: var(--vds-color-black-alpha-020);
+  --vds-component-button-on-color-border-regular: var(--vds-color-white-alpha-080);
+  --vds-component-button-on-color-border-subdued: var(--vds-color-white-alpha-050);
+  --vds-component-button-on-color-surface-selected: var(--vds-color-white-alpha-030);
+  --vds-component-button-on-color-surface-alt-enabled: var(--vds-color-white-alpha-080);
+  --vds-component-comment-editorspick-surface: var(--vds-color-neutral-060);
+  --vds-component-comment-reaction-tooltip-surface: var(--vds-color-black-alpha-080);
+  --vds-component-comment-reaction-icon-background: var(--vds-color-accent-050);
+  --vds-component-comment-reaction-icon-outline: var(--vds-color-neutral-900);
+  --vds-component-comment-reaction-icon-fill-1: #fbdcd2;
+  --vds-component-comment-reaction-icon-fill-2: var(--vds-color-accent-600);
+  --vds-component-comment-reaction-icon-fill-3: var(--vds-color-accent-100);
+  --vds-component-comment-reaction-icon-fill-4: var(--vds-color-accent-300);
+  --vds-component-divider-fill-strong: var(--vds-color-black-alpha-050);
+  --vds-component-divider-fill-regular: var(--vds-color-black-alpha-015);
+  --vds-component-divider-fill-subdued: var(--vds-color-black-alpha-006);
+  --vds-component-divider-fill-on-color-strong: var(--vds-color-white-alpha-050);
+  --vds-component-divider-fill-on-color-regular: var(--vds-color-white-alpha-030);
+  --vds-component-divider-fill-on-color-subdued: var(--vds-color-white-alpha-010);
+  --vds-component-edition-map: #4300120d;
+  --vds-component-evisual-surface-100: var(--vds-color-dark-850);
+  --vds-component-evisual-surface-000: var(--vds-color-dark-900);
+  --vds-component-evisual-surface-graphic-stop-000: #4b2952;
+  --vds-component-evisual-surface-graphic-stop-100: #4b295200;
+  --vds-component-evisual-item-mask-A-stop-000: #0d101300;
+  --vds-component-evisual-item-mask-A-stop-100: #0d1013e5;
+  --vds-component-evisual-item-mask-B-stop-000: #0d10131a;
+  --vds-component-evisual-item-mask-B-stop-100: #0d1013e5;
+  --vds-component-evisual-navigation-gradient-mask-A-stop-000: #0d101300;
+  --vds-component-evisual-navigation-gradient-mask-A-stop-100: #0d1013;
+  --vds-component-evisual-navigation-gradient-mask-B-stop-000: #00000000;
+  --vds-component-evisual-navigation-gradient-mask-B-stop-100: #00000099;
+  --vds-component-evisual-navigation-tab-surface-rest: var(--vds-color-white-alpha-010);
+  --vds-component-evisual-navigation-tab-surface-selected: var(--vds-color-white);
+  --vds-component-evisual-chip-surface-rest: var(--vds-color-white-alpha-010);
+  --vds-component-evisual-chip-surface-selected: var(--vds-color-white);
+  --vds-component-evisual-element-link-fill: var(--vds-color-blue-400);
+  --vds-component-evisual-element-accent: #fb7672;
+  --vds-component-evisual-element-indicator-001: #ff4848;
+  --vds-component-evisual-element-indicator-002: #64ffa1;
+  --vds-component-evisual-element-indicator-003: #d0f801;
+  --vds-component-evisual-element-indicator-004: #fdab31;
+  --vds-component-evisual-element-indicator-005: #75dfff;
+  --vds-component-evisual-element-reaction-love-fill: #de2f61;
+  --vds-component-football-icon-fill-ball: var(--vds-color-neutral-800);
+  --vds-component-football-icon-fill-yellow-card: var(--vds-color-gold-600);
+  --vds-component-game-surface: var(--vds-color-seashell-050);
+  --vds-component-game-button-surface-regular: var(--vds-color-black-alpha-070);
+  --vds-component-game-button-surface-subdued: var(--vds-color-black-alpha-010);
+  --vds-component-game-button-border-regular: var(--vds-color-black-alpha-070);
+  --vds-component-game-button-border-subdued: var(--vds-color-black-alpha-030);
+  --vds-component-game-medal-gold: #ffe791;
+  --vds-component-game-medal-silver: #eeeeee;
+  --vds-component-game-medal-bronze: #f6cfc2;
+  --vds-component-game-icon-fill-regular: var(--vds-color-black-alpha-070);
+  --vds-component-game-icon-fill-subdued: var(--vds-color-black-alpha-040);
+  --vds-component-game-icon-fill-invert: var(--vds-color-white-alpha-093);
+  --vds-component-game-icon-highscore-fill: var(--vds-color-gold-400);
+  --vds-component-game-icon-highscore-score: var(--vds-color-neutral-900);
+  --vds-component-game-loading-bar-background: var(--vds-color-black-alpha-010);
+  --vds-component-game-loading-bar-fill: var(--vds-color-black-alpha-080);
+  --vds-component-game-text-on-color: var(--vds-color-white-alpha-093);
+  --vds-component-game-text-invert: var(--vds-color-white-alpha-093);
+  --vds-component-game-unscramble-surface: #cddfff;
+  --vds-component-game-unscramble-text-accent: #5a78ac;
+  --vds-component-game-spelling-surface: #ffd3cd;
+  --vds-component-game-spelling-accent: #f58879;
+  --vds-component-game-spelling-choice-surface-correct: var(--vds-color-green-050);
+  --vds-component-game-spelling-choice-surface-incorrect: var(--vds-color-red-050);
+  --vds-component-game-spelling-timer-ring-background: var(--vds-color-black-alpha-010);
+  --vds-component-game-spelling-timer-ring-fill-high: var(--vds-color-green-400);
+  --vds-component-game-spelling-timer-ring-fill-medium: var(--vds-color-gold-400);
+  --vds-component-game-spelling-timer-ring-fill-low: var(--vds-color-orange-400);
+  --vds-component-game-spelling-timer-ring-fill-lowest: var(--vds-color-red-400);
+  --vds-component-game-spelling-timer-score-high: var(--vds-color-green-700);
+  --vds-component-game-spelling-timer-score-medium: var(--vds-color-gold-700);
+  --vds-component-game-spelling-timer-score-low: var(--vds-color-orange-700);
+  --vds-component-game-spelling-timer-score-lowest: var(--vds-color-black);
+  --vds-component-game-spelling-timer-score-minus: var(--vds-color-red-700);
+  --vds-component-game-spelling-text-accent: #764040;
+  --vds-component-game-sudoku-surface: #ffeecd;
+  --vds-component-game-sudoku-accent: #ffbd53;
+  --vds-component-game-sudoku-text-accent: #906309;
+  --vds-component-game-sudoku-cell-disabled: var(--vds-color-neutral-080);
+  --vds-component-game-sudoku-cell-state-selected: #ffaa0066;
+  --vds-component-game-sudoku-cell-state-highlight-set: #ffaa001a;
+  --vds-component-game-sudoku-cell-state-highlight-number: #ffaa004d;
+  --vds-component-knob-surface-regular: var(--vds-color-white);
+  --vds-component-knob-surface-accent: var(--vds-color-accent-600);
+  --vds-component-knob-surface-disabled: var(--vds-color-neutral-050);
+  --vds-component-logo-vnexpress-negative: var(--vds-color-white);
+  --vds-component-logo-vnexpress-inverted: var(--vds-color-white);
+  --vds-component-logo-vnexpress-greyscale: var(--vds-color-neutral-400);
+  --vds-component-logo-vnexpress-mono: var(--vds-color-dark-900);
+  --vds-component-logo-vnexpress-mono-inverted: var(--vds-color-white-alpha-080);
+  --vds-component-logo-vnexpress-standard-primary: var(--vds-color-accent-800);
+  --vds-component-logo-vnexpress-standard-secondary: var(--vds-color-neutral-600);
+  --vds-component-logo-vnexpress-standard-tertiary: #1a1a1a;
+  --vds-component-logo-vnexpress-standard-quaternary: #d9d9d9;
+  --vds-component-logo-fpt-1: #1169b0;
+  --vds-component-logo-fpt-2: #f27227;
+  --vds-component-logo-fpt-3: #16b14b;
+  --vds-component-logo-fpt-4: #ffffff;
+  --vds-component-logo-vds-primary: var(--vds-color-neutral-900);
+  --vds-component-logo-vds-secondary: var(--vds-color-neutral-800);
+  --vds-component-logo-vds-tertiary: var(--vds-color-neutral-200);
+  --vds-component-logo-1st-party-eclick-1: #00747b;
+  --vds-component-logo-1st-party-eclick-2: #80c6c6;
+  --vds-component-logo-1st-party-eclick-3: #7f7f7f;
+  --vds-component-logo-3rd-party-facebook-1: #1977f3;
+  --vds-component-logo-3rd-party-facebook-2: #ffffff;
+  --vds-component-logo-3rd-party-apple-regular: #000000;
+  --vds-component-logo-3rd-party-apple-grey: #a2aaad;
+  --vds-component-logo-3rd-party-apple-inverted: #ffffff;
+  --vds-component-logo-3rd-party-google-1: #e74133;
+  --vds-component-logo-3rd-party-google-2: #f9bb00;
+  --vds-component-logo-3rd-party-google-3: #32a753;
+  --vds-component-logo-3rd-party-google-4: #3e82f1;
+  --vds-component-logo-3rd-party-google-android-1: #3ddc84;
+  --vds-component-news-general-fill: var(--vds-color-accent-700);
+  --vds-component-news-general-fill-darkmode-alternative: var(--vds-color-accent-700);
+  --vds-component-news-general-background: #b426520d;
+  --vds-component-news-business-fill: #04416d;
+  --vds-component-news-business-background: #04416d0d;
+  --vds-component-news-travel-fill: #0072bb;
+  --vds-component-news-lifestyle-fill: #267d97;
+  --vds-component-news-vehicles-fill: #5d6c79;
+  --vds-component-news-health-fill: #03817b;
+  --vds-component-news-health-background: #049b930d;
+  --vds-component-news-sports-fill: #498523;
+  --vds-component-news-sports-background: #4985230d;
+  --vds-component-news-science-fill: #867428;
+  --vds-component-news-tech-fill: #b88000;
+  --vds-component-news-education-fill: #b75c00;
+  --vds-component-news-relax-fill: #dc3926;
+  --vds-component-news-entertainment-fill: #d71450;
+  --vds-component-news-legal-fill: #6e2c2d;
+  --vds-component-news-ministry-fill: #c24646;
+  --vds-component-news-item-media-control-icon-fill: var(--vds-color-dark-600);
+  --vds-component-news-item-media-control-icon-background: var(--vds-color-neutral-060);
+  --vds-component-pagination-indicator-rest: var(--vds-color-black-alpha-010);
+  --vds-component-pagination-indicator-on-color-rest: var(--vds-color-white-alpha-020);
+  --vds-component-pagination-indicator-on-color-selected: var(--vds-color-white-alpha-070);
+  --vds-component-pagination-indicator-selected: var(--vds-color-black-alpha-060);
+  --vds-component-player-audioplayer-surface: var(--vds-color-white-alpha-010);
+  --vds-component-player-audioplayer-fill: var(--vds-color-white-alpha-088);
+  --vds-component-player-audioplayer-text: var(--vds-color-white-alpha-088);
+  --vds-component-player-audioplayer-sleep-timer: var(--vds-color-purple-bright);
+  --vds-component-player-audioplayer-toggle: var(--vds-color-green-400);
+  --vds-component-player-videoplayer-element-fill-subdued: var(--vds-color-white-alpha-050);
+  --vds-component-player-videoplayer-element-fill-regular: var(--vds-color-white-alpha-088);
+  --vds-component-player-videoplayer-element-fill-inverted: var(--vds-color-dark-850);
+  --vds-component-player-videoplayer-element-surface-background-subdued: var(--vds-color-black-alpha-010);
+  --vds-component-player-videoplayer-element-surface-background-regular: var(--vds-color-black-alpha-050);
+  --vds-component-player-videoplayer-element-surface-background-strong: var(--vds-color-black-alpha-080);
+  --vds-component-player-videoplayer-scrim-regular: var(--vds-color-black-alpha-030);
+  --vds-component-player-videoplayer-scrim-strong: var(--vds-color-black-alpha-060);
+  --vds-component-player-progressbar-background: var(--vds-color-white-alpha-010);
+  --vds-component-player-progressbar-foreground-buffered: var(--vds-color-white-alpha-010);
+  --vds-component-player-progressbar-foreground-on-color: var(--vds-color-white-alpha-088);
+  --vds-component-player-progressbar-foreground-accent: var(--vds-color-accent-600);
+  --vds-component-player-progressbar-foreground-ad: var(--vds-color-gold-400);
+  --vds-component-progressbar-background: var(--vds-color-neutral-100);
+  --vds-component-progressbar-foreground-regular: var(--vds-color-neutral-700);
+  --vds-component-progressbar-foreground-subdued: var(--vds-color-neutral-400);
+  --vds-component-scrim-image-regular: #00000000;
+  --vds-component-scrim-image-gradient-stop-000: #000000;
+  --vds-component-scrim-image-gradient-stop-100: #00000000;
+  --vds-component-scrim-screen-regular: var(--vds-color-black-alpha-010);
+  --vds-component-scrim-screen-strong: var(--vds-color-black-alpha-060);
+  --vds-component-scrim-screen-stronger: var(--vds-color-black-alpha-080);
+  --vds-component-search-surface: var(--vds-color-neutral-060);
+  --vds-component-skeleton-surface: var(--vds-color-neutral-100);
+  --vds-component-state-layer-rest: #36444c00;
+  --vds-component-state-layer-hover: #36444c14;
+  --vds-component-state-layer-pressed: #36444c2e;
+  --vds-component-state-layer-on-color-rest: #deebff00;
+  --vds-component-state-layer-on-color-hover: #deebff26;
+  --vds-component-state-layer-on-color-pressed: #deebff33;
+  --vds-component-subscriptions-surface-rest: var(--vds-color-seashell-050);
+  --vds-component-subscriptions-surface-selected: var(--vds-color-accent-700);
+  --vds-component-subscriptions-border-regular: var(--vds-color-seashell-600);
+  --vds-component-subscriptions-border-accent: var(--vds-color-accent-bright);
+  --vds-component-summary-foreground: var(--vds-color-white);
+  --vds-component-summary-background: var(--vds-color-neutral-080);
+  --vds-component-summary-gradient-mask-bottom-stop-000: #ececec00;
+  --vds-component-summary-gradient-mask-bottom-stop-100: var(--vds-component-summary-background);
+  --vds-component-summary-gradient-mask-top-stop-000: var(--vds-color-dark-900);
+  --vds-component-summary-gradient-mask-top-stop-100: #0d101300;
+  --vds-component-system-widget-surface: var(--vds-color-neutral-050);
+  --vds-component-tab-surface-rest: var(--vds-color-black-alpha-010);
+  --vds-component-tab-surface-selected: var(--vds-color-white);
+  --vds-component-toggle-surface-background-disabled: var(--vds-color-neutral-050);
+  --vds-component-toggle-surface-background-enabled: var(--vds-color-neutral-100);
+  --vds-component-audio-news-gradient-mask-stop-000: #ffffff00;
+  --vds-component-audio-news-gradient-mask-stop-100: #ffffff;
+  --vds-component-audio-news-podcasts-item-background: var(--vds-color-accent-900);
+  --vds-component-audio-news-podcasts-item-tag-fill: var(--vds-color-accent-bright);
+  --vds-component-audio-news-media-control-fill: var(--vds-color-white);
+  --vds-component-text-field-surface-rest: var(--vds-color-black-alpha-003);
+  --vds-component-text-field-surface-solid-rest: var(--vds-color-white);
+  --vds-component-gradient-overlay-100: #ffffff;
+  --vds-component-gradient-overlay-000: #ffffff00;
+  --vds-component-gradient-overlay-010: #ffffff1a;
+  --vds-component-gradient-overlay-020: #ffffff33;
+  --vds-component-gradient-overlay-030: #ffffff4d;
+  --vds-component-gradient-overlay-040: #ffffff66;
+  --vds-component-gradient-overlay-050: #ffffff80;
+  --vds-component-gradient-overlay-060: #ffffff99;
+  --vds-component-gradient-overlay-070: #ffffffb2;
+  --vds-component-gradient-overlay-080: #ffffffcc;
+  --vds-spacing-none: var(--vds-dimension-000);
+  --vds-spacing-4xs: var(--vds-dimension-025);
+  --vds-spacing-3xs: var(--vds-dimension-050);
+  --vds-spacing-2xs: var(--vds-dimension-100);
+  --vds-spacing-xs: var(--vds-dimension-150);
+  --vds-spacing-sm: var(--vds-dimension-200);
+  --vds-spacing-md: var(--vds-dimension-300);
+  --vds-spacing-lg: var(--vds-dimension-400);
+  --vds-spacing-xl: var(--vds-dimension-500);
+  --vds-spacing-2xl: var(--vds-dimension-600);
+  --vds-spacing-3xl: var(--vds-dimension-700);
+  --vds-spacing-4xl: var(--vds-dimension-800);
+  --vds-spacing-xs-n: -12px;
+  --vds-spacing-margin-sm: var(--vds-dimension-200);
+  --vds-spacing-margin-md: 20px;
+  --vds-spacing-margin-lg: var(--vds-dimension-400);
+  --vds-radii-none: var(--vds-dimension-000);
+  --vds-radii-sm: var(--vds-dimension-025);
+  --vds-radii-md: var(--vds-dimension-050);
+  --vds-radii-lg: var(--vds-dimension-100);
+  --vds-radii-xl: var(--vds-dimension-150);
+  --vds-radii-circle: var(--vds-dimension-4500);
+  --vds-border-weight-none: 0px;
+  --vds-border-weight-md: 1px;
+  --vds-border-weight-lg: 2px;
+  --vds-border-weight-xl: 3px;
+  --vds-component-article-bar-radii: var(--vds-dimension-150);
+  --vds-component-article-bar-height: var(--vds-dimension-700);
+  --vds-component-button-height-xs: var(--vds-dimension-350);
+  --vds-component-button-height-sm: var(--vds-dimension-400);
+  --vds-component-button-height-md: var(--vds-dimension-500);
+  --vds-component-button-height-lg: var(--vds-dimension-550);
+  --vds-component-button-height-xl: var(--vds-dimension-600);
+  --vds-component-button-height-2xl: var(--vds-dimension-700);
+  --vds-component-divider-thickness-regular: 1px;
+  --vds-component-divider-thickness-medium: 2px;
+  --vds-component-divider-thickness-thick: 8px;
+  --vds-component-list-item-height: var(--vds-dimension-600);
+  --vds-component-focus-border-weight: var(--vds-border-weight-xl);
+  --vds-component-bar-height-md: var(--vds-dimension-500);
+  --vds-component-bar-height-lg: var(--vds-dimension-550);
+  --vds-component-bar-height-2lg: var(--vds-dimension-600);
+  --vds-component-bar-height-xl: var(--vds-dimension-700);
+  --vds-component-table-generic: var(--vds-dimension-700);
+  --vds-component-table-row-height-sm: var(--vds-dimension-350);
+  --vds-component-table-row-height-md: var(--vds-dimension-500);
+  --vds-component-table-header-height-sm: var(--vds-dimension-300);
+  --vds-component-table-header-height-md: var(--vds-dimension-400);
+  --vds-article-title-font-weight-regular: var(--vds-typography-font-weight-regular);
+  --vds-article-title-font-weight-bold: var(--vds-typography-font-weight-bold);
+  --vds-article-title-font-weight-black: var(--vds-typography-font-weight-black);
+  --vds-article-title-primary-font-family: var(--vds-typography-font-serif-100);
+  --vds-article-title-primary-font-size-xs: var(--vds-typography-font-size-100);
+  --vds-article-title-primary-font-size-sm: var(--vds-typography-font-size-500);
+  --vds-article-title-primary-font-size-md: var(--vds-typography-font-size-900);
+  --vds-article-title-primary-font-size-lg: var(--vds-typography-font-size-1100);
+  --vds-article-title-primary-font-size-xl: var(--vds-typography-font-size-1400);
+  --vds-article-title-primary-line-height: var(--vds-typography-line-height-300);
+  --vds-article-title-secondary-font-family: var(--vds-typography-font-sans-serif-300);
+  --vds-article-title-secondary-line-height: var(--vds-typography-line-height-300);
+  --vds-article-title-secondary-font-size-xs: var(--vds-typography-font-size-100);
+  --vds-article-title-secondary-font-size-xsm: var(--vds-typography-font-size-300);
+  --vds-article-title-secondary-font-size-sm: var(--vds-typography-font-size-500);
+  --vds-article-title-secondary-font-size-smd: var(--vds-typography-font-size-600);
+  --vds-article-title-secondary-font-size-md: var(--vds-typography-font-size-900);
+  --vds-article-title-secondary-font-size-lg: var(--vds-typography-font-size-1100);
+  --vds-article-title-secondary-font-size-xl: var(--vds-typography-font-size-1400);
+  --vds-article-title-goc-nhin-font-family: var(--vds-typography-font-slab-100);
+  --vds-article-title-goc-nhin-line-height: var(--vds-typography-line-height-100);
+  --vds-article-title-goc-nhin-font-size-xs: var(--vds-typography-font-size-300);
+  --vds-article-title-goc-nhin-font-size-sm: var(--vds-typography-font-size-900);
+  --vds-article-title-goc-nhin-font-size-md: var(--vds-typography-font-size-1200);
+  --vds-article-title-goc-nhin-font-size-lg: var(--vds-typography-font-size-1300);
+  --vds-article-title-goc-nhin-font-size-xl: var(--vds-typography-font-size-1500);
+  --vds-article-paragraph-font-weight-regular: var(--vds-typography-font-weight-regular);
+  --vds-article-paragraph-font-weight-bold: var(--vds-typography-font-weight-bold);
+  --vds-article-paragraph-standard-font-family: var(--vds-typography-font-sans-serif-100);
+  --vds-article-paragraph-standard-font-size-xs: var(--vds-typography-font-size-300);
+  --vds-article-paragraph-standard-font-size-sm: var(--vds-typography-font-size-500);
+  --vds-article-paragraph-standard-font-size-md: var(--vds-typography-font-size-600);
+  --vds-article-paragraph-standard-font-size-lg: var(--vds-typography-font-size-700);
+  --vds-article-paragraph-standard-line-height: var(--vds-typography-line-height-100);
+  --vds-article-paragraph-android-font-family: var(--vds-typography-font-sans-serif-200);
+  --vds-article-paragraph-android-line-height: var(--vds-typography-line-height-100);
+  --vds-article-paragraph-android-font-size-xs: var(--vds-typography-font-size-300);
+  --vds-article-paragraph-android-font-size-sm: var(--vds-typography-font-size-500);
+  --vds-article-paragraph-android-font-size-md: var(--vds-typography-font-size-600);
+  --vds-article-paragraph-android-font-size-lg: var(--vds-typography-font-size-700);
+  --vds-article-paragraph-option-1-font-family: var(--vds-typography-font-serif-100);
+  --vds-article-paragraph-option-1-line-height: var(--vds-typography-line-height-100);
+  --vds-article-paragraph-option-1-font-size-lg: var(--vds-typography-font-size-600);
+  --vds-heading-font-family: var(--vds-typography-font-sans-serif-300);
+  --vds-heading-font-size-xs: var(--vds-typography-font-size-500);
+  --vds-heading-font-size-sm: var(--vds-typography-font-size-700);
+  --vds-heading-font-size-md: var(--vds-typography-font-size-900);
+  --vds-heading-font-size-lg: var(--vds-typography-font-size-1300);
+  --vds-heading-font-weight: var(--vds-typography-font-weight-bold);
+  --vds-microcopy-font-family: var(--vds-typography-font-sans-serif-300);
+  --vds-microcopy-label-font-weight-regular: var(--vds-typography-font-weight-regular);
+  --vds-microcopy-label-font-weight-bold: var(--vds-typography-font-weight-bold);
+  --vds-microcopy-label-font-size-xs: var(--vds-typography-font-size-050);
+  --vds-microcopy-label-font-size-xsm: var(--vds-typography-font-size-100);
+  --vds-microcopy-label-font-size-sm: var(--vds-typography-font-size-200);
+  --vds-microcopy-label-font-size-md: var(--vds-typography-font-size-400);
+  --vds-microcopy-label-font-size-lg: var(--vds-typography-font-size-600);
+  --vds-microcopy-label-font-size-xl: var(--vds-typography-font-size-800);
+  --vds-microcopy-label-font-size-2xl: var(--vds-typography-font-size-1000);
+  --vds-microcopy-helper-font-weight-regular: var(--vds-typography-font-weight-regular);
+  --vds-microcopy-helper-font-weight-bold: var(--vds-typography-font-weight-bold);
+  --vds-microcopy-helper-font-size-xs: var(--vds-typography-font-size-050);
+  --vds-microcopy-helper-font-size-sm: var(--vds-typography-font-size-100);
+  --vds-microcopy-helper-font-size-md: var(--vds-typography-font-size-300);
+  --vds-numeric-font-family: var(--vds-typography-font-mono-100);
+  --vds-numeric-font-weight-regular: var(--vds-typography-font-weight-regular);
+  --vds-numeric-font-weight-bold: var(--vds-typography-font-weight-bold);
+  --vds-numeric-font-size-xs: var(--vds-typography-font-size-050);
+  --vds-numeric-font-size-xsm: var(--vds-typography-font-size-100);
+  --vds-numeric-font-size-sm: var(--vds-typography-font-size-200);
+  --vds-numeric-font-size-md: var(--vds-typography-font-size-400);
+  --vds-numeric-font-size-lg: var(--vds-typography-font-size-600);
+  --vds-numeric-font-size-xl: var(--vds-typography-font-size-800);
+  --vds-numeric-font-size-2xl: var(--vds-typography-font-size-1000);
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  --vds-surface-100: var(--vds-color-dark-850);
+  --vds-surface-200: var(--vds-color-dark-800);
+  --vds-surface-300: var(--vds-color-dark-750);
+  --vds-surface-000: var(--vds-color-dark-900);
+  --vds-surface-paper-000: var(--vds-color-dark-850);
+  --vds-surface-dark-000: var(--vds-color-black);
+  --vds-surface-special-A: var(--vds-color-dark-850);
+  --vds-surface-special-B: #e68fad0d;
+  --vds-surface-info: var(--vds-color-blue-900);
+  --vds-surface-positive: var(--vds-color-green-900);
+  --vds-surface-warning: var(--vds-color-orange-900);
+  --vds-surface-negative: var(--vds-color-red-900);
+  --vds-surface-accent: var(--vds-color-accent-1000);
+  --vds-surface-support: var(--vds-color-support-900);
+  --vds-surface-input-rest: var(--vds-color-white-alpha-015);
+  --vds-surface-input-accent-selected: var(--vds-color-accent-700-alpha-050);
+  --vds-surface-input-support-selected: var(--vds-color-support-500);
+  --vds-surface-input-positive-selected: var(--vds-color-green-400);
+  --vds-surface-input-negative-selected: var(--vds-color-red-400);
+  --vds-text-regular: var(--vds-color-white-alpha-088);
+  --vds-text-regular-lighter: var(--vds-color-white-alpha-070);
+  --vds-text-subdued: var(--vds-color-white-alpha-070);
+  --vds-text-subdued-lighter: var(--vds-color-white-alpha-050);
+  --vds-text-strong: var(--vds-color-white-alpha-093);
+  --vds-text-article-title: var(--vds-color-white-alpha-088);
+  --vds-text-article-lead: var(--vds-color-white-alpha-070);
+  --vds-text-article-paragraph: var(--vds-color-white-alpha-081);
+  --vds-text-article-caption: var(--vds-color-white-alpha-070);
+  --vds-text-on-color-regular: var(--vds-color-white-alpha-088);
+  --vds-text-on-color-regular-lighter: var(--vds-color-white-alpha-070);
+  --vds-text-on-color-subdued: var(--vds-color-white-alpha-050);
+  --vds-text-on-color-subdued-lighter: var(--vds-color-white-alpha-030);
+  --vds-text-on-color-strong: var(--vds-color-white-alpha-093);
+  --vds-text-on-color-alternative: var(--vds-color-dark-900);
+  --vds-text-on-white: var(--vds-color-dark-900);
+  --vds-text-accent-regular: var(--vds-color-accent-300);
+  --vds-text-accent-strong: var(--vds-color-accent-300);
+  --vds-text-accent-alternative: var(--vds-color-white-alpha-080);
+  --vds-text-support-regular: var(--vds-color-support-300);
+  --vds-text-support-alternative: var(--vds-color-white-alpha-080);
+  --vds-text-link-regular: var(--vds-color-blue-400);
+  --vds-text-link-strong: var(--vds-color-blue-150);
+  --vds-text-info-regular: var(--vds-color-blue-400);
+  --vds-text-info-alternative: var(--vds-color-white-alpha-080);
+  --vds-text-positive-regular: var(--vds-color-green-400);
+  --vds-text-positive-alternative: var(--vds-color-white-alpha-080);
+  --vds-text-warning-regular: var(--vds-color-orange-400);
+  --vds-text-warning-alternative: var(--vds-color-white-alpha-080);
+  --vds-text-negative-regular: var(--vds-color-red-300);
+  --vds-text-negative-alternative: var(--vds-color-white-alpha-080);
+  --vds-text-extreme-regular: var(--vds-color-purple-bright);
+  --vds-text-extreme-alternative: var(--vds-color-white-alpha-080);
+  --vds-border-subdued-lighter: var(--vds-color-white-alpha-015);
+  --vds-border-subdued: var(--vds-color-white-alpha-020);
+  --vds-border-regular: var(--vds-color-white-alpha-030);
+  --vds-border-strong: var(--vds-color-white-alpha-050);
+  --vds-border-accent-subdued: var(--vds-color-accent-700);
+  --vds-border-accent-regular: var(--vds-color-accent-400);
+  --vds-border-accent-strong: var(--vds-color-accent-200);
+  --vds-border-support-regular: var(--vds-color-support-400);
+  --vds-border-on-color-regular: var(--vds-color-white-alpha-080);
+  --vds-border-info-regular: var(--vds-color-blue-400);
+  --vds-border-positive-regular: var(--vds-color-green-400);
+  --vds-border-warning-regular: var(--vds-color-orange-400);
+  --vds-border-negative-regular: var(--vds-color-red-400);
+  --vds-border-focus: var(--vds-color-blue-400);
+  --vds-icon-fill-subdued: var(--vds-color-white-alpha-050);
+  --vds-icon-fill-regular: var(--vds-color-white-alpha-060);
+  --vds-icon-fill-strong: var(--vds-color-white-alpha-080);
+  --vds-icon-fill-on-color-regular: var(--vds-color-white-alpha-088);
+  --vds-icon-fill-on-color-subdued: var(--vds-color-white-alpha-070);
+  --vds-icon-fill-on-color-subdued-lighter: var(--vds-color-white-alpha-030);
+  --vds-icon-fill-on-color-alternative: var(--vds-color-dark-900);
+  --vds-icon-fill-accent-regular: var(--vds-color-accent-300);
+  --vds-icon-fill-accent-strong: var(--vds-color-accent-400);
+  --vds-icon-fill-accent-alternative: var(--vds-color-white-alpha-080);
+  --vds-icon-fill-link-regular: var(--vds-color-blue-400);
+  --vds-icon-fill-link-strong: var(--vds-color-blue-150);
+  --vds-icon-fill-info-regular: var(--vds-color-blue-400);
+  --vds-icon-fill-info-subdued: var(--vds-color-blue-400);
+  --vds-icon-fill-positive-regular: var(--vds-color-green-400);
+  --vds-icon-fill-positive-subdued: var(--vds-color-green-400);
+  --vds-icon-fill-warning-regular: var(--vds-color-orange-400);
+  --vds-icon-fill-warning-subdued: var(--vds-color-orange-400);
+  --vds-icon-fill-negative-regular: var(--vds-color-red-400);
+  --vds-icon-fill-negative-subdued: var(--vds-color-red-400);
+  --vds-icon-fill-on-white: var(--vds-color-dark-900);
+  --vds-icon-background-regular: var(--vds-color-white-alpha-020);
+  --vds-icon-background-on-image-regular: var(--vds-color-black-alpha-020);
+  --vds-icon-background-on-image-strong: var(--vds-color-black-alpha-050);
+  --vds-icon-background-on-color-regular: var(--vds-color-white-alpha-020);
+  --vds-icon-background-on-color-subdued: var(--vds-color-white-alpha-010);
+  --vds-icon-background-on-color-strong: var(--vds-color-white-alpha-050);
+  --vds-icon-background-on-color-solid: var(--vds-color-white);
+  --vds-icon-background-contrast: var(--vds-color-black-alpha-080);
+  --vds-icon-background-accent-rest: var(--vds-color-accent-300-alpha-020);
+  --vds-icon-background-accent-selected: var(--vds-color-accent-300-alpha-020);
+  --vds-icon-background-accent-strong-rest: var(--vds-color-accent-700);
+  --vds-icon-background-accent-strong-hover: var(--vds-color-accent-800);
+  --vds-icon-background-accent-strong-pressed: var(--vds-color-accent-900);
+  --vds-component-live-fill: var(--vds-color-accent-800);
+  --vds-component-article-bar-gradient-mask-stop-000: #0d101300;
+  --vds-component-article-bar-gradient-mask-stop-100: var(--vds-color-dark-900);
+  --vds-component-avatar-text: var(--vds-color-neutral-600);
+  --vds-component-avatar-surface-enabled: var(--vds-color-neutral-100);
+  --vds-component-badge-fill: var(--vds-color-support-500);
+  --vds-component-button-surface-rest-regular: var(--vds-color-dark-800);
+  --vds-component-button-surface-rest-subdued: var(--vds-color-dark-850);
+  --vds-component-button-surface-selected-a: var(--vds-color-white-alpha-030);
+  --vds-component-button-surface-selected-b: var(--vds-surface-input-accent-selected);
+  --vds-component-button-surface-overlay-rest: var(--vds-color-black-alpha-010);
+  --vds-component-button-surface-accent-rest: var(--vds-color-accent-700);
+  --vds-component-button-surface-accent-subdued-rest: #b1346033;
+  --vds-component-button-surface-support-rest: var(--vds-color-support-600);
+  --vds-component-button-surface-info-contained-rest: var(--vds-color-blue-800);
+  --vds-component-button-surface-positive-contained-rest: var(--vds-color-green-800);
+  --vds-component-button-surface-warning-contained-rest: var(--vds-color-orange-800);
+  --vds-component-button-surface-negative-contained-rest: var(--vds-color-red-800);
+  --vds-component-button-border-regular: var(--vds-color-white-alpha-030);
+  --vds-component-button-border-subdued: var(--vds-color-white-alpha-020);
+  --vds-component-button-touch-surface-selected: var(--vds-color-dark-800);
+  --vds-component-button-on-image-rest: var(--vds-color-black-alpha-020);
+  --vds-component-button-on-color-border-regular: var(--vds-color-white-alpha-080);
+  --vds-component-button-on-color-border-subdued: var(--vds-color-white-alpha-050);
+  --vds-component-button-on-color-surface-selected: var(--vds-color-white-alpha-030);
+  --vds-component-button-on-color-surface-alt-enabled: var(--vds-color-white-alpha-080);
+  --vds-component-comment-editorspick-surface: var(--vds-color-dark-850);
+  --vds-component-comment-reaction-tooltip-surface: var(--vds-color-black-alpha-080);
+  --vds-component-comment-reaction-icon-background: var(--vds-color-accent-900);
+  --vds-component-comment-reaction-icon-outline: var(--vds-color-neutral-900);
+  --vds-component-comment-reaction-icon-fill-1: #fbdcd2;
+  --vds-component-comment-reaction-icon-fill-2: var(--vds-color-accent-600);
+  --vds-component-comment-reaction-icon-fill-3: var(--vds-color-accent-100);
+  --vds-component-comment-reaction-icon-fill-4: var(--vds-color-accent-300);
+  --vds-component-divider-fill-strong: var(--vds-color-white-alpha-050);
+  --vds-component-divider-fill-regular: var(--vds-color-white-alpha-030);
+  --vds-component-divider-fill-subdued: var(--vds-color-white-alpha-010);
+  --vds-component-divider-fill-on-color-strong: var(--vds-color-white-alpha-050);
+  --vds-component-divider-fill-on-color-regular: var(--vds-color-white-alpha-030);
+  --vds-component-divider-fill-on-color-subdued: var(--vds-color-white-alpha-010);
+  --vds-component-edition-map: #ffffff0f;
+  --vds-component-evisual-surface-100: var(--vds-color-dark-850);
+  --vds-component-evisual-surface-000: var(--vds-color-dark-900);
+  --vds-component-evisual-surface-graphic-stop-000: #4b2952;
+  --vds-component-evisual-surface-graphic-stop-100: #4b295200;
+  --vds-component-evisual-item-mask-A-stop-000: #0d101300;
+  --vds-component-evisual-item-mask-A-stop-100: #0d1013e5;
+  --vds-component-evisual-item-mask-B-stop-000: #0d10131a;
+  --vds-component-evisual-item-mask-B-stop-100: #0d1013e5;
+  --vds-component-evisual-navigation-gradient-mask-A-stop-000: #0d101300;
+  --vds-component-evisual-navigation-gradient-mask-A-stop-100: #0d1013;
+  --vds-component-evisual-navigation-gradient-mask-B-stop-000: #00000000;
+  --vds-component-evisual-navigation-gradient-mask-B-stop-100: #00000099;
+  --vds-component-evisual-navigation-tab-surface-rest: var(--vds-color-white-alpha-010);
+  --vds-component-evisual-navigation-tab-surface-selected: var(--vds-color-white);
+  --vds-component-evisual-chip-surface-rest: var(--vds-color-white-alpha-010);
+  --vds-component-evisual-chip-surface-selected: var(--vds-color-white);
+  --vds-component-evisual-element-link-fill: var(--vds-color-blue-400);
+  --vds-component-evisual-element-accent: #fb7672;
+  --vds-component-evisual-element-indicator-001: #ff4848;
+  --vds-component-evisual-element-indicator-002: #64ffa1;
+  --vds-component-evisual-element-indicator-003: #d0f801;
+  --vds-component-evisual-element-indicator-004: #fdab31;
+  --vds-component-evisual-element-indicator-005: #75dfff;
+  --vds-component-evisual-element-reaction-love-fill: #de2f61;
+  --vds-component-football-icon-fill-ball: var(--vds-color-white-alpha-070);
+  --vds-component-football-icon-fill-yellow-card: var(--vds-color-gold-600);
+  --vds-component-game-surface: var(--vds-color-dark-850);
+  --vds-component-game-button-surface-regular: var(--vds-color-white-alpha-093);
+  --vds-component-game-button-surface-subdued: var(--vds-color-white-alpha-010);
+  --vds-component-game-button-border-regular: var(--vds-color-white-alpha-093);
+  --vds-component-game-button-border-subdued: var(--vds-color-white-alpha-030);
+  --vds-component-game-medal-gold: #b18d0b;
+  --vds-component-game-medal-silver: #727272;
+  --vds-component-game-medal-bronze: #846256;
+  --vds-component-game-icon-fill-regular: var(--vds-color-white-alpha-093);
+  --vds-component-game-icon-fill-subdued: var(--vds-color-white-alpha-040);
+  --vds-component-game-icon-fill-invert: var(--vds-color-black-alpha-070);
+  --vds-component-game-icon-highscore-fill: var(--vds-color-gold-600);
+  --vds-component-game-icon-highscore-score: var(--vds-color-neutral-900);
+  --vds-component-game-loading-bar-background: var(--vds-color-white-alpha-010);
+  --vds-component-game-loading-bar-fill: var(--vds-color-white-alpha-088);
+  --vds-component-game-text-on-color: var(--vds-color-white-alpha-093);
+  --vds-component-game-text-invert: var(--vds-color-black);
+  --vds-component-game-unscramble-surface: #405476;
+  --vds-component-game-unscramble-text-accent: #b1c8f3;
+  --vds-component-game-spelling-surface: #764040;
+  --vds-component-game-spelling-accent: #f58879;
+  --vds-component-game-spelling-choice-surface-correct: var(--vds-color-green-800);
+  --vds-component-game-spelling-choice-surface-incorrect: var(--vds-color-red-800);
+  --vds-component-game-spelling-timer-ring-background: var(--vds-color-white-alpha-010);
+  --vds-component-game-spelling-timer-ring-fill-high: var(--vds-color-green-400);
+  --vds-component-game-spelling-timer-ring-fill-medium: var(--vds-color-gold-400);
+  --vds-component-game-spelling-timer-ring-fill-low: var(--vds-color-orange-400);
+  --vds-component-game-spelling-timer-ring-fill-lowest: var(--vds-color-red-400);
+  --vds-component-game-spelling-timer-score-high: var(--vds-color-green-400);
+  --vds-component-game-spelling-timer-score-medium: var(--vds-color-gold-400);
+  --vds-component-game-spelling-timer-score-low: var(--vds-color-orange-400);
+  --vds-component-game-spelling-timer-score-lowest: var(--vds-color-white-alpha-088);
+  --vds-component-game-spelling-timer-score-minus: var(--vds-color-red-400);
+  --vds-component-game-spelling-text-accent: #ffd3cd;
+  --vds-component-game-sudoku-surface: #3e382d;
+  --vds-component-game-sudoku-accent: #ffbd53;
+  --vds-component-game-sudoku-text-accent: #ffeecd;
+  --vds-component-game-sudoku-cell-disabled: var(--vds-color-white-alpha-010);
+  --vds-component-game-sudoku-cell-state-selected: #ffd781b2;
+  --vds-component-game-sudoku-cell-state-highlight-set: #ffd78133;
+  --vds-component-game-sudoku-cell-state-highlight-number: #ffd78166;
+  --vds-component-knob-surface-regular: var(--vds-color-neutral-060);
+  --vds-component-knob-surface-accent: var(--vds-color-accent-600);
+  --vds-component-knob-surface-disabled: var(--vds-color-dark-650);
+  --vds-component-logo-vnexpress-negative: var(--vds-color-white);
+  --vds-component-logo-vnexpress-inverted: var(--vds-color-dark-900);
+  --vds-component-logo-vnexpress-greyscale: var(--vds-color-white-alpha-060);
+  --vds-component-logo-vnexpress-mono: var(--vds-color-white-alpha-080);
+  --vds-component-logo-vnexpress-mono-inverted: var(--vds-color-dark-900);
+  --vds-component-logo-vnexpress-standard-primary: var(--vds-color-accent-bright);
+  --vds-component-logo-vnexpress-standard-secondary: var(--vds-color-white-alpha-080);
+  --vds-component-logo-vnexpress-standard-tertiary: var(--vds-color-white-alpha-080);
+  --vds-component-logo-vnexpress-standard-quaternary: var(--vds-color-white-alpha-050);
+  --vds-component-logo-fpt-1: #1f85d8;
+  --vds-component-logo-fpt-2: #f27227;
+  --vds-component-logo-fpt-3: #16b14b;
+  --vds-component-logo-fpt-4: #ffffff;
+  --vds-component-logo-vds-primary: var(--vds-color-white-alpha-088);
+  --vds-component-logo-vds-secondary: var(--vds-color-white-alpha-080);
+  --vds-component-logo-vds-tertiary: var(--vds-color-white-alpha-020);
+  --vds-component-logo-1st-party-eclick-1: #2fc1ca;
+  --vds-component-logo-1st-party-eclick-2: #80c6c6;
+  --vds-component-logo-1st-party-eclick-3: #ffffff99;
+  --vds-component-logo-3rd-party-facebook-1: #1977f3;
+  --vds-component-logo-3rd-party-facebook-2: #ffffff;
+  --vds-component-logo-3rd-party-apple-regular: #ffffff;
+  --vds-component-logo-3rd-party-apple-grey: #a2aaad;
+  --vds-component-logo-3rd-party-apple-inverted: #000000;
+  --vds-component-logo-3rd-party-google-1: #e74133;
+  --vds-component-logo-3rd-party-google-2: #f9bb00;
+  --vds-component-logo-3rd-party-google-3: #32a753;
+  --vds-component-logo-3rd-party-google-4: #3e82f1;
+  --vds-component-logo-3rd-party-google-android-1: #3ddc84;
+  --vds-component-news-general-fill: var(--vds-color-accent-500);
+  --vds-component-news-general-fill-darkmode-alternative: var(--vds-color-white-alpha-093);
+  --vds-component-news-general-background: #e664891a;
+  --vds-component-news-business-fill: #6baaca;
+  --vds-component-news-business-background: #6baaca1a;
+  --vds-component-news-travel-fill: #4cc0f6;
+  --vds-component-news-lifestyle-fill: #6ac1db;
+  --vds-component-news-vehicles-fill: #97a2ac;
+  --vds-component-news-health-fill: #4bafad;
+  --vds-component-news-health-background: #4bafad1a;
+  --vds-component-news-sports-fill: #a5d079;
+  --vds-component-news-sports-background: #a5d0791a;
+  --vds-component-news-science-fill: #cdba6b;
+  --vds-component-news-tech-fill: #f8d279;
+  --vds-component-news-education-fill: #e1984e;
+  --vds-component-news-relax-fill: #e07069;
+  --vds-component-news-entertainment-fill: #f15e83;
+  --vds-component-news-legal-fill: #b97771;
+  --vds-component-news-ministry-fill: #f28888;
+  --vds-component-news-item-media-control-icon-fill: var(--vds-color-white-alpha-088);
+  --vds-component-news-item-media-control-icon-background: var(--vds-color-white-alpha-010);
+  --vds-component-pagination-indicator-rest: var(--vds-color-white-alpha-010);
+  --vds-component-pagination-indicator-on-color-rest: var(--vds-color-white-alpha-020);
+  --vds-component-pagination-indicator-on-color-selected: var(--vds-color-white-alpha-070);
+  --vds-component-pagination-indicator-selected: var(--vds-color-white-alpha-070);
+  --vds-component-player-audioplayer-surface: var(--vds-color-white-alpha-010);
+  --vds-component-player-audioplayer-fill: var(--vds-color-white-alpha-088);
+  --vds-component-player-audioplayer-text: var(--vds-color-white-alpha-088);
+  --vds-component-player-audioplayer-sleep-timer: var(--vds-color-purple-bright);
+  --vds-component-player-audioplayer-toggle: var(--vds-color-green-400);
+  --vds-component-player-videoplayer-element-fill-subdued: var(--vds-color-white-alpha-050);
+  --vds-component-player-videoplayer-element-fill-regular: var(--vds-color-white-alpha-088);
+  --vds-component-player-videoplayer-element-fill-inverted: var(--vds-color-dark-850);
+  --vds-component-player-videoplayer-element-surface-background-subdued: var(--vds-color-black-alpha-010);
+  --vds-component-player-videoplayer-element-surface-background-regular: var(--vds-color-black-alpha-050);
+  --vds-component-player-videoplayer-element-surface-background-strong: var(--vds-color-black-alpha-080);
+  --vds-component-player-videoplayer-scrim-regular: var(--vds-color-black-alpha-030);
+  --vds-component-player-videoplayer-scrim-strong: var(--vds-color-black-alpha-060);
+  --vds-component-player-progressbar-background: var(--vds-color-white-alpha-010);
+  --vds-component-player-progressbar-foreground-buffered: var(--vds-color-white-alpha-010);
+  --vds-component-player-progressbar-foreground-on-color: var(--vds-color-white-alpha-088);
+  --vds-component-player-progressbar-foreground-accent: var(--vds-color-accent-600);
+  --vds-component-player-progressbar-foreground-ad: var(--vds-color-gold-400);
+  --vds-component-progressbar-background: var(--vds-color-white-alpha-010);
+  --vds-component-progressbar-foreground-regular: var(--vds-color-white-alpha-070);
+  --vds-component-progressbar-foreground-subdued: var(--vds-color-white-alpha-050);
+  --vds-component-scrim-image-regular: #0000000d;
+  --vds-component-scrim-image-gradient-stop-000: #000000;
+  --vds-component-scrim-image-gradient-stop-100: #00000000;
+  --vds-component-scrim-screen-regular: var(--vds-color-black-alpha-010);
+  --vds-component-scrim-screen-strong: var(--vds-color-black-alpha-060);
+  --vds-component-scrim-screen-stronger: var(--vds-color-black-alpha-080);
+  --vds-component-search-surface: var(--vds-color-dark-750);
+  --vds-component-skeleton-surface: var(--vds-color-dark-700);
+  --vds-component-state-layer-rest: #deebff00;
+  --vds-component-state-layer-hover: #deebff26;
+  --vds-component-state-layer-pressed: #deebff33;
+  --vds-component-state-layer-on-color-rest: #deebff00;
+  --vds-component-state-layer-on-color-hover: #deebff26;
+  --vds-component-state-layer-on-color-pressed: #deebff33;
+  --vds-component-subscriptions-surface-rest: var(--vds-surface-000);
+  --vds-component-subscriptions-surface-selected: var(--vds-color-accent-700);
+  --vds-component-subscriptions-border-regular: var(--vds-color-white-alpha-040);
+  --vds-component-subscriptions-border-accent: var(--vds-color-accent-bright);
+  --vds-component-summary-foreground: var(--vds-color-dark-900);
+  --vds-component-summary-background: var(--vds-color-dark-850);
+  --vds-component-summary-gradient-mask-bottom-stop-000: #20242a00;
+  --vds-component-summary-gradient-mask-bottom-stop-100: var(--vds-component-summary-background);
+  --vds-component-summary-gradient-mask-top-stop-000: var(--vds-color-dark-900);
+  --vds-component-summary-gradient-mask-top-stop-100: #0d101300;
+  --vds-component-system-widget-surface: var(--vds-color-dark-900);
+  --vds-component-tab-surface-rest: var(--vds-color-white-alpha-010);
+  --vds-component-tab-surface-selected: var(--vds-color-white-alpha-080);
+  --vds-component-toggle-surface-background-disabled: var(--vds-color-dark-850);
+  --vds-component-toggle-surface-background-enabled: var(--vds-color-dark-650);
+  --vds-component-audio-news-gradient-mask-stop-000: #0d101300;
+  --vds-component-audio-news-gradient-mask-stop-100: #0d1013;
+  --vds-component-audio-news-podcasts-item-background: var(--vds-color-accent-900);
+  --vds-component-audio-news-podcasts-item-tag-fill: var(--vds-color-accent-bright);
+  --vds-component-audio-news-media-control-fill: var(--vds-color-white);
+  --vds-component-text-field-surface-rest: var(--vds-color-white-alpha-010);
+  --vds-component-text-field-surface-solid-rest: var(--vds-color-dark-900);
+  --vds-component-gradient-overlay-100: #0d1013;
+  --vds-component-gradient-overlay-000: #0d101300;
+  --vds-component-gradient-overlay-010: #0d10131a;
+  --vds-component-gradient-overlay-020: #0d101333;
+  --vds-component-gradient-overlay-030: #0d10134d;
+  --vds-component-gradient-overlay-040: #0d101366;
+  --vds-component-gradient-overlay-050: #0d101380;
+  --vds-component-gradient-overlay-060: #0d101399;
+  --vds-component-gradient-overlay-070: #0d1013b2;
+  --vds-component-gradient-overlay-080: #0d1013cc;
+}
+
+/**
+ * VnExpress Design System — text styles (composite typography)
+ * Tự sinh từ packages/tokens/figma — KHÔNG sửa tay. Chạy `npm run build -w @vnexpress/tokens`.
+ */
+
+:root {
+  --vds-font-article-title-primary-regular-xs: 400 var(--vds-article-title-primary-font-size-xs)/1.6 var(--vds-article-title-primary-font-family);
+  --vds-font-article-title-primary-regular-sm: 400 var(--vds-article-title-primary-font-size-sm)/1.6 var(--vds-article-title-primary-font-family);
+  --vds-font-article-title-primary-regular-smd: 400 var(--vds-typography-font-size-700)/1.6 var(--vds-article-title-primary-font-family);
+  --vds-font-article-title-primary-regular-md: 400 var(--vds-article-title-primary-font-size-md)/1.6 var(--vds-article-title-primary-font-family);
+  --vds-font-article-title-primary-regular-mlg: 400 var(--vds-typography-font-size-1200)/1.6 var(--vds-article-title-primary-font-family);
+  --vds-font-article-title-primary-regular-lg: 400 var(--vds-article-title-primary-font-size-lg)/1.6 var(--vds-article-title-primary-font-family);
+  --vds-font-article-title-primary-regular-xl: 400 var(--vds-article-title-primary-font-size-xl)/1.6 var(--vds-article-title-primary-font-family);
+  --vds-font-article-title-primary-bold-xs: 700 var(--vds-article-title-primary-font-size-xs)/1.6 var(--vds-article-title-primary-font-family);
+  --vds-font-article-title-primary-bold-sm: 700 var(--vds-article-title-primary-font-size-sm)/1.6 var(--vds-article-title-primary-font-family);
+  --vds-font-article-title-primary-bold-smd: 700 var(--vds-typography-font-size-700)/1.6 var(--vds-article-title-primary-font-family);
+  --vds-font-article-title-primary-bold-md: 700 var(--vds-article-title-primary-font-size-md)/1.6 var(--vds-article-title-primary-font-family);
+  --vds-font-article-title-primary-bold-mlg: 700 var(--vds-typography-font-size-1200)/1.6 var(--vds-article-title-primary-font-family);
+  --vds-font-article-title-primary-bold-lg: 700 var(--vds-article-title-primary-font-size-lg)/1.6 var(--vds-article-title-primary-font-family);
+  --vds-font-article-title-primary-bold-xl: 700 var(--vds-article-title-primary-font-size-xl)/1.6 var(--vds-article-title-primary-font-family);
+  --vds-font-article-title-primary-black-xs: 900 var(--vds-article-title-primary-font-size-xs)/1.6 var(--vds-article-title-primary-font-family);
+  --vds-font-article-title-primary-black-sm: 900 var(--vds-article-title-primary-font-size-sm)/1.6 var(--vds-article-title-primary-font-family);
+  --vds-font-article-title-primary-black-md: 900 var(--vds-article-title-primary-font-size-md)/1.6 var(--vds-article-title-primary-font-family);
+  --vds-font-article-title-primary-black-lg: 900 var(--vds-article-title-primary-font-size-lg)/1.6 var(--vds-article-title-primary-font-family);
+  --vds-font-article-title-primary-black-xl: 900 var(--vds-article-title-primary-font-size-xl)/1.6 var(--vds-article-title-primary-font-family);
+  --vds-font-article-title-secondary-bold-xs: 700 var(--vds-article-title-secondary-font-size-xs)/1.5 var(--vds-article-title-secondary-font-family);
+  --vds-font-article-title-secondary-bold-xsm: 700 var(--vds-article-title-secondary-font-size-xsm)/1.5 var(--vds-article-title-secondary-font-family);
+  --vds-font-article-title-secondary-bold-sm: 700 var(--vds-article-title-secondary-font-size-sm)/1.5 var(--vds-article-title-secondary-font-family);
+  --vds-font-article-title-secondary-bold-smd: 700 var(--vds-article-title-secondary-font-size-smd)/1.5 var(--vds-article-title-secondary-font-family);
+  --vds-font-article-title-secondary-bold-md: 700 var(--vds-article-title-secondary-font-size-md)/1.5 var(--vds-article-title-secondary-font-family);
+  --vds-font-article-title-secondary-bold-lg: 700 var(--vds-article-title-secondary-font-size-lg)/1.5 var(--vds-article-title-secondary-font-family);
+  --vds-font-article-title-secondary-bold-xl: 700 var(--vds-article-title-secondary-font-size-xl)/1.5 var(--vds-article-title-secondary-font-family);
+  --vds-font-article-title-secondary-black-xs: 700 var(--vds-article-title-secondary-font-size-xs)/1.5 var(--vds-article-title-secondary-font-family);
+  --vds-font-article-title-secondary-black-sm: 700 var(--vds-article-title-secondary-font-size-sm)/1.5 var(--vds-article-title-secondary-font-family);
+  --vds-font-article-title-secondary-black-smd: 700 var(--vds-article-title-secondary-font-size-smd)/1.5 var(--vds-article-title-secondary-font-family);
+  --vds-font-article-title-secondary-black-md: 700 var(--vds-article-title-secondary-font-size-md)/1.5 var(--vds-article-title-secondary-font-family);
+  --vds-font-article-title-secondary-black-lg: 700 var(--vds-article-title-secondary-font-size-lg)/1.5 var(--vds-article-title-secondary-font-family);
+  --vds-font-article-title-secondary-black-xl: 700 var(--vds-article-title-secondary-font-size-xl)/1.5 var(--vds-article-title-secondary-font-family);
+  --vds-font-article-title-goc-nhin-regular-xs: 400 var(--vds-article-title-goc-nhin-font-size-xs)/1.4 var(--vds-article-title-goc-nhin-font-family);
+  --vds-font-article-title-goc-nhin-regular-sm: 400 var(--vds-article-title-goc-nhin-font-size-sm)/1.4 var(--vds-article-title-goc-nhin-font-family);
+  --vds-font-article-title-goc-nhin-regular-md: 400 var(--vds-article-title-goc-nhin-font-size-md)/1.4 var(--vds-article-title-goc-nhin-font-family);
+  --vds-font-article-title-goc-nhin-regular-lg: 400 var(--vds-article-title-goc-nhin-font-size-lg)/1.4 var(--vds-article-title-goc-nhin-font-family);
+  --vds-font-article-title-goc-nhin-regular-xl: 400 var(--vds-article-title-goc-nhin-font-size-xl)/1.4 var(--vds-article-title-goc-nhin-font-family);
+  --vds-font-article-title-goc-nhin-bold-xs: 700 var(--vds-article-title-goc-nhin-font-size-xs)/1.4 var(--vds-article-title-goc-nhin-font-family);
+  --vds-font-article-title-goc-nhin-bold-sm: 700 var(--vds-article-title-goc-nhin-font-size-sm)/1.4 var(--vds-article-title-goc-nhin-font-family);
+  --vds-font-article-title-goc-nhin-bold-md: 700 var(--vds-article-title-goc-nhin-font-size-md)/1.4 var(--vds-article-title-goc-nhin-font-family);
+  --vds-font-article-title-goc-nhin-bold-lg: 700 var(--vds-article-title-goc-nhin-font-size-lg)/1.4 var(--vds-article-title-goc-nhin-font-family);
+  --vds-font-article-title-goc-nhin-bold-xl: 700 var(--vds-article-title-goc-nhin-font-size-xl)/1.4 var(--vds-article-title-goc-nhin-font-family);
+  --vds-font-article-paragraph-standard-regular-xs: 400 var(--vds-article-paragraph-standard-font-size-xs)/1.5 var(--vds-article-paragraph-standard-font-family);
+  --vds-font-article-paragraph-standard-regular-sm: 400 var(--vds-article-paragraph-standard-font-size-sm)/1.5 var(--vds-article-paragraph-standard-font-family);
+  --vds-font-article-paragraph-standard-regular-md: 400 var(--vds-article-paragraph-standard-font-size-md)/1.5 var(--vds-article-paragraph-standard-font-family);
+  --vds-font-article-paragraph-standard-regular-lg: 400 var(--vds-article-paragraph-standard-font-size-lg)/1.5 var(--vds-article-paragraph-standard-font-family);
+  --vds-font-article-paragraph-standard-bold-xs: 700 var(--vds-article-paragraph-standard-font-size-xs)/1.5 var(--vds-article-paragraph-standard-font-family);
+  --vds-font-article-paragraph-standard-bold-sm: 700 var(--vds-article-paragraph-standard-font-size-sm)/1.5 var(--vds-article-paragraph-standard-font-family);
+  --vds-font-article-paragraph-standard-bold-md: 700 var(--vds-article-paragraph-standard-font-size-md)/1.5 var(--vds-article-paragraph-standard-font-family);
+  --vds-font-article-paragraph-standard-bold-lg: 700 var(--vds-article-paragraph-standard-font-size-lg)/1.5 var(--vds-article-paragraph-standard-font-family);
+  --vds-font-article-paragraph-android-regular-xs: 400 var(--vds-article-paragraph-android-font-size-xs)/1.5 var(--vds-article-paragraph-android-font-family);
+  --vds-font-article-paragraph-android-regular-sm: 400 var(--vds-article-paragraph-android-font-size-sm)/1.5 var(--vds-article-paragraph-android-font-family);
+  --vds-font-article-paragraph-android-regular-md: 400 var(--vds-article-paragraph-android-font-size-md)/1.5 var(--vds-article-paragraph-android-font-family);
+  --vds-font-article-paragraph-android-regular-lg: 400 var(--vds-article-paragraph-android-font-size-lg)/1.5 var(--vds-article-paragraph-android-font-family);
+  --vds-font-article-paragraph-android-bold-xs: 700 var(--vds-article-paragraph-android-font-size-xs)/1.5 var(--vds-article-paragraph-android-font-family);
+  --vds-font-article-paragraph-android-bold-sm: 700 var(--vds-article-paragraph-android-font-size-sm)/1.5 var(--vds-article-paragraph-android-font-family);
+  --vds-font-article-paragraph-android-bold-md: 700 var(--vds-article-paragraph-android-font-size-md)/1.5 var(--vds-article-paragraph-android-font-family);
+  --vds-font-article-paragraph-android-bold-lg: 700 var(--vds-article-paragraph-android-font-size-lg)/1.5 var(--vds-article-paragraph-android-font-family);
+  --vds-font-article-paragraph-option-1-regular-lg: 400 var(--vds-article-paragraph-option-1-font-size-lg)/1.8 var(--vds-article-paragraph-option-1-font-family);
+  --vds-font-article-paragraph-option-1-bold-lg: 700 var(--vds-article-paragraph-option-1-font-size-lg)/1.8 var(--vds-article-paragraph-option-1-font-family);
+  --vds-font-article-summary-standard-regular-md: 400 var(--vds-article-paragraph-standard-font-size-md)/1.3 var(--vds-article-paragraph-standard-font-family);
+  --vds-font-article-summary-standard-regular-lg: 400 var(--vds-article-paragraph-standard-font-size-lg)/1.3 var(--vds-article-paragraph-standard-font-family);
+  --vds-font-article-summary-android-regular-md: 400 var(--vds-article-paragraph-android-font-size-md)/1.3 var(--vds-article-paragraph-android-font-family);
+  --vds-font-article-summary-android-regular-lg: 400 var(--vds-article-paragraph-android-font-size-lg)/1.3 var(--vds-article-paragraph-android-font-family);
+  --vds-font-heading-xs: 700 var(--vds-heading-font-size-xs)/1.5 var(--vds-heading-font-family);
+  --vds-font-heading-sm: 700 var(--vds-heading-font-size-sm)/1.5 var(--vds-heading-font-family);
+  --vds-font-heading-md: 700 var(--vds-heading-font-size-md)/1.5 var(--vds-heading-font-family);
+  --vds-font-heading-lg: 700 var(--vds-heading-font-size-lg)/1.5 var(--vds-heading-font-family);
+  --vds-font-microcopy-label-regular-xs: 400 var(--vds-microcopy-label-font-size-xs)/1.5 var(--vds-microcopy-font-family);
+  --vds-font-microcopy-label-regular-xsm: 400 var(--vds-microcopy-label-font-size-xsm)/1.5 var(--vds-microcopy-font-family);
+  --vds-font-microcopy-label-regular-sm: 400 var(--vds-microcopy-label-font-size-sm)/1.5 var(--vds-microcopy-font-family);
+  --vds-font-microcopy-label-regular-md: 400 var(--vds-microcopy-label-font-size-md)/1.5 var(--vds-microcopy-font-family);
+  --vds-font-microcopy-label-regular-lg: 400 var(--vds-microcopy-label-font-size-lg)/1.5 var(--vds-microcopy-font-family);
+  --vds-font-microcopy-label-regular-xl: 400 var(--vds-microcopy-label-font-size-xl)/1.5 var(--vds-microcopy-font-family);
+  --vds-font-microcopy-label-regular-2xl: 400 var(--vds-microcopy-label-font-size-2xl)/1.5 var(--vds-microcopy-font-family);
+  --vds-font-microcopy-label-bold-xs: 700 var(--vds-microcopy-label-font-size-xs)/1.5 var(--vds-microcopy-font-family);
+  --vds-font-microcopy-label-bold-xsm: 700 var(--vds-microcopy-label-font-size-xsm)/1.5 var(--vds-microcopy-font-family);
+  --vds-font-microcopy-label-bold-sm: 700 var(--vds-microcopy-label-font-size-sm)/1.5 var(--vds-microcopy-font-family);
+  --vds-font-microcopy-label-bold-md: 700 var(--vds-microcopy-label-font-size-md)/1.5 var(--vds-microcopy-font-family);
+  --vds-font-microcopy-label-bold-lg: 700 var(--vds-microcopy-label-font-size-lg)/1.5 var(--vds-microcopy-font-family);
+  --vds-font-microcopy-label-bold-xl: 700 var(--vds-microcopy-label-font-size-xl)/1.5 var(--vds-microcopy-font-family);
+  --vds-font-microcopy-label-bold-2xl: 700 var(--vds-microcopy-label-font-size-2xl)/1.5 var(--vds-microcopy-font-family);
+  --vds-font-microcopy-label-underline-sm: 400 var(--vds-microcopy-label-font-size-sm)/1.5 var(--vds-microcopy-font-family);
+  --vds-font-microcopy-label-underline-md: 400 var(--vds-microcopy-label-font-size-md)/1.5 var(--vds-microcopy-font-family);
+  --vds-font-microcopy-helper-regular-xs: 400 var(--vds-microcopy-helper-font-size-xs)/1.5 var(--vds-microcopy-font-family);
+  --vds-font-microcopy-helper-regular-sm: 400 var(--vds-microcopy-helper-font-size-sm)/1.5 var(--vds-microcopy-font-family);
+  --vds-font-microcopy-helper-regular-md: 400 var(--vds-microcopy-helper-font-size-md)/1.5 var(--vds-microcopy-font-family);
+  --vds-font-microcopy-helper-bold-xs: 700 var(--vds-microcopy-helper-font-size-xs)/1.5 var(--vds-microcopy-font-family);
+  --vds-font-microcopy-helper-bold-sm: 700 var(--vds-microcopy-helper-font-size-sm)/1.5 var(--vds-microcopy-font-family);
+  --vds-font-microcopy-helper-bold-md: 700 var(--vds-microcopy-helper-font-size-md)/1.5 var(--vds-microcopy-font-family);
+  --vds-font-numeric-regular-xs: 400 var(--vds-numeric-font-size-xs)/1.5 var(--vds-numeric-font-family);
+  --vds-font-numeric-regular-xsm: 400 var(--vds-numeric-font-size-xsm)/1.5 var(--vds-numeric-font-family);
+  --vds-font-numeric-regular-sm: 400 var(--vds-numeric-font-size-sm)/1.5 var(--vds-numeric-font-family);
+  --vds-font-numeric-regular-md: 400 var(--vds-numeric-font-size-md)/1.5 var(--vds-numeric-font-family);
+  --vds-font-numeric-regular-lg: 400 var(--vds-numeric-font-size-lg)/1.5 var(--vds-numeric-font-family);
+  --vds-font-numeric-regular-xl: 400 var(--vds-numeric-font-size-xl)/1.5 var(--vds-numeric-font-family);
+  --vds-font-numeric-regular-2xl: 400 var(--vds-numeric-font-size-2xl)/1.5 var(--vds-numeric-font-family);
+  --vds-font-numeric-bold-xs: 700 var(--vds-numeric-font-size-xs)/1.5 var(--vds-numeric-font-family);
+  --vds-font-numeric-bold-xsm: 700 var(--vds-numeric-font-size-xsm)/1.5 var(--vds-numeric-font-family);
+  --vds-font-numeric-bold-sm: 700 var(--vds-numeric-font-size-sm)/1.5 var(--vds-numeric-font-family);
+  --vds-font-numeric-bold-md: 700 var(--vds-numeric-font-size-md)/1.5 var(--vds-numeric-font-family);
+  --vds-font-numeric-bold-lg: 700 var(--vds-numeric-font-size-lg)/1.5 var(--vds-numeric-font-family);
+  --vds-font-numeric-bold-xl: 700 var(--vds-numeric-font-size-xl)/1.5 var(--vds-numeric-font-family);
+  --vds-font-numeric-bold-2xl: 700 var(--vds-numeric-font-size-2xl)/1.5 var(--vds-numeric-font-family);
+}
+
+.vds-text-article-title-primary-regular-xs {
+  font-family: var(--vds-article-title-primary-font-family);
+  font-size: var(--vds-article-title-primary-font-size-xs);
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 0px;
+}
+
+.vds-text-article-title-primary-regular-sm {
+  font-family: var(--vds-article-title-primary-font-family);
+  font-size: var(--vds-article-title-primary-font-size-sm);
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 0px;
+}
+
+.vds-text-article-title-primary-regular-smd {
+  font-family: var(--vds-article-title-primary-font-family);
+  font-size: var(--vds-typography-font-size-700);
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 0px;
+}
+
+.vds-text-article-title-primary-regular-md {
+  font-family: var(--vds-article-title-primary-font-family);
+  font-size: var(--vds-article-title-primary-font-size-md);
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 0px;
+}
+
+.vds-text-article-title-primary-regular-mlg {
+  font-family: var(--vds-article-title-primary-font-family);
+  font-size: var(--vds-typography-font-size-1200);
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 0px;
+}
+
+.vds-text-article-title-primary-regular-lg {
+  font-family: var(--vds-article-title-primary-font-family);
+  font-size: var(--vds-article-title-primary-font-size-lg);
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 0px;
+}
+
+.vds-text-article-title-primary-regular-xl {
+  font-family: var(--vds-article-title-primary-font-family);
+  font-size: var(--vds-article-title-primary-font-size-xl);
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 0px;
+}
+
+.vds-text-article-title-primary-bold-xs {
+  font-family: var(--vds-article-title-primary-font-family);
+  font-size: var(--vds-article-title-primary-font-size-xs);
+  font-weight: 700;
+  line-height: 1.6;
+  letter-spacing: 0px;
+}
+
+.vds-text-article-title-primary-bold-sm {
+  font-family: var(--vds-article-title-primary-font-family);
+  font-size: var(--vds-article-title-primary-font-size-sm);
+  font-weight: 700;
+  line-height: 1.6;
+  letter-spacing: 0px;
+}
+
+.vds-text-article-title-primary-bold-smd {
+  font-family: var(--vds-article-title-primary-font-family);
+  font-size: var(--vds-typography-font-size-700);
+  font-weight: 700;
+  line-height: 1.6;
+  letter-spacing: 0px;
+}
+
+.vds-text-article-title-primary-bold-md {
+  font-family: var(--vds-article-title-primary-font-family);
+  font-size: var(--vds-article-title-primary-font-size-md);
+  font-weight: 700;
+  line-height: 1.6;
+  letter-spacing: 0px;
+}
+
+.vds-text-article-title-primary-bold-mlg {
+  font-family: var(--vds-article-title-primary-font-family);
+  font-size: var(--vds-typography-font-size-1200);
+  font-weight: 700;
+  line-height: 1.6;
+  letter-spacing: 0px;
+}
+
+.vds-text-article-title-primary-bold-lg {
+  font-family: var(--vds-article-title-primary-font-family);
+  font-size: var(--vds-article-title-primary-font-size-lg);
+  font-weight: 700;
+  line-height: 1.6;
+  letter-spacing: 0px;
+}
+
+.vds-text-article-title-primary-bold-xl {
+  font-family: var(--vds-article-title-primary-font-family);
+  font-size: var(--vds-article-title-primary-font-size-xl);
+  font-weight: 700;
+  line-height: 1.6;
+  letter-spacing: 0px;
+}
+
+.vds-text-article-title-primary-black-xs {
+  font-family: var(--vds-article-title-primary-font-family);
+  font-size: var(--vds-article-title-primary-font-size-xs);
+  font-weight: 900;
+  line-height: 1.6;
+  letter-spacing: 0px;
+}
+
+.vds-text-article-title-primary-black-sm {
+  font-family: var(--vds-article-title-primary-font-family);
+  font-size: var(--vds-article-title-primary-font-size-sm);
+  font-weight: 900;
+  line-height: 1.6;
+  letter-spacing: 0px;
+}
+
+.vds-text-article-title-primary-black-md {
+  font-family: var(--vds-article-title-primary-font-family);
+  font-size: var(--vds-article-title-primary-font-size-md);
+  font-weight: 900;
+  line-height: 1.6;
+  letter-spacing: 0px;
+}
+
+.vds-text-article-title-primary-black-lg {
+  font-family: var(--vds-article-title-primary-font-family);
+  font-size: var(--vds-article-title-primary-font-size-lg);
+  font-weight: 900;
+  line-height: 1.6;
+  letter-spacing: 0px;
+}
+
+.vds-text-article-title-primary-black-xl {
+  font-family: var(--vds-article-title-primary-font-family);
+  font-size: var(--vds-article-title-primary-font-size-xl);
+  font-weight: 900;
+  line-height: 1.6;
+  letter-spacing: 0px;
+}
+
+.vds-text-article-title-secondary-bold-xs {
+  font-family: var(--vds-article-title-secondary-font-family);
+  font-size: var(--vds-article-title-secondary-font-size-xs);
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0px;
+}
+
+.vds-text-article-title-secondary-bold-xsm {
+  font-family: var(--vds-article-title-secondary-font-family);
+  font-size: var(--vds-article-title-secondary-font-size-xsm);
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0px;
+}
+
+.vds-text-article-title-secondary-bold-sm {
+  font-family: var(--vds-article-title-secondary-font-family);
+  font-size: var(--vds-article-title-secondary-font-size-sm);
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0px;
+}
+
+.vds-text-article-title-secondary-bold-smd {
+  font-family: var(--vds-article-title-secondary-font-family);
+  font-size: var(--vds-article-title-secondary-font-size-smd);
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0px;
+}
+
+.vds-text-article-title-secondary-bold-md {
+  font-family: var(--vds-article-title-secondary-font-family);
+  font-size: var(--vds-article-title-secondary-font-size-md);
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0px;
+}
+
+.vds-text-article-title-secondary-bold-lg {
+  font-family: var(--vds-article-title-secondary-font-family);
+  font-size: var(--vds-article-title-secondary-font-size-lg);
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0px;
+}
+
+.vds-text-article-title-secondary-bold-xl {
+  font-family: var(--vds-article-title-secondary-font-family);
+  font-size: var(--vds-article-title-secondary-font-size-xl);
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0px;
+}
+
+.vds-text-article-title-secondary-black-xs {
+  font-family: var(--vds-article-title-secondary-font-family);
+  font-size: var(--vds-article-title-secondary-font-size-xs);
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0px;
+}
+
+.vds-text-article-title-secondary-black-sm {
+  font-family: var(--vds-article-title-secondary-font-family);
+  font-size: var(--vds-article-title-secondary-font-size-sm);
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0px;
+}
+
+.vds-text-article-title-secondary-black-smd {
+  font-family: var(--vds-article-title-secondary-font-family);
+  font-size: var(--vds-article-title-secondary-font-size-smd);
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0px;
+}
+
+.vds-text-article-title-secondary-black-md {
+  font-family: var(--vds-article-title-secondary-font-family);
+  font-size: var(--vds-article-title-secondary-font-size-md);
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0px;
+}
+
+.vds-text-article-title-secondary-black-lg {
+  font-family: var(--vds-article-title-secondary-font-family);
+  font-size: var(--vds-article-title-secondary-font-size-lg);
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0px;
+}
+
+.vds-text-article-title-secondary-black-xl {
+  font-family: var(--vds-article-title-secondary-font-family);
+  font-size: var(--vds-article-title-secondary-font-size-xl);
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0px;
+}
+
+.vds-text-article-title-goc-nhin-regular-xs {
+  font-family: var(--vds-article-title-goc-nhin-font-family);
+  font-size: var(--vds-article-title-goc-nhin-font-size-xs);
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: 0px;
+}
+
+.vds-text-article-title-goc-nhin-regular-sm {
+  font-family: var(--vds-article-title-goc-nhin-font-family);
+  font-size: var(--vds-article-title-goc-nhin-font-size-sm);
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: 0px;
+}
+
+.vds-text-article-title-goc-nhin-regular-md {
+  font-family: var(--vds-article-title-goc-nhin-font-family);
+  font-size: var(--vds-article-title-goc-nhin-font-size-md);
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: 0px;
+}
+
+.vds-text-article-title-goc-nhin-regular-lg {
+  font-family: var(--vds-article-title-goc-nhin-font-family);
+  font-size: var(--vds-article-title-goc-nhin-font-size-lg);
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: 0px;
+}
+
+.vds-text-article-title-goc-nhin-regular-xl {
+  font-family: var(--vds-article-title-goc-nhin-font-family);
+  font-size: var(--vds-article-title-goc-nhin-font-size-xl);
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: 0px;
+}
+
+.vds-text-article-title-goc-nhin-bold-xs {
+  font-family: var(--vds-article-title-goc-nhin-font-family);
+  font-size: var(--vds-article-title-goc-nhin-font-size-xs);
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0px;
+}
+
+.vds-text-article-title-goc-nhin-bold-sm {
+  font-family: var(--vds-article-title-goc-nhin-font-family);
+  font-size: var(--vds-article-title-goc-nhin-font-size-sm);
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0px;
+}
+
+.vds-text-article-title-goc-nhin-bold-md {
+  font-family: var(--vds-article-title-goc-nhin-font-family);
+  font-size: var(--vds-article-title-goc-nhin-font-size-md);
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0px;
+}
+
+.vds-text-article-title-goc-nhin-bold-lg {
+  font-family: var(--vds-article-title-goc-nhin-font-family);
+  font-size: var(--vds-article-title-goc-nhin-font-size-lg);
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0px;
+}
+
+.vds-text-article-title-goc-nhin-bold-xl {
+  font-family: var(--vds-article-title-goc-nhin-font-family);
+  font-size: var(--vds-article-title-goc-nhin-font-size-xl);
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0px;
+}
+
+.vds-text-article-paragraph-standard-regular-xs {
+  font-family: var(--vds-article-paragraph-standard-font-family);
+  font-size: var(--vds-article-paragraph-standard-font-size-xs);
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0px;
+}
+
+.vds-text-article-paragraph-standard-regular-sm {
+  font-family: var(--vds-article-paragraph-standard-font-family);
+  font-size: var(--vds-article-paragraph-standard-font-size-sm);
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0px;
+}
+
+.vds-text-article-paragraph-standard-regular-md {
+  font-family: var(--vds-article-paragraph-standard-font-family);
+  font-size: var(--vds-article-paragraph-standard-font-size-md);
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0px;
+}
+
+.vds-text-article-paragraph-standard-regular-lg {
+  font-family: var(--vds-article-paragraph-standard-font-family);
+  font-size: var(--vds-article-paragraph-standard-font-size-lg);
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0px;
+}
+
+.vds-text-article-paragraph-standard-bold-xs {
+  font-family: var(--vds-article-paragraph-standard-font-family);
+  font-size: var(--vds-article-paragraph-standard-font-size-xs);
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0px;
+}
+
+.vds-text-article-paragraph-standard-bold-sm {
+  font-family: var(--vds-article-paragraph-standard-font-family);
+  font-size: var(--vds-article-paragraph-standard-font-size-sm);
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0px;
+}
+
+.vds-text-article-paragraph-standard-bold-md {
+  font-family: var(--vds-article-paragraph-standard-font-family);
+  font-size: var(--vds-article-paragraph-standard-font-size-md);
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0px;
+}
+
+.vds-text-article-paragraph-standard-bold-lg {
+  font-family: var(--vds-article-paragraph-standard-font-family);
+  font-size: var(--vds-article-paragraph-standard-font-size-lg);
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0px;
+}
+
+.vds-text-article-paragraph-android-regular-xs {
+  font-family: var(--vds-article-paragraph-android-font-family);
+  font-size: var(--vds-article-paragraph-android-font-size-xs);
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0px;
+}
+
+.vds-text-article-paragraph-android-regular-sm {
+  font-family: var(--vds-article-paragraph-android-font-family);
+  font-size: var(--vds-article-paragraph-android-font-size-sm);
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0px;
+}
+
+.vds-text-article-paragraph-android-regular-md {
+  font-family: var(--vds-article-paragraph-android-font-family);
+  font-size: var(--vds-article-paragraph-android-font-size-md);
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0px;
+}
+
+.vds-text-article-paragraph-android-regular-lg {
+  font-family: var(--vds-article-paragraph-android-font-family);
+  font-size: var(--vds-article-paragraph-android-font-size-lg);
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0px;
+}
+
+.vds-text-article-paragraph-android-bold-xs {
+  font-family: var(--vds-article-paragraph-android-font-family);
+  font-size: var(--vds-article-paragraph-android-font-size-xs);
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0px;
+}
+
+.vds-text-article-paragraph-android-bold-sm {
+  font-family: var(--vds-article-paragraph-android-font-family);
+  font-size: var(--vds-article-paragraph-android-font-size-sm);
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0px;
+}
+
+.vds-text-article-paragraph-android-bold-md {
+  font-family: var(--vds-article-paragraph-android-font-family);
+  font-size: var(--vds-article-paragraph-android-font-size-md);
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0px;
+}
+
+.vds-text-article-paragraph-android-bold-lg {
+  font-family: var(--vds-article-paragraph-android-font-family);
+  font-size: var(--vds-article-paragraph-android-font-size-lg);
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0px;
+}
+
+.vds-text-article-paragraph-option-1-regular-lg {
+  font-family: var(--vds-article-paragraph-option-1-font-family);
+  font-size: var(--vds-article-paragraph-option-1-font-size-lg);
+  font-weight: 400;
+  line-height: 1.8;
+  letter-spacing: 0px;
+}
+
+.vds-text-article-paragraph-option-1-bold-lg {
+  font-family: var(--vds-article-paragraph-option-1-font-family);
+  font-size: var(--vds-article-paragraph-option-1-font-size-lg);
+  font-weight: 700;
+  line-height: 1.8;
+  letter-spacing: 0px;
+}
+
+.vds-text-article-summary-standard-regular-md {
+  font-family: var(--vds-article-paragraph-standard-font-family);
+  font-size: var(--vds-article-paragraph-standard-font-size-md);
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: 0px;
+}
+
+.vds-text-article-summary-standard-regular-lg {
+  font-family: var(--vds-article-paragraph-standard-font-family);
+  font-size: var(--vds-article-paragraph-standard-font-size-lg);
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: 0px;
+}
+
+.vds-text-article-summary-android-regular-md {
+  font-family: var(--vds-article-paragraph-android-font-family);
+  font-size: var(--vds-article-paragraph-android-font-size-md);
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: 0px;
+}
+
+.vds-text-article-summary-android-regular-lg {
+  font-family: var(--vds-article-paragraph-android-font-family);
+  font-size: var(--vds-article-paragraph-android-font-size-lg);
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: 0px;
+}
+
+.vds-text-heading-xs {
+  font-family: var(--vds-heading-font-family);
+  font-size: var(--vds-heading-font-size-xs);
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0px;
+}
+
+.vds-text-heading-sm {
+  font-family: var(--vds-heading-font-family);
+  font-size: var(--vds-heading-font-size-sm);
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0px;
+}
+
+.vds-text-heading-md {
+  font-family: var(--vds-heading-font-family);
+  font-size: var(--vds-heading-font-size-md);
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0px;
+}
+
+.vds-text-heading-lg {
+  font-family: var(--vds-heading-font-family);
+  font-size: var(--vds-heading-font-size-lg);
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0px;
+}
+
+.vds-text-microcopy-label-regular-xs {
+  font-family: var(--vds-microcopy-font-family);
+  font-size: var(--vds-microcopy-label-font-size-xs);
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0px;
+}
+
+.vds-text-microcopy-label-regular-xsm {
+  font-family: var(--vds-microcopy-font-family);
+  font-size: var(--vds-microcopy-label-font-size-xsm);
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0px;
+}
+
+.vds-text-microcopy-label-regular-sm {
+  font-family: var(--vds-microcopy-font-family);
+  font-size: var(--vds-microcopy-label-font-size-sm);
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0px;
+}
+
+.vds-text-microcopy-label-regular-md {
+  font-family: var(--vds-microcopy-font-family);
+  font-size: var(--vds-microcopy-label-font-size-md);
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0px;
+}
+
+.vds-text-microcopy-label-regular-lg {
+  font-family: var(--vds-microcopy-font-family);
+  font-size: var(--vds-microcopy-label-font-size-lg);
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0px;
+}
+
+.vds-text-microcopy-label-regular-xl {
+  font-family: var(--vds-microcopy-font-family);
+  font-size: var(--vds-microcopy-label-font-size-xl);
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0px;
+}
+
+.vds-text-microcopy-label-regular-2xl {
+  font-family: var(--vds-microcopy-font-family);
+  font-size: var(--vds-microcopy-label-font-size-2xl);
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0px;
+}
+
+.vds-text-microcopy-label-bold-xs {
+  font-family: var(--vds-microcopy-font-family);
+  font-size: var(--vds-microcopy-label-font-size-xs);
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0px;
+}
+
+.vds-text-microcopy-label-bold-xsm {
+  font-family: var(--vds-microcopy-font-family);
+  font-size: var(--vds-microcopy-label-font-size-xsm);
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0px;
+}
+
+.vds-text-microcopy-label-bold-sm {
+  font-family: var(--vds-microcopy-font-family);
+  font-size: var(--vds-microcopy-label-font-size-sm);
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0px;
+}
+
+.vds-text-microcopy-label-bold-md {
+  font-family: var(--vds-microcopy-font-family);
+  font-size: var(--vds-microcopy-label-font-size-md);
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0px;
+}
+
+.vds-text-microcopy-label-bold-lg {
+  font-family: var(--vds-microcopy-font-family);
+  font-size: var(--vds-microcopy-label-font-size-lg);
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0px;
+}
+
+.vds-text-microcopy-label-bold-xl {
+  font-family: var(--vds-microcopy-font-family);
+  font-size: var(--vds-microcopy-label-font-size-xl);
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0px;
+}
+
+.vds-text-microcopy-label-bold-2xl {
+  font-family: var(--vds-microcopy-font-family);
+  font-size: var(--vds-microcopy-label-font-size-2xl);
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0px;
+}
+
+.vds-text-microcopy-label-underline-sm {
+  font-family: var(--vds-microcopy-font-family);
+  font-size: var(--vds-microcopy-label-font-size-sm);
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0px;
+  text-decoration: underline;
+}
+
+.vds-text-microcopy-label-underline-md {
+  font-family: var(--vds-microcopy-font-family);
+  font-size: var(--vds-microcopy-label-font-size-md);
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0px;
+  text-decoration: underline;
+}
+
+.vds-text-microcopy-helper-regular-xs {
+  font-family: var(--vds-microcopy-font-family);
+  font-size: var(--vds-microcopy-helper-font-size-xs);
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0px;
+}
+
+.vds-text-microcopy-helper-regular-sm {
+  font-family: var(--vds-microcopy-font-family);
+  font-size: var(--vds-microcopy-helper-font-size-sm);
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0px;
+}
+
+.vds-text-microcopy-helper-regular-md {
+  font-family: var(--vds-microcopy-font-family);
+  font-size: var(--vds-microcopy-helper-font-size-md);
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0px;
+}
+
+.vds-text-microcopy-helper-bold-xs {
+  font-family: var(--vds-microcopy-font-family);
+  font-size: var(--vds-microcopy-helper-font-size-xs);
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0px;
+}
+
+.vds-text-microcopy-helper-bold-sm {
+  font-family: var(--vds-microcopy-font-family);
+  font-size: var(--vds-microcopy-helper-font-size-sm);
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0px;
+}
+
+.vds-text-microcopy-helper-bold-md {
+  font-family: var(--vds-microcopy-font-family);
+  font-size: var(--vds-microcopy-helper-font-size-md);
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0px;
+}
+
+.vds-text-numeric-regular-xs {
+  font-family: var(--vds-numeric-font-family);
+  font-size: var(--vds-numeric-font-size-xs);
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0px;
+}
+
+.vds-text-numeric-regular-xsm {
+  font-family: var(--vds-numeric-font-family);
+  font-size: var(--vds-numeric-font-size-xsm);
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0px;
+}
+
+.vds-text-numeric-regular-sm {
+  font-family: var(--vds-numeric-font-family);
+  font-size: var(--vds-numeric-font-size-sm);
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0px;
+}
+
+.vds-text-numeric-regular-md {
+  font-family: var(--vds-numeric-font-family);
+  font-size: var(--vds-numeric-font-size-md);
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0px;
+}
+
+.vds-text-numeric-regular-lg {
+  font-family: var(--vds-numeric-font-family);
+  font-size: var(--vds-numeric-font-size-lg);
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0px;
+}
+
+.vds-text-numeric-regular-xl {
+  font-family: var(--vds-numeric-font-family);
+  font-size: var(--vds-numeric-font-size-xl);
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0px;
+}
+
+.vds-text-numeric-regular-2xl {
+  font-family: var(--vds-numeric-font-family);
+  font-size: var(--vds-numeric-font-size-2xl);
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0px;
+}
+
+.vds-text-numeric-bold-xs {
+  font-family: var(--vds-numeric-font-family);
+  font-size: var(--vds-numeric-font-size-xs);
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0px;
+}
+
+.vds-text-numeric-bold-xsm {
+  font-family: var(--vds-numeric-font-family);
+  font-size: var(--vds-numeric-font-size-xsm);
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0px;
+}
+
+.vds-text-numeric-bold-sm {
+  font-family: var(--vds-numeric-font-family);
+  font-size: var(--vds-numeric-font-size-sm);
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0px;
+}
+
+.vds-text-numeric-bold-md {
+  font-family: var(--vds-numeric-font-family);
+  font-size: var(--vds-numeric-font-size-md);
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0px;
+}
+
+.vds-text-numeric-bold-lg {
+  font-family: var(--vds-numeric-font-family);
+  font-size: var(--vds-numeric-font-size-lg);
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0px;
+}
+
+.vds-text-numeric-bold-xl {
+  font-family: var(--vds-numeric-font-family);
+  font-size: var(--vds-numeric-font-size-xl);
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0px;
+}
+
+.vds-text-numeric-bold-2xl {
+  font-family: var(--vds-numeric-font-family);
+  font-size: var(--vds-numeric-font-size-2xl);
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0px;
+}
+
+/**
+ * VnExpress Design System — effect styles (shadow)
+ * Tự sinh từ packages/tokens/figma — KHÔNG sửa tay. Chạy `npm run build -w @vnexpress/tokens`.
+ */
+
+:root {
+  --vds-shadow-elavation-A: 0px 0px 0px 0px #0000000d, 0px 16px 35px 0px #0000000d, 0px 63px 63px 0px #0000000a, 0px 142px 85px 0px #00000008, 0px 252px 101px 0px #00000003, 0px 394px 110px 0px #00000000;
+  --vds-shadow-elavation-B: 0px 4px 9px 0px #00000012, 0px 17px 17px 0px #0000000f, 0px 39px 23px 0px #0000000a, 0px 69px 28px 0px #00000003, 0px 108px 30px 0px #00000000;
+  --vds-shadow-component-card: 0px 2px 4px 0px #0000001c, 0px 8px 8px 0px #0000001a, 0px 18px 11px 0px #0000000f, 0px 33px 13px 0px #00000005, 0px 51px 14px 0px #00000000;
+  --vds-shadow-component-icon: 1px 1px 4px 0px #00000066;
+  --vds-shadow-component-toggle: 0px 3px 1px 0px #0000000f, 0px 3px 8px 0px #00000026;
+  --vds-shadow-component-widget: 0px 4px 16px 0px #ead9ca;
+  --vds-shadow-component-subscriptions: 0px 4px 12px 4px #9f224e4d;
+  --vds-shadow-component-textfield-focus: 0px 0px 8px 0px #4290d980;
+}

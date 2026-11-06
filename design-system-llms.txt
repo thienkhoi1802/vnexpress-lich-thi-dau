@@ -1,0 +1,107 @@
+﻿# VnExpress Design System
+
+> Hệ thống thiết kế của báo VnExpress: nguyên tắc, foundations, design token, icon, logo và quy ước nội dung. Nguồn gốc là Figma "VDS (Core) UI Library".
+
+Dành cho AI agent: đọc hết file này trước khi thiết kế hoặc code, rồi làm theo. Tài liệu tiếng Việt, giữ thuật ngữ tiếng Anh. Mỗi trang có bản Markdown (link ở các mục bên dưới); toàn bộ tài liệu trong một file: [llms-full.txt](https://vnexpress-design-system.vne-designops.workers.dev/llms-full.txt).
+
+## Bắt đầu nhanh
+
+1. Code web: nhúng 4 dòng vào `<head>` (font, token, component). Bản thử dùng thẳng link:
+
+```html
+<link rel="stylesheet" href="https://vnexpress-design-system.vne-designops.workers.dev/generated/fonts/vds-fonts.css">
+<link rel="stylesheet" href="https://vnexpress-design-system.vne-designops.workers.dev/generated/tokens/vds.css">
+<link rel="stylesheet" href="https://vnexpress-design-system.vne-designops.workers.dev/generated/components/vds-components.css">
+<script src="https://vnexpress-design-system.vne-designops.workers.dev/generated/components/vds-components.js" defer></script>
+```
+
+   Sản phẩm thật: tải bộ file theo phiên bản ở trang [Components](https://vnexpress-design-system.vne-designops.workers.dev/components/overview.md) (mục Phiên bản), kèm font, vào dự án. Link trên trang tài liệu đổi ngay khi Figma đổi, sản phẩm thì cần bản theo phiên bản. Không gọi link trang tài liệu trong sản phẩm thật: trang có thể đổi địa chỉ hoặc tạm ngừng, khi đó sản phẩm mất giao diện. Hướng dẫn cho từng vai trò: [Bắt đầu dùng VDS](https://vnexpress-design-system.vne-designops.workers.dev/introduction/getting-started.md).
+2. Component có sẵn (Alert Inline, Alert Toast, Button, Button Inline, Button Touch, Input Code Field, Input Text Field, Selection Item Chip, Tabs): chép mẫu HTML ở trang của component, giữ nguyên class `vds-*`. Không tự vẽ lại.
+3. Chọn token theo vai trò ở các trang [Màu](https://vnexpress-design-system.vne-designops.workers.dev/foundations/color.md), [Typography](https://vnexpress-design-system.vne-designops.workers.dev/foundations/typography.md), [Spacing & Sizing](https://vnexpress-design-system.vne-designops.workers.dev/foundations/spacing.md). Chỉ mở tokens.json khi cần tra một giá trị cụ thể (file lớn).
+4. Icon: tra tên ở [danh sách icon](https://vnexpress-design-system.vne-designops.workers.dev/generated/icons/index.md), file SVG ở https://vnexpress-design-system.vne-designops.workers.dev/generated/icons/{file}.
+5. Trước khi giao: tự kiểm theo mục "Kiểm tra kết quả của agent" ở trang [Dùng VDS với AI](https://vnexpress-design-system.vne-designops.workers.dev/introduction/ai.md).
+
+## Quy tắc bắt buộc
+
+- Chỉ dùng token VDS: biến CSS `--vds-*`, class chữ `.vds-text-*` (vd `.vds-text-article-title-primary-bold-md`), biến bóng `--vds-shadow-*`. Không gán cứng màu, cỡ chữ, khoảng cách, bo góc, bóng đổ.
+- Chọn font theo vai trò, qua class chữ:
+  - tiêu đề tin bài: Merriweather (`article/title/primary/*`);
+  - chữ giao diện ngắn (nhãn, nút, menu, tiêu đề khối): Merriweather Sans (`microcopy/*`, `heading/*`);
+  - văn bản đọc liền mạch (dài quá 2 dòng hoặc là câu): Arial (`article/paragraph/standard/*`), Android dùng Roboto;
+  - số liệu: Roboto Mono (`numeric/*`);
+  - Breakers Slab chỉ cho chuyên mục Góc nhìn: tiêu đề bài và heading (`article/title/goc-nhin/*`), không dùng cho chỗ khác.
+- Nền `surface/000`, chữ mặc định `text/regular`. Màu nhấn đỏ đô (accent) dùng ít và có chủ đích, để dẫn mắt tới chỗ cần chú ý (vd heading khối tin, mục đang chọn, nút hành động chính); không dùng làm nền lớn hay để trang trí. Xanh dương dành cho link và tín hiệu của hệ thống (thông tin, vòng focus).
+- Link trong nội dung luôn gạch chân (nét 1px), màu `text/link/regular`. Nút, menu, tiêu đề tin (cả khối tin là link) không gạch chân.
+- Bố cục kiểu báo in: mỗi tin có padding bên trong nên các tin đặt sát nhau, phân tách bằng đường kẻ mảnh 1px (`component/divider/fill/*`). Không dùng card và bóng đổ cho nội dung thường.
+- Hỗ trợ light và dark: đặt `data-theme="dark"` trên thẻ `<html>`, token Color tự đổi; không viết màu riêng cho dark.
+- Tương phản theo WCAG 2.2 AA: chữ thường ≥ 4,5:1, chữ lớn ≥ 3:1, icon và viền cần thấy ≥ 3:1. Đặt token chữ trên đúng nền đi kèm (bảng Tương phản ở trang Màu). `text/subdued`, `text/subdued-lighter` cố ý chìm, chỉ cho thông tin phụ (helper, placeholder, meta của tin) và thành phần bị vô hiệu hoá.
+- Component có sẵn trong VDS thì bắt buộc dùng, không tự vẽ lại: [Alert Inline](https://vnexpress-design-system.vne-designops.workers.dev/components/alert-inline.md), [Alert Toast](https://vnexpress-design-system.vne-designops.workers.dev/components/alert-toast.md), [Button](https://vnexpress-design-system.vne-designops.workers.dev/components/button.md), [Button Inline](https://vnexpress-design-system.vne-designops.workers.dev/components/button-inline.md), [Button Touch](https://vnexpress-design-system.vne-designops.workers.dev/components/button-touch.md), [Input Code Field](https://vnexpress-design-system.vne-designops.workers.dev/components/input-code-field.md), [Input Text Field](https://vnexpress-design-system.vne-designops.workers.dev/components/input-text-field.md), [Selection Item Chip](https://vnexpress-design-system.vne-designops.workers.dev/components/selection-item-chip.md), [Tabs](https://vnexpress-design-system.vne-designops.workers.dev/components/tabs.md). Chép mẫu HTML ở trang của component, giữ nguyên class `vds-*`, `role`, `aria-*`; tab, ô nhập mã, chip, nút đóng thông báo cần `vds-components.js`. Component chưa có (News Item, Header, Footer…): tự dựng từ token và class chữ, đặt tên và thuộc tính theo component trong Figma (vd Button: Type, Size, State).
+- Icon và logo chỉ lấy từ VDS. Icon một màu xám, đen, trắng (`mono` trong manifest): dán SVG thẳng vào HTML để nhận màu từ `color` (token `icon/fill/*`); icon nhiều màu, icon một màu có sắc giữ màu gốc.
+- Câu chữ trung lập, ngắn gọn. Ngày, giờ, số, địa điểm viết theo các trang Nội dung (vd `21/10/2026`, `09:00`).
+
+## Giới thiệu
+
+- [Design System & VDS](https://vnexpress-design-system.vne-designops.workers.dev/introduction/design-system.md): Design system là gì, VDS gồm những gì, dùng ở đâu và dành cho ai.
+- [Nguyên tắc](https://vnexpress-design-system.vne-designops.workers.dev/introduction/principles.md): Ba nguyên tắc định hướng mọi quyết định thiết kế: Rõ ràng, Chỉn chu, Trung lập.
+- [Bắt đầu dùng VDS](https://vnexpress-design-system.vne-designops.workers.dev/introduction/getting-started.md): Dùng VDS theo vai trò: designer, developer web, developer app, AI agent; bản thử và sản phẩm thật, nâng phiên bản.
+- [Dùng VDS với AI](https://vnexpress-design-system.vne-designops.workers.dev/introduction/ai.md): Cách đưa VDS cho AI agent để thiết kế và code sản phẩm đúng chuẩn VnExpress.
+- [Câu hỏi thường gặp](https://vnexpress-design-system.vne-designops.workers.dev/introduction/faq.md): Những câu hỏi thường gặp về design system.
+- [Thuật ngữ](https://vnexpress-design-system.vne-designops.workers.dev/introduction/glossary.md): Định nghĩa các thuật ngữ chuyên ngành dùng trong tài liệu.
+
+## Foundations
+
+- [Nhận diện VnExpress](https://vnexpress-design-system.vne-designops.workers.dev/foundations/identity.md): Những đặc trưng khiến một giao diện nhìn vào là biết của VnExpress, và các quy tắc cốt lõi.
+- [Màu sắc](https://vnexpress-design-system.vne-designops.workers.dev/foundations/color.md): Bảng màu gốc, màu ngữ nghĩa cho nền, chữ, viền, icon và quy tắc dùng màu theo vai trò.
+- [Typography](https://vnexpress-design-system.vne-designops.workers.dev/foundations/typography.md): Font, text style (composite token) và text style nào dùng cho vai trò nào.
+- [Spacing & Sizing](https://vnexpress-design-system.vne-designops.workers.dev/foundations/spacing.md): Thang khoảng cách, bo góc, độ dày viền, kích thước component và quy tắc dùng.
+- [Elevation](https://vnexpress-design-system.vne-designops.workers.dev/foundations/elevation.md): Shadow (effect style) và khi nào được phép dùng.
+- [Iconography](https://vnexpress-design-system.vne-designops.workers.dev/foundations/iconography.md): Bộ icon VDS: quy ước tên, theme, kích thước, màu và cách dùng.
+- [Logo](https://vnexpress-design-system.vne-designops.workers.dev/foundations/logo.md): Logo VnExpress và các thương hiệu liên quan, phiên bản Light/Dark và cách dùng.
+- [Layout & Grid](https://vnexpress-design-system.vne-designops.workers.dev/foundations/layout.md): Khung trang, cột, breakpoint và cách bố cục kiểu báo in của VnExpress.
+
+## Design tokens
+
+- [Tổng quan](https://vnexpress-design-system.vne-designops.workers.dev/tokens/overview.md): Design token là gì; ba tầng Base, Semantic, Component và token composite.
+- [Cách dùng](https://vnexpress-design-system.vne-designops.workers.dev/tokens/usage.md): Dùng token trong code web và app: biến CSS, class typography, JSON gốc từ Figma.
+
+## Components
+
+- [Tổng quan](https://vnexpress-design-system.vne-designops.workers.dev/components/overview.md): Cách dùng component VDS trên sản phẩm và bản thử: nạp CSS, JS rồi chép mẫu HTML.
+- [Alert Inline](https://vnexpress-design-system.vne-designops.workers.dev/components/alert-inline.md): Thông báo ngắn một dòng, đặt ngay dưới nội dung liên quan, vd lỗi của ô nhập.
+- [Alert Toast](https://vnexpress-design-system.vne-designops.workers.dev/components/alert-toast.md): Khung thông báo có tiêu đề, nội dung, nút hành động hoặc nút đóng.
+- [Button](https://vnexpress-design-system.vne-designops.workers.dev/components/button.md): Nút cho hành động: 19 kiểu theo vai trò, 3 cỡ, có icon.
+- [Button Inline](https://vnexpress-design-system.vne-designops.workers.dev/components/button-inline.md): Nút gọn đặt bên trong component khác, vd cuối ô nhập.
+- [Button Touch](https://vnexpress-design-system.vne-designops.workers.dev/components/button-touch.md): Nút tròn chỉ có icon, cho header, thanh công cụ, thẻ tin.
+- [Input Code Field](https://vnexpress-design-system.vne-designops.workers.dev/components/input-code-field.md): Ô nhập mã xác thực, mỗi ký tự một ô; dán cả mã hoặc tự điền từ SMS.
+- [Input Text Field](https://vnexpress-design-system.vne-designops.workers.dev/components/input-text-field.md): Ô nhập một dòng có nhãn, icon, nút, dòng phụ và trạng thái lỗi.
+- [Selection Item Chip](https://vnexpress-design-system.vne-designops.workers.dev/components/selection-item-chip.md): Chip để lọc, chọn nhanh: bật tắt từng chip hoặc chọn một trong nhóm.
+- [Tabs](https://vnexpress-design-system.vne-designops.workers.dev/components/tabs.md): Chuyển giữa các nhóm nội dung cùng cấp trong một khu vực.
+
+## Nội dung
+
+- [Thời gian](https://vnexpress-design-system.vne-designops.workers.dev/content/time.md): Quy ước viết ngày, giờ, múi giờ và cách rút gọn thời gian.
+- [Số](https://vnexpress-design-system.vne-designops.workers.dev/content/numbers.md): Quy ước viết số, dấu phân cách và rút gọn số lớn (K, M, B).
+- [Địa điểm](https://vnexpress-design-system.vne-designops.workers.dev/content/locations.md): Tên tỉnh thành Việt Nam và tên quốc gia dùng trên VnExpress.
+- [Cắt ký tự](https://vnexpress-design-system.vne-designops.workers.dev/content/truncation.md): Cách cắt văn bản khi không đủ chỗ hiển thị.
+
+## Tài nguyên
+
+- [Tải về & liên kết](https://vnexpress-design-system.vne-designops.workers.dev/resources.md): Figma, file token, icon, logo, font và dữ liệu dạng máy đọc được.
+
+## Dữ liệu máy đọc
+
+- [vds-fonts.css](https://vnexpress-design-system.vne-designops.workers.dev/generated/fonts/vds-fonts.css): font Merriweather, Merriweather Sans, Roboto Mono, Breakers Slab (tự host, có tiếng Việt)
+- [vds.css](https://vnexpress-design-system.vne-designops.workers.dev/generated/tokens/vds.css): biến CSS, class typography, shadow, dark mode — nhúng vào trang web là dùng được
+- [vds-components.css](https://vnexpress-design-system.vne-designops.workers.dev/generated/components/vds-components.css), [vds-components.js](https://vnexpress-design-system.vne-designops.workers.dev/generated/components/vds-components.js): giao diện và hành vi của component có sẵn, dùng với mẫu HTML ở trang từng component
+- [Danh sách icon](https://vnexpress-design-system.vne-designops.workers.dev/generated/icons/index.md): tên, theme, cỡ, từ khoá (có tiếng Việt) của 703 icon (bản gọn của icons/manifest.json)
+- [tokens.json](https://vnexpress-design-system.vne-designops.workers.dev/generated/tokens/tokens.json): toàn bộ token (tên Figma, biến CSS, giá trị light/dark, alias), text style, effect style
+- [icons/manifest.json](https://vnexpress-design-system.vne-designops.workers.dev/generated/icons/manifest.json): thông tin đầy đủ từng file icon
+- [logos/manifest.json](https://vnexpress-design-system.vne-designops.workers.dev/generated/logos/manifest.json): danh sách logo bản light, dark, themeable
+- [strings.json](https://vnexpress-design-system.vne-designops.workers.dev/generated/tokens/strings.json): chuỗi UX writing tiếng Việt và tiếng Anh
+- [locations.json](https://vnexpress-design-system.vne-designops.workers.dev/generated/data/locations.json): tỉnh, thành Việt Nam và quốc gia, đúng tên sử dụng
+- [Figma JSON gốc](https://vnexpress-design-system.vne-designops.workers.dev/generated/tokens/figma/manifest.json): file export nguyên bản từ Figma (dev app dùng trực tiếp)
+
+## Optional
+
+- [llms-full.txt](https://vnexpress-design-system.vne-designops.workers.dev/llms-full.txt): toàn bộ tài liệu trong một file
+

@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chi tiết trận đấu - VnExpress Thể Thao</title>
+  <link rel="icon" type="image/x-icon" href="https://s1.vnecdn.net/vnexpress/restruct/i/v9525/logo/favicon.ico">
+  <!-- VnExpress Design System (VDS) Core -->
+  <link rel="stylesheet" href="/vds-0.5.0/fonts/vds-fonts.css">
+  <link rel="stylesheet" href="/vds-0.5.0/tokens/vds.css">
+  <link rel="stylesheet" href="/vds-0.5.0/components/vds-components.css">
+  <link rel="stylesheet" href="/css/style.css?v=34">
+  <link rel="stylesheet" href="/css/vds-adaptations.css?v=278">
+  <script src="/vds-0.5.0/components/vds-components.js" defer></script>
+  <script src="/vds/vds-helper.js?v=3"></script>
+  <!-- Lucide icons fallback -->
+  <script src="/js/vds-icons.js?v=1"></script>
+</head>
+<body>
+
+  <!-- Pinned / Sticky Header (Breadcrumb on mobile / Full header on desktop) -->
+  <header class="vne-header-wrapper vne-match-detail-header" id="vne-sticky-header">
+    <div class="vne-container vne-match-page-container">
+      <div class="vne-topbar">
+        <div class="vne-header-left">
+          <div class="vne-breadcrumbs" id="vne-header-breadcrumbs">
+            <!-- Desktop Breadcrumb (VnExpress / Thể thao / Bóng đá) -->
+            <div class="vne-breadcrumb-desktop">
+              <a href="/" class="vds-logo-link" title="Báo điện tử VnExpress">
+                <vds-logo name="Logo__VnExpress__Standard" aria-label="VnExpress" class="vds-header-logo"></vds-logo>
+              </a>
+              <span class="vne-breadcrumb-slash">/</span>
+              <a href="/lich-thi-dau">Thể thao</a>
+              <span class="vne-breadcrumb-slash">/</span>
+              <a href="/lich-thi-dau" class="vne-breadcrumb-bongda">Bóng đá</a>
+            </div>
+
+            <!-- Mobile Breadcrumb (Pinned 'Kết quả' or 'Lịch thi đấu' / [Tên giải]) -->
+            <div class="vne-breadcrumb-mobile">
+              <a href="/" class="vne-breadcrumb-mobile-icon" title="VnExpress Thể thao" aria-label="Trang chủ VnExpress"></a>
+              <a href="/ket-qua" id="breadcrumb-parent-link" class="vne-breadcrumb-parent">Kết quả</a>
+              <span class="vne-breadcrumb-slash">/</span>
+              <a href="/giai-dau/champions-league" id="breadcrumb-league-link" class="vne-breadcrumb-league">Champions League</a>
+            </div>
+          </div>
+
+          <div class="vne-nav-tabs" role="tablist" aria-label="Điều hướng dữ liệu bóng đá">
+            <a href="/lich-thi-dau" class="vne-tab-btn" id="tab-future" role="tab" aria-selected="false">
+              <vds-icon name="Calendar__Regular__16" size="16"></vds-icon>
+              <span>Lịch thi đấu</span>
+            </a>
+            <a href="/ket-qua" class="vne-tab-btn" id="tab-past" role="tab" aria-selected="false">
+              <vds-icon name="SportSoccer__Regular__16" size="16"></vds-icon>
+              <span>Kết quả</span>
+            </a>
+            <a href="/live" class="vne-tab-btn" id="tab-live" role="tab" aria-selected="false">
+              <span class="live-dot-pulse"></span>
+              <span>LIVE</span>
+              <span class="vne-live-pill-badge" id="live-count-badge">1</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="vne-header-right">
+          <span id="current-datetime-display"></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="vne-container vne-match-page-container">
+    <div class="vne-main-layout vne-match-detail-layout">
+
+      <!-- ================= SIDEBAR LEFT: MENU CÁC GIẢI & ĐỘI BÓNG ================= -->
+      <aside class="vne-sidebar-left">
+        <div class="vne-card-box">
+          <div class="vne-search-input-wrapper">
+            <i data-lucide="search" class="vne-search-icon"></i>
+            <input type="text" id="sidebar-search-input" class="vne-search-input" placeholder="Tìm đội bóng, giải đấu..." oninput="onSidebarSearch(this.value)">
+          </div>
+
+          <!-- Leagues List -->
+          <div class="vne-sidebar-title">
+            <span>GIẢI ĐẤU</span>
+            <span class="vne-count-badge" id="league-count-badge">10/25</span>
+          </div>
+          <ul class="vne-filter-list" id="league-filter-list">
+            <!-- Dynamically populated -->
+          </ul>
+          <button class="vne-show-more-btn" id="btn-toggle-more-leagues" onclick="toggleMoreLeagues()">
+            <span id="txt-more-leagues">∨ Xem thêm (15 giải khác)</span>
+          </button>
+
+          <!-- Hot Teams List -->
+          <div class="vne-sidebar-title" style="margin-top: var(--vds-spacing-xs);">
+            <span>ĐỘI BÓNG</span>
+            <span class="vne-count-badge" id="team-count-badge">6/18</span>
+          </div>
+          <ul class="vne-filter-list" id="team-filter-list">
+            <!-- Dynamically populated -->
+          </ul>
+          <button class="vne-show-more-btn" id="btn-toggle-more-teams" onclick="toggleMoreTeams()">
+            <span id="txt-more-teams">∨ Xem thêm (12 đội khác)</span>
+          </button>
+        </div>
+      
+        <aside class="vne-news-ad" aria-label="Khu vực quảng cáo"><span>ADS (300×600)</span></aside>
+</aside>
+
+      <!-- ================= MIDDLE COLUMN: CHI TIẾT TRẬN ĐẤU ================= -->
+      <section class="vne-content-middle">
+        <div class="vne-match-detail-card">
+
+          <!-- 0. League Header Bar (Clickable title navigating back to League Detail) -->
+          <div class="vne-md-league-bar" id="md-league-bar">
+            <a href="/giai-dau/champions-league" id="md-league-title-link" class="vne-md-league-link" title="Xem chi tiết giải đấu">
+              <div class="vne-md-league-link-left">
+                <img id="md-league-title-logo" src="https://is.vnecdn.net/objects/leagues/2.png?v=1" alt="Logo" class="vne-md-league-logo">
+                <span id="md-league-title-name" class="vne-md-league-name">UEFA Champions League</span>
+              </div>
+              <div class="vne-md-league-link-right">
+                <span class="vne-md-league-link-hint">Chi tiết giải đấu</span>
+                <i data-lucide="chevron-right" class="vne-md-league-chevron"></i>
+              </div>
+            </a>
+          </div>
+
+          <!-- 1. Top Dark Header Bar (Image 1) -->
+          <div class="vne-md-topbar" id="md-header-date-bar">
+            Thứ tư 21/10/2026, 02:00 - Lượt 3
+          </div>
+
+          <!-- 2. Scoreboard Hero Area with Watermarks & Scorers (Image 1) -->
+          <div class="vne-md-hero">
+            <!-- Chia sẻ: desktop hover → danh sách; mobile → share sheet của thiết bị -->
+            <div class="vne-md-share" id="md-share">
+              <button type="button" class="vne-md-share-btn" id="md-share-btn" aria-haspopup="menu" aria-expanded="false" aria-label="Chia sẻ trận đấu" title="Chia sẻ">
+                <vds-icon name="ShareArrow__Filled__20" size="20"></vds-icon>
+              </button>
+              <div class="vne-md-share-pop">
+                <div class="vne-md-share-menu" role="menu" aria-label="Chia sẻ">
+                  <a role="menuitem" href="#" data-share="facebook" target="_blank" rel="noopener"><img src="/vds-0.5.0/icons/Icon__Social__Facebook.svg" alt="" width="20" height="20"><span>Facebook</span></a>
+                  <a role="menuitem" href="#" data-share="x" target="_blank" rel="noopener"><img src="/vds-0.5.0/icons/Icon__Social__XTwitter.svg" alt="" width="20" height="20"><span>X</span></a>
+                  <a role="menuitem" href="#" data-share="linkedin" target="_blank" rel="noopener"><img src="/vds-0.5.0/icons/Icon__Social__LinkedIn.svg" alt="" width="20" height="20"><span>LinkedIn</span></a>
+                  <button role="menuitem" type="button" data-share="copy"><vds-icon name="Link__Regular__20" size="20"></vds-icon><span>Sao chép liên kết</span></button>
+                </div>
+              </div>
+            </div>
+            <img id="md-watermark-home" src="https://is.vnecdn.net/objects/teams/85.png?v=1" alt="" class="vne-md-watermark left">
+            <img id="md-watermark-away" src="https://is.vnecdn.net/objects/teams/529.png?v=1" alt="" class="vne-md-watermark right">
+
+            <div class="vne-md-status-wrap">
+              <span class="vne-md-status-pill" id="md-status-pill">Kết thúc</span>
+            </div>
+
+            <div class="vne-md-scoreboard-row">
+              <div class="vne-md-team home">
+                <span class="vne-md-team-name" id="md-home-name">PSG</span>
+                <img id="md-home-logo" src="https://is.vnecdn.net/objects/teams/85.png?v=1" alt="Home" class="vne-md-team-logo">
+              </div>
+
+              <div class="vne-md-score-pill" id="md-score-pill">
+                <span id="md-home-score">4</span>
+                <span class="vne-md-score-dash">-</span>
+                <span id="md-away-score">2</span>
+              </div>
+
+              <div class="vne-md-team away">
+                <img id="md-away-logo" src="https://is.vnecdn.net/objects/teams/529.png?v=1" alt="Away" class="vne-md-team-logo">
+                <span class="vne-md-team-name" id="md-away-name">Barca</span>
+              </div>
+            </div>
+
+            <div class="vne-md-halftime" id="md-halftime-text">Hiệp một: 1 - 0</div>
+
+            <div class="vne-md-scorers-grid" id="md-scorers-grid">
+              <div class="vne-md-scorers-col home" id="md-home-scorers"></div>
+              <div class="vne-md-scorers-col away" id="md-away-scorers"></div>
+            </div>
+          </div>
+
+          <!-- 3. Sub-Navigation Tabs Bar (4 Independent Sub-URLs) -->
+          <div class="vne-md-tabs-bar">
+            <a href="#" id="md-tab-btn-dien-bien" class="vne-md-tab-btn active" onclick="switchMatchTab('dien-bien', event)">
+              Diễn biến
+            </a>
+            <a href="#" id="md-tab-btn-thong-ke" class="vne-md-tab-btn" onclick="switchMatchTab('thong-ke', event)">
+              Thống kê
+            </a>
+            <a href="#" id="md-tab-btn-doi-hinh-ra-san" class="vne-md-tab-btn" onclick="switchMatchTab('doi-hinh-ra-san', event)">
+              Đội hình ra sân
+            </a>
+            <a href="#" id="md-tab-btn-ket-qua-gan-day" class="vne-md-tab-btn" onclick="switchMatchTab('ket-qua-gan-day', event)">
+              Kết quả gần đây
+            </a>
+            <a href="#" id="md-tab-btn-bang-xep-hang" class="vne-md-tab-btn" style="display:none" onclick="switchMatchTab('bang-xep-hang', event)">
+              Bảng xếp hạng
+            </a>
+            <a href="#" id="md-tab-btn-tran-lien-quan" class="vne-md-tab-btn" style="display:none" onclick="switchMatchTab('tran-lien-quan', event)">
+              Trận liên quan
+            </a>
+            <a href="#" id="md-tab-btn-tin-tuc" class="vne-md-tab-btn" style="display:none" onclick="switchMatchTab('tin-tuc', event)">
+              Tin tức
+            </a>
+            <a href="#" id="md-tab-btn-thong-tin" class="vne-md-tab-btn" style="display:none" onclick="switchMatchTab('thong-tin', event)">Thông tin</a>
+            <a href="#" id="md-tab-btn-tuong-thuat" class="vne-md-tab-btn" style="display:none" onclick="switchMatchTab('tuong-thuat', event)">Tường thuật</a>
+            <a href="#" id="md-tab-btn-tong-thuat" class="vne-md-tab-btn" style="display:none" onclick="switchMatchTab('tong-thuat', event)">Tổng thuật</a>
+          </div>
+
+          <!-- 4. Tab Content Panes -->
+          <div class="vne-md-tab-body">
+
+            <!-- TAB 1: DIỄN BIẾN (Image 2) -->
+            <div id="md-pane-dien-bien" class="vne-md-pane active">
+              <div class="vne-md-timeline-header">
+                <div class="vne-md-tl-team home">
+                  <span id="tl-home-name">PSG</span>
+                  <img id="tl-home-logo" src="https://is.vnecdn.net/objects/teams/85.png?v=1" alt="">
+                </div>
+                <div class="vne-md-tl-divider"></div>
+                <div class="vne-md-tl-team away">
+                  <img id="tl-away-logo" src="https://is.vnecdn.net/objects/teams/529.png?v=1" alt="">
+                  <span id="tl-away-name">Barca</span>
+                </div>
+              </div>
+
+              <div class="vne-md-timeline-list" id="md-timeline-container">
+                <!-- Populated dynamically -->
+              </div>
+            </div>
+
+            <!-- TAB 2: THỐNG KÊ (Image 3) -->
+            <div id="md-pane-thong-ke" class="vne-md-pane">
+              <div class="vne-md-stats-box">
+                <div class="vne-md-stats-header">
+                  <div class="vne-md-stats-team">
+                    <img id="st-home-logo" src="https://is.vnecdn.net/objects/teams/85.png?v=1" alt="">
+                    <span id="st-home-name">PSG</span>
+                  </div>
+                  <div class="vne-md-stats-team">
+                    <span id="st-away-name">Barca</span>
+                    <img id="st-away-logo" src="https://is.vnecdn.net/objects/teams/529.png?v=1" alt="">
+                  </div>
+                </div>
+                <div id="md-stats-rows-container">
+                  <!-- Populated dynamically -->
+                </div>
+              </div>
+
+              <!-- League Standings Table inside Thống kê tab (Image 3) -->
+              <div class="vne-md-inline-standings-wrap">
+                <div class="vne-table-responsive">
+                  <table class="vne-md-inline-table">
+                    <thead>
+                      <tr>
+                        <th colspan="2" class="th-group-name" id="md-inline-table-title">Bảng e</th>
+                        <th>Trận</th>
+                        <th>Thắng</th>
+                        <th>Hòa</th>
+                        <th>Bại</th>
+                        <th>Bàn thắng</th>
+                        <th>Bàn bại</th>
+                        <th>+/-</th>
+                        <th>Điểm</th>
+                        <th>Kết quả gần đây</th>
+                      </tr>
+                    </thead>
+                    <tbody id="md-inline-standings-tbody">
+                      <!-- Populated dynamically -->
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <!-- TAB 3: ĐỘI HÌNH RA SÂN (Image 4) -->
+            <div id="md-pane-doi-hinh-ra-san" class="vne-md-pane">
+              <!-- Mobile Roster Switcher (Visible on mobile only) -->
+              <div class="vne-md-mobile-roster-switch">
+                <button type="button" class="vne-md-roster-tab active" id="btn-roster-home" onclick="switchMobileRoster('home')">
+                  <img id="roster-tab-home-logo" src="https://is.vnecdn.net/objects/teams/85.png?v=1" alt="">
+                  <span id="roster-tab-home-name">PSG</span>
+                </button>
+                <button type="button" class="vne-md-roster-tab" id="btn-roster-away" onclick="switchMobileRoster('away')">
+                  <img id="roster-tab-away-logo" src="https://is.vnecdn.net/objects/teams/529.png?v=1" alt="">
+                  <span id="roster-tab-away-name">Barca</span>
+                </button>
+              </div>
+
+              <div class="vne-md-lineup-grid">
+                <!-- Left Column: Home Lineup & Subs -->
+                <div class="vne-md-lineup-col home" id="md-lineup-home-col">
+                  <div class="vne-md-lineup-team-bar home">
+                    <img id="lu-home-logo" src="https://is.vnecdn.net/objects/teams/85.png?v=1" alt="">
+                    <span id="lu-home-name">PSG</span>
+                  </div>
+
+                  <div class="vne-md-roster-card">
+                    <div class="vne-md-roster-header">Đội hình ra sân</div>
+                    <div id="lu-home-starters"></div>
+                  </div>
+
+                  <div class="vne-md-roster-card">
+                    <div class="vne-md-roster-header">Cầu thủ dự bị</div>
+                    <div id="lu-home-subs"></div>
+                  </div>
+                </div>
+
+                <!-- Center Column: Green Soccer Pitch with Formations -->
+                <div class="vne-md-pitch-col">
+                  <div class="vne-md-pitch-wrapper">
+                    <!-- Top Pitch Header (Home) -->
+                    <div class="vne-md-pitch-bar top">
+                      <div class="vne-md-pitch-team">
+                        <img id="pitch-home-logo" src="https://is.vnecdn.net/objects/teams/85.png?v=1" alt="">
+                        <span id="pitch-home-name">PSG</span>
+                      </div>
+                      <span class="vne-md-pitch-formation" id="pitch-home-formation">4-3-3</span>
+                    </div>
+
+                    <!-- Green Field -->
+                    <div class="vne-md-soccer-field">
+                      <!-- Pitch Lines Overlay -->
+                      <div class="pitch-line-outer">
+                        <div class="pitch-penalty-top">
+                          <div class="pitch-goal-top"></div>
+                        </div>
+                        <div class="pitch-arc-top"></div>
+
+                        <div class="pitch-halfway-line"></div>
+                        <div class="pitch-center-circle"></div>
+
+                        <div class="pitch-arc-bottom"></div>
+                        <div class="pitch-penalty-bottom">
+                          <div class="pitch-goal-bottom"></div>
+                        </div>
+                      </div>
+
+                      <!-- Upper Half: Home Team Formation Nodes -->
+                      <div class="pitch-half home-half" id="pitch-home-nodes"></div>
+
+                      <!-- Lower Half: Away Team Formation Nodes -->
+                      <div class="pitch-half away-half" id="pitch-away-nodes"></div>
+                    </div>
+
+                    <!-- Bottom Pitch Header (Away) -->
+                    <div class="vne-md-pitch-bar bottom">
+                      <div class="vne-md-pitch-team">
+                        <img id="pitch-away-logo" src="https://is.vnecdn.net/objects/teams/529.png?v=1" alt="">
+                        <span id="pitch-away-name">Barca</span>
+                      </div>
+                      <span class="vne-md-pitch-formation" id="pitch-away-formation">4-2-3-1</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Right Column: Away Lineup & Subs -->
+                <div class="vne-md-lineup-col away" id="md-lineup-away-col">
+                  <div class="vne-md-lineup-team-bar away">
+                    <img id="lu-away-logo" src="https://is.vnecdn.net/objects/teams/529.png?v=1" alt="">
+                    <span id="lu-away-name">Barca</span>
+                  </div>
+
+                  <div class="vne-md-roster-card">
+                    <div class="vne-md-roster-header">Đội hình ra sân</div>
+                    <div id="lu-away-starters"></div>
+                  </div>
+
+                  <div class="vne-md-roster-card">
+                    <div class="vne-md-roster-header">Cầu thủ dự bị</div>
+                    <div id="lu-away-subs"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- TAB 4: KẾT QUẢ GẦN ĐÂY (Image 5) -->
+            <!-- TAB: BẢNG XẾP HẠNG (trận chưa diễn ra) -->
+            <div id="md-pane-bang-xep-hang" class="vne-md-pane">
+              <div class="vne-md-inline-standings-wrap vne-md-bxh-wrap">
+                <div class="vne-table-responsive">
+                  <table class="vne-md-inline-table">
+                    <thead>
+                      <tr>
+                        <th colspan="2" class="th-group-name" id="md-bxh-title">Bảng xếp hạng</th>
+                        <th><span class="bxh-lg">Trận</span><span class="bxh-sm">Tr</span></th><th>Thắng</th><th>Hòa</th><th>Bại</th><th>BT</th><th>BB</th><th>+/-</th><th>Điểm</th><th>Kết quả gần đây</th>
+                      </tr>
+                    </thead>
+                    <tbody id="md-bxh-tbody"></tbody>
+                  </table>
+                </div>
+                <div class="vne-md-bxh-legend"><span class="bxh-sm"><b>Tr:</b> Trận</span><span><b>BT:</b> Bàn thắng</span><span><b>BB:</b> Bàn bại</span><span><b>+/-:</b> Hiệu số</span></div>
+                <button type="button" class="vne-md-bxh-more" onclick="var w=this.closest('.vne-md-bxh-wrap');var o=w.classList.toggle('is-expanded');this.textContent=o?'Thu gọn':'Xem thêm';">Xem thêm</button>
+              </div>
+            </div>
+
+            <!-- TAB: TIN TỨC (tất cả tin liên quan) -->
+            <div id="md-pane-thong-tin" class="vne-md-pane"><div class="vne-md-recent-wrap"><h3 class="vne-md-recent-heading vne-md-info-h">Tin tức</h3><div class="vne-news-list" id="md-info-news-list"></div></div></div>
+            <div id="md-pane-tuong-thuat" class="vne-md-pane"><div class="vne-md-cm-wrap" id="md-commentary"></div></div>
+            <div id="md-pane-tong-thuat" class="vne-md-pane"><article class="vne-md-recap" id="md-recap"></article></div>
+
+            <div id="md-pane-tin-tuc" class="vne-md-pane vne-md-pane-news">
+              <div class="vne-news-list" id="md-news-tab-list"></div>
+            </div>
+
+            <!-- TAB: TRẬN LIÊN QUAN (3 trận sắp diễn ra gần nhất của mỗi đội) -->
+            <div id="md-pane-tran-lien-quan" class="vne-md-pane">
+              <div class="vne-md-recent-wrap">
+                <h3 class="vne-md-recent-heading">Trận liên quan</h3>
+                <div class="vne-md-recent-grid">
+                  <div>
+                    <div class="vne-md-recent-team-subhead">
+                      <img id="rel-home-logo" src="https://is.vnecdn.net/objects/teams/85.png?v=1" alt="">
+                      <span><em class="vne-md-pre">3 trận sắp tới của </em><strong id="rel-home-name">Đội A</strong></span>
+                    </div>
+                    <div class="vne-md-recent-col" id="md-rel-home-col"></div>
+                  </div>
+                  <div>
+                    <div class="vne-md-recent-team-subhead">
+                      <img id="rel-away-logo" src="https://is.vnecdn.net/objects/teams/529.png?v=1" alt="">
+                      <span><em class="vne-md-pre">3 trận sắp tới của </em><strong id="rel-away-name">Đội B</strong></span>
+                    </div>
+                    <div class="vne-md-recent-col" id="md-rel-away-col"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div id="md-pane-ket-qua-gan-day" class="vne-md-pane">
+              <div class="vne-md-recent-wrap">
+                <h3 class="vne-md-recent-heading">Phong độ 5 trận gần đây</h3>
+                <div class="vne-md-recent-grid">
+                  <div>
+                    <div class="vne-md-recent-team-subhead">
+                      <img id="recent-home-subhead-logo" src="https://is.vnecdn.net/objects/teams/85.png?v=1" alt="">
+                      <span><strong id="recent-home-subhead-name">PSG</strong></span><em class="vne-md-subhead-note">5 trận gần nhất</em>
+                    </div>
+                    <div class="vne-md-recent-col" id="md-recent-home-col"></div>
+                  </div>
+                  <div>
+                    <div class="vne-md-recent-team-subhead">
+                      <img id="recent-away-subhead-logo" src="https://is.vnecdn.net/objects/teams/529.png?v=1" alt="">
+                      <span><strong id="recent-away-subhead-name">Barca</strong></span><em class="vne-md-subhead-note">5 trận gần nhất</em>
+                    </div>
+                    <div class="vne-md-recent-col" id="md-recent-away-col"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      <!-- Tin tức bóng đá (giống trang lịch thi đấu) -->
+      <section class="vne-md-news" aria-label="Tin liên quan">
+        <div class="vne-md-news-title">Tin liên quan</div>
+        <div class="vne-news-list" id="md-news-list"></div>
+      </section>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="vne-footer">
+    <div class="vne-container vne-match-page-container">
+      <div class="vne-footer-links">
+        <a href="/giai-dau/ngoai-hang-anh">Ngoại hạng Anh</a>
+        <a href="/giai-dau/champions-league">Champions League</a>
+        <a href="/giai-dau/la-liga">La Liga</a>
+        <a href="/giai-dau/bundesliga">Bundesliga</a>
+        <a href="/giai-dau/serie-a">Serie A</a>
+        <a href="/giai-dau/ligue-1">Ligue 1</a>
+        <a href="/giai-dau/v-league">V-League</a>
+        <a href="/giai-dau/nations-league">Nations League</a>
+        <a href="/giai-dau/saudi-pro-league">Saudi Pro League</a>
+        <a href="/giai-dau/mls">MLS</a>
+      </div>
+
+      <div class="vne-footer-info">
+        <div style="font-weight: 700; color: var(--vne-text-main);">Báo điện tử VnExpress</div>
+        <div>Báo tiếng Việt nhiều người xem nhất. Thuộc Bộ Khoa học và Công nghệ.</div>
+        <div>Số giấy phép: 548/GP-BTTTT do Bộ Thông tin và Truyền thông cấp ngày 24/08/2021.</div>
+        <div style="margin-top: var(--vds-spacing-3xs);">&copy; 1997-2026. Toàn bộ bản quyền thuộc VnExpress.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/match-detail.js?v=52"></script>
+</body>
+</html>

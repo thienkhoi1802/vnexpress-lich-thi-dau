@@ -1,0 +1,36 @@
+response: [
+{
+team: {
+id: 9
+name: "Spain"
+logo: "https://media.api-sports.io/football/teams/9.png"
+}
+players: [
+{
+id: 386828
+name: "Lamine Yamal"
+age: 18
+number: 19
+position: "Midfielder"
+photo: "https://media.api-sports.io/football/players/386828.png"
+}
+]
+}
+{
+team: {
+id: 529
+name: "Barcelona"
+logo: "https://media.api-sports.io/football/teams/529.png"
+}
+players: [
+{
+id: 386828
+name: "Lamine Yamal"
+age: 18
+number: 10
+position: "Attacker"
+photo: "https://media.api-sports.io/football/players/386828.png"
+}
+]
+}
+]

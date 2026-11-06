@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hồ sơ & Thống kê cầu thủ - VnExpress Thể Thao</title>
+  <link rel="icon" type="image/x-icon" href="https://s1.vnecdn.net/vnexpress/restruct/i/v9525/logo/favicon.ico">
+  <!-- VnExpress Design System (VDS) Core -->
+  <link rel="stylesheet" href="/vds-0.5.0/fonts/vds-fonts.css">
+  <link rel="stylesheet" href="/vds-0.5.0/tokens/vds.css">
+  <link rel="stylesheet" href="/vds-0.5.0/components/vds-components.css">
+  <link rel="stylesheet" href="/css/style.css?v=34">
+  <link rel="stylesheet" href="/css/vds-adaptations.css?v=278">
+  <script src="/vds-0.5.0/components/vds-components.js" defer></script>
+  <script src="/vds/vds-helper.js?v=3"></script>
+  <!-- Lucide icons fallback -->
+  <script src="/js/vds-icons.js?v=1"></script>
+
+  <style>
+    /* =========================================================================
+       PLAYER DETAIL PAGE STYLES (100% Aligned with VnExpress Design System)
+       ========================================================================= */
+
+    /* 1. Hero Player Profile Header Banner */
+    .vne-player-hero {
+      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+      color: #fff;
+      padding: 32px 0 28px;
+      border-bottom: 3px solid var(--vne-red, #9f224e);
+      position: relative;
+      overflow: hidden;
+    }
+    .vne-player-hero::before {
+      content: '';
+      position: absolute;
+      top: -60px;
+      right: -60px;
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, rgba(159, 34, 78, 0.28) 0%, rgba(15, 23, 42, 0) 70%);
+      pointer-events: none;
+    }
+    .vne-player-hero-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      position: relative;
+      z-index: 2;
+    }
+    .vne-player-hero-left {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex: 1;
+    }
+    .vne-player-avatar-box {
+      position: relative;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: #334155;
+      padding: 4px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+      flex-shrink: 0;
+      border: 3px solid rgba(255,255,255,0.2);
+    }
+    .vne-player-avatar-img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      background: #1e293b;
+    }
+    .vne-player-number-badge {
+      position: absolute;
+      bottom: -2px;
+      right: -2px;
+      background: var(--vne-red, #9f224e);
+      color: #fff;
+      font-size: 15px;
+      font-weight: 800;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 3px solid #0f172a;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.4);
+    }
+    .vne-player-hero-name {
+      font-size: 30px;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.2;
+      margin: 0 0 8px 0;
+      letter-spacing: -0.3px;
+    }
+    .vne-player-hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .vne-player-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #f1f5f9;
+      font-size: 12.5px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.15s ease;
+    }
+    a.vne-player-chip:hover {
+      background: rgba(159, 34, 78, 0.7);
+      border-color: #9f224e;
+      color: #fff;
+    }
+    .vne-player-chip img {
+      width: 18px;
+      height: 18px;
+      object-fit: contain;
+    }
+    .vne-player-quick-specs {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 16px;
+      font-size: 13px;
+      color: #cbd5e1;
+    }
+    .vne-player-quick-specs span {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .vne-player-quick-specs strong {
+      color: #fff;
+      font-weight: 700;
+    }
+
+    /* Hero Right Highlight Stats */
+    .vne-player-hero-stats {
+      display: flex;
+      gap: 16px;
+      flex-shrink: 0;
+    }
+    .vne-player-stat-card {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 10px;
+      padding: 12px 18px;
+      text-align: center;
+      min-width: 90px;
+      backdrop-filter: blur(6px);
+    }
+    .vne-player-stat-val {
+      font-size: 24px;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.1;
+    }
+    .vne-player-stat-val.gold {
+      color: #fbbf24;
+    }
+    .vne-player-stat-label {
+      font-size: 11.5px;
+      color: #94a3b8;
+      font-weight: 600;
+      margin-top: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    /* 2. Sub-Navigation Bar (2 SEO Tabs) */
+    .vne-subnav-bar {
+      background: #fff;
+      border-bottom: 1px solid var(--vne-border, #e2e8f0);
+      position: sticky;
+      top: 50px;
+      z-index: 10;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+    }
+    .vne-subnav-inner {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .vne-subnav-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 20px;
+      background: transparent;
+      border: none;
+      border-bottom: 3px solid transparent;
+      font-size: 14.5px;
+      font-weight: 700;
+      color: var(--vne-text-muted, #64748b);
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .vne-subnav-btn:hover {
+      color: var(--vne-red, #9f224e);
+    }
+    .vne-subnav-btn.active {
+      color: var(--vne-red, #9f224e);
+      border-bottom-color: var(--vne-red, #9f224e);
+    }
+
+    /* 3. Main Content Layout (2 Columns) */
+    .vne-player-layout {
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 32px;
+      margin-top: 24px;
+      margin-bottom: 40px;
+    }
+    .vne-player-main-col {
+      min-width: 0;
+    }
+    .vne-player-sidebar-col {
+      min-width: 0;
+    }
+
+    /* 4. COMPACT SEASON STATS WIDGET (Positioned STRICTLY after news item #3) */
+    .vne-compact-stats-box {
+      margin: 22px 0;
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-left: 4px solid var(--vne-red, #9f224e);
+      border-radius: 10px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+      padding: 18px 20px;
+      overflow: hidden;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .vne-compact-stats-box:hover {
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    }
+    .vne-compact-stats-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #f1f5f9;
+      margin-bottom: 14px;
+    }
+    .vne-compact-stats-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .vne-compact-stats-badge {
+      display: inline-block;
+      padding: 3px 8px;
+      background: rgba(159, 34, 78, 0.1);
+      color: var(--vne-red, #9f224e);
+      font-size: 11px;
+      font-weight: 800;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+    .vne-compact-stats-title {
+      font-size: 15px;
+      font-weight: 800;
+      color: #0f172a;
+      margin: 0;
+    }
+    .vne-compact-stats-meta-matches {
+      font-size: 12.5px;
+      color: #475569;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-weight: 700;
+    }
+    .vne-compact-metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .vne-compact-metric-item {
+      background: #f8fafc;
+      border: 1px solid #edf2f7;
+      border-radius: 8px;
+      padding: 10px 12px;
+      text-align: center;
+      transition: background 0.15s;
+    }
+    .vne-compact-metric-item:hover {
+      background: #f1f5f9;
+    }
+    .vne-compact-metric-val {
+      font-size: 20px;
+      font-weight: 800;
+      color: #0f172a;
+      line-height: 1.1;
+    }
+    .vne-compact-metric-val.highlight {
+      color: var(--vne-red, #9f224e);
+    }
+    .vne-compact-metric-label {
+      font-size: 12px;
+      font-weight: 700;
+      color: #64748b;
+      margin-top: 3px;
+    }
+    .vne-compact-metric-sub {
+      font-size: 11px;
+      color: #94a3b8;
+      margin-top: 2px;
+    }
+    .vne-compact-stats-footer {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding-top: 10px;
+      border-top: 1px solid #f1f5f9;
+    }
+    .vne-btn-switch-thongke {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: transparent;
+      border: 1px solid var(--vne-red, #9f224e);
+      color: var(--vne-red, #9f224e);
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.15s ease;
+    }
+    .vne-btn-switch-thongke:hover {
+      background: var(--vne-red, #9f224e);
+      color: #fff;
+    }
+
+    /* 5. TAB 2: IN-DEPTH STATISTICS (THỐNG KÊ CHUYÊN SÂU) */
+    .vne-thongke-section {
+      margin-bottom: 28px;
+    }
+    .vne-thongke-sec-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #0f172a;
+    }
+    .vne-thongke-sec-title {
+      font-size: 18px;
+      font-weight: 800;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0;
+    }
+    .vne-thongke-sec-sub {
+      font-size: 12.5px;
+      color: #64748b;
+      font-weight: 600;
+    }
+
+    /* Tournament Breakdown Table */
+    .vne-table-scroll-wrapper {
+      overflow-x: auto;
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+      -webkit-overflow-scrolling: touch;
+    }
+    .vne-stats-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      text-align: center;
+    }
+    .vne-stats-table th {
+      background: #f8fafc;
+      color: #475569;
+      font-weight: 700;
+      padding: 12px 10px;
+      border-bottom: 2px solid #e2e8f0;
+      white-space: nowrap;
+    }
+    .vne-stats-table td {
+      padding: 12px 10px;
+      border-bottom: 1px solid #f1f5f9;
+      color: #1e293b;
+      white-space: nowrap;
+    }
+    .vne-stats-table tr:hover td {
+      background: #f8fafc;
+    }
+    .vne-stats-table tr.total-row {
+      background: #f1f5f9;
+      font-weight: 800;
+      border-top: 2px solid #cbd5e1;
+    }
+    .vne-stats-table tr.total-row td {
+      color: #0f172a;
+    }
+    .vne-stats-table .td-left {
+      text-align: left;
+    }
+    .vne-stats-league-cell {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      color: #0f172a;
+    }
+    .vne-stats-league-logo {
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+    }
+
+    /* In-Depth Metric Categories Grid */
+    .vne-deep-categories-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin-top: 20px;
+    }
+    .vne-deep-cat-card {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      padding: 18px 20px;
+      overflow: hidden;
+    }
+    .vne-deep-cat-card.primary {
+      border-top: 3px solid var(--vne-red, #9f224e);
+    }
+    .vne-deep-cat-title {
+      font-size: 16px;
+      font-weight: 800;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 14px 0;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #f1f5f9;
+    }
+    .vne-deep-stat-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .vne-deep-stat-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 6px 0;
+      border-bottom: 1px dashed #f1f5f9;
+    }
+    .vne-deep-stat-row:last-child {
+      border-bottom: none;
+    }
+    .vne-deep-stat-left {
+      flex: 1;
+      padding-right: 12px;
+    }
+    .vne-deep-stat-name {
+      font-size: 13.5px;
+      font-weight: 600;
+      color: #334155;
+    }
+    .vne-deep-stat-sub {
+      font-size: 11.5px;
+      color: #94a3b8;
+      margin-top: 1px;
+    }
+    .vne-deep-stat-val {
+      font-size: 15px;
+      font-weight: 800;
+      color: #0f172a;
+      text-align: right;
+    }
+
+    /* 6. Sidebar Widgets */
+    .vne-player-sidebar-box {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 18px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+    }
+    .vne-sidebar-box-title {
+      font-size: 14.5px;
+      font-weight: 800;
+      color: #0f172a;
+      margin: 0 0 12px 0;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #f1f5f9;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .vne-club-card-inner {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 12px;
+    }
+    .vne-club-card-logo {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+    }
+    .vne-club-card-name {
+      font-size: 16px;
+      font-weight: 800;
+      color: #0f172a;
+      text-decoration: none;
+    }
+    .vne-club-card-name:hover {
+      color: var(--vne-red, #9f224e);
+    }
+    .vne-club-card-league {
+      font-size: 12px;
+      color: #64748b;
+      margin-top: 2px;
+    }
+
+    /* Rating Pill */
+    .vne-rating-pill {
+      display: inline-block;
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 800;
+      background: #e2e8f0;
+      color: #1e293b;
+    }
+    .vne-rating-pill.high {
+      background: #dcfce7;
+      color: #15803d;
+    }
+
+    /* Responsive Mobile Optimizations */
+    @media (max-width: 992px) {
+      .vne-player-hero-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+      }
+      .vne-player-hero-stats {
+        width: 100%;
+        justify-content: flex-start;
+        overflow-x: auto;
+      }
+      .vne-player-layout {
+        grid-template-columns: 1fr;
+      }
+      .vne-deep-categories-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .vne-player-hero {
+        padding: 20px 0;
+      }
+      .vne-player-hero-left {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+      }
+      .vne-player-hero-meta {
+        justify-content: center;
+      }
+      .vne-player-quick-specs {
+        justify-content: center;
+      }
+      .vne-compact-metrics-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .vne-compact-stats-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Pinned / Sticky Header (Shared across site) -->
+  <header class="vne-header-wrapper">
+    <div class="vne-container">
+      <div class="vne-topbar">
+        <div class="vne-header-left">
+          <div class="vne-breadcrumbs">
+            <a href="/" class="vds-logo-link" title="Báo điện tử VnExpress">
+              <vds-logo name="Logo__VnExpress__Standard" aria-label="VnExpress" class="vds-header-logo"></vds-logo>
+            </a>
+            <span class="vne-breadcrumb-slash">/</span>
+            <a href="/">Thể thao</a>
+            <span class="vne-breadcrumb-slash">/</span>
+            <a href="/" style="color: var(--vds-text-regular); font-weight: 700;">Bóng đá</a>
+            <span class="vne-breadcrumb-slash">/</span>
+            <span style="color: var(--vne-red, var(--vds-text-accent-regular)); font-weight: 700;">Hồ sơ cầu thủ</span>
+          </div>
+
+          <div class="vne-nav-tabs" role="tablist" aria-label="Điều hướng dữ liệu bóng đá">
+            <a href="/lich-thi-dau" class="vne-tab-btn" id="tab-future" role="tab" aria-selected="false">
+              <vds-icon name="Calendar__Regular__16" size="16"></vds-icon>
+              <span>Lịch thi đấu</span>
+            </a>
+            <a href="/ket-qua" class="vne-tab-btn" id="tab-past" role="tab" aria-selected="false">
+              <vds-icon name="SportSoccer__Regular__16" size="16"></vds-icon>
+              <span>Kết quả</span>
+            </a>
+            <a href="/live" class="vne-tab-btn" id="tab-live" role="tab" aria-selected="false">
+              <span class="live-dot-pulse"></span>
+              <span>LIVE</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="vne-header-right">
+          <span id="current-datetime-display"></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Player Profile Hero Banner -->
+  <section class="vne-player-hero">
+    <div class="vne-container">
+      <div class="vne-player-hero-inner">
+        <!-- Left: Avatar, Name, Chips & Specs -->
+        <div class="vne-player-hero-left">
+          <div class="vne-player-avatar-box">
+            <img id="player-avatar" src="https://media.api-sports.io/football/players/386828.png" alt="Cầu thủ" class="vne-player-avatar-img" onerror="this.src='https://s1.vnecdn.net/vnexpress/restruct/i/v9525/v2_2019/pc/graphics/placeholder.png'">
+            <div class="vne-player-number-badge" id="player-jersey-number">10</div>
+          </div>
+          <div>
+            <h1 class="vne-player-hero-name" id="player-name">Lamine Yamal</h1>
+            
+            <div class="vne-player-hero-meta" id="player-hero-meta">
+              <!-- Current Club Chip -->
+              <a href="/doi-bong/barcelona-529" class="vne-player-chip" id="player-club-chip">
+                <img id="player-club-logo" src="https://media.api-sports.io/football/teams/529.png" alt="Club">
+                <span id="player-club-name">Barcelona</span>
+              </a>
+              <!-- National Team Chip -->
+              <span class="vne-player-chip" id="player-nat-chip">
+                <img id="player-nat-flag" src="https://media.api-sports.io/flags/es.svg" alt="Flag">
+                <span id="player-nat-name">Tây Ban Nha</span>
+              </span>
+              <!-- Position Badge -->
+              <span class="vne-player-chip" id="player-position-badge" style="background: var(--vds-icon-background-on-image-strong);border-color: var(--vds-border-strong);">
+                Tiền đạo cánh phải
+              </span>
+            </div>
+
+            <div class="vne-player-quick-specs" id="player-quick-specs">
+              <span>Tuổi: <strong id="player-age">19 tuổi</strong></span>
+              <span>•</span>
+              <span>Sinh ngày: <strong id="player-dob">13/07/2007</strong></span>
+              <span>•</span>
+              <span>Nơi sinh: <strong id="player-pob">Mataró, Tây Ban Nha</strong></span>
+              <span>•</span>
+              <span>Thể hình: <strong id="player-physique">179 cm / 72 kg</strong></span>
+              <span>•</span>
+              <span>Chân thuận: <strong id="player-foot">Chân trái</strong></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Highlight Season Stat Cards -->
+        <div class="vne-player-hero-stats" id="player-hero-stat-cards">
+          <div class="vne-player-stat-card">
+            <div class="vne-player-stat-val" id="hero-stat-apps">28</div>
+            <div class="vne-player-stat-label">Trận ra sân</div>
+          </div>
+          <div class="vne-player-stat-card">
+            <div class="vne-player-stat-val gold" id="hero-stat-goals">17</div>
+            <div class="vne-player-stat-label" id="hero-stat-goals-label">Bàn thắng</div>
+          </div>
+          <div class="vne-player-stat-card">
+            <div class="vne-player-stat-val" id="hero-stat-assists">12</div>
+            <div class="vne-player-stat-label" id="hero-stat-assists-label">Kiến tạo</div>
+          </div>
+          <div class="vne-player-stat-card">
+            <div class="vne-player-stat-val gold" id="hero-stat-rating">7.96</div>
+            <div class="vne-player-stat-label">Điểm số TB</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sub-Navigation Bar: 2 SEO Tabs -->
+  <nav class="vne-subnav-bar">
+    <div class="vne-container">
+      <div class="vne-subnav-inner">
+        <button type="button" id="subnav-tong-quan" class="vne-subnav-btn active" onclick="switchPlayerTab('tong-quan', event)">
+          <i data-lucide="newspaper" style="width: 16px; height: 16px;"></i>
+          <span>Tổng quan & Tin tức</span>
+        </button>
+        <button type="button" id="subnav-thong-ke" class="vne-subnav-btn" onclick="switchPlayerTab('thong-ke', event)">
+          <i data-lucide="bar-chart-2" style="width: 16px; height: 16px;"></i>
+          <span>Thống kê</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Container -->
+  <main class="vne-container">
+
+    <!-- =========================================================================
+         TAB 1: TỔNG QUAN & TIN TỨC (NEWS STREAM + COMPACT STATS WIDGET AFTER ITEM 3)
+         ========================================================================= -->
+    <div id="tab-pane-tong-quan" class="vne-tab-pane active" style="display: block;">
+      <div class="vne-player-layout">
+        
+        <!-- Left Column: News Feed with Injected Compact Stats -->
+        <section class="vne-player-main-col">
+          <!-- Hero Article (Item 1) -->
+          <div id="player-news-hero-container"></div>
+
+          <!-- News Item 2 & 3 Container -->
+          <div id="player-news-top-list"></div>
+
+          <!-- COMPACT SEASON STATS WIDGET: STRICTLY INJECTED BELOW NEWS ITEM #3 (PC & MOBILE) -->
+          <div class="vne-compact-stats-box" id="player-compact-stats-box">
+            <div class="vne-compact-stats-header">
+              <div class="vne-compact-stats-title-wrap">
+                <span class="vne-compact-stats-badge" id="compact-badge-pos">Tiền đạo</span>
+                <h3 class="vne-compact-stats-title" id="compact-title">Thống kê mùa giải 2025/2026</h3>
+              </div>
+              <div class="vne-compact-stats-meta-matches" id="compact-matches-played">
+                Đã thi đấu: <strong>28 trận (2,179')</strong>
+              </div>
+            </div>
+
+            <!-- Positional Metrics Grid -->
+            <div class="vne-compact-metrics-grid" id="compact-metrics-grid">
+              <!-- Dynamically rendered based on Attacker / Midfielder / Defender / Goalkeeper -->
+            </div>
+
+            <!-- CTA Switch to In-Depth Stats Tab -->
+            <div class="vne-compact-stats-footer">
+              <a href="javascript:void(0)" class="vne-btn-switch-thongke" onclick="switchPlayerTab('thong-ke', event)">
+                <span>Xem toàn bộ thống kê chuyên sâu</span>
+                <i data-lucide="arrow-right" style="width: 14px; height: 14px;"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- News Items 4, 5, 6... Continuing Below Stats Box -->
+          <div id="player-news-rest-list"></div>
+
+          <!-- News Pagination -->
+          <div class="vne-pagination" style="margin-top: var(--vds-spacing-md);">
+            <span id="player-news-range-info">Hiển thị 1 - 20 tin bài</span>
+            <div class="vne-pagination-btns" id="player-news-pagination"></div>
+          </div>
+        </section>
+
+        <!-- Right Column: Sidebar -->
+        <aside class="vne-player-sidebar-col">
+          <!-- Widget 1: CLB Chủ quản hiện tại -->
+          <div class="vne-player-sidebar-box">
+            <h4 class="vne-sidebar-box-title">
+              <i data-lucide="shield" style="width: 15px; height: 15px; color: var(--vne-red);"></i>
+              <span>CLB CHỦ QUẢN HIỆN TẠI</span>
+            </h4>
+            <div class="vne-club-card-inner">
+              <img id="sidebar-club-logo" src="https://media.api-sports.io/football/teams/529.png" alt="CLB" class="vne-club-card-logo">
+              <div>
+                <a href="/doi-bong/barcelona-529" id="sidebar-club-name" class="vne-club-card-name">Barcelona</a>
+                <div class="vne-club-card-league" id="sidebar-club-league">La Liga • Tây Ban Nha</div>
+              </div>
+            </div>
+            <div style="font-size: var(--vds-typography-font-size-200);color: var(--vds-icon-fill-regular);margin-bottom: var(--vds-spacing-xs); line-height: 1.6;">
+              <div>HLV trưởng: <strong id="sidebar-club-coach">Hansi Flick</strong></div>
+              <div>Sân nhà: <strong id="sidebar-club-stadium">Spotify Camp Nou</strong></div>
+            </div>
+            <a href="/doi-bong/barcelona-529" id="sidebar-club-link" class="vne-btn-switch-thongke" style="display:flex; justify-content:center; text-align:center;">
+              Xem trang chi tiết CLB →
+            </a>
+          </div>
+
+          <!-- Widget 2: Đội tuyển Quốc gia -->
+          <div class="vne-player-sidebar-box">
+            <h4 class="vne-sidebar-box-title">
+              <i data-lucide="flag" style="width: 15px; height: 15px;color: var(--vds-icon-fill-regular);"></i>
+              <span>ĐỘI TUYỂN QUỐC GIA</span>
+            </h4>
+            <div style="display: flex; align-items: center;gap: var(--vds-spacing-xs);">
+              <img id="sidebar-nat-logo" src="https://media.api-sports.io/football/teams/9.png" alt="ĐTQG" style="width: 40px; height: 40px; object-fit: contain;">
+              <div>
+                <div style="font-size: var(--vds-typography-font-size-400); font-weight: 800;color: var(--vds-icon-fill-regular);" id="sidebar-nat-name">Tây Ban Nha</div>
+                <div style="font-size: var(--vds-typography-font-size-100);color: var(--vds-text-subdued);" id="sidebar-nat-role">Số áo đội tuyển: #19</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Widget 3: Hồ sơ tiểu sử tóm tắt -->
+          <div class="vne-player-sidebar-box">
+            <h4 class="vne-sidebar-box-title">
+              <i data-lucide="user" style="width: 15px; height: 15px;color: var(--vds-text-positive-regular);"></i>
+              <span>TIỂU SỬ & HỒ SƠ</span>
+            </h4>
+            <div style="font-size: var(--vds-typography-font-size-200); line-height: 1.8;color: var(--vds-icon-fill-regular);">
+              <div style="display:flex; justify-content:space-between;border-bottom: 1px solid var(--vds-component-divider-fill-subdued);padding: var(--vds-spacing-3xs) 0;">
+                <span style="color: var(--vds-text-subdued);">Họ và tên:</span>
+                <strong id="sidebar-bio-fullname">Lamine Yamal</strong>
+              </div>
+              <div style="display:flex; justify-content:space-between;border-bottom: 1px solid var(--vds-component-divider-fill-subdued);padding: var(--vds-spacing-3xs) 0;">
+                <span style="color: var(--vds-text-subdued);">Ngày sinh:</span>
+                <strong id="sidebar-bio-dob">13/07/2007</strong>
+              </div>
+              <div style="display:flex; justify-content:space-between;border-bottom: 1px solid var(--vds-component-divider-fill-subdued);padding: var(--vds-spacing-3xs) 0;">
+                <span style="color: var(--vds-text-subdued);">Nơi sinh:</span>
+                <strong id="sidebar-bio-pob">Mataró, Tây Ban Nha</strong>
+              </div>
+              <div style="display:flex; justify-content:space-between;border-bottom: 1px solid var(--vds-component-divider-fill-subdued);padding: var(--vds-spacing-3xs) 0;">
+                <span style="color: var(--vds-text-subdued);">Giá trị ước tính:</span>
+                <strong id="sidebar-bio-value" style="color:var(--vne-red);">€150 triệu</strong>
+              </div>
+              <div style="display:flex; justify-content:space-between;padding: var(--vds-spacing-3xs) 0;">
+                <span style="color: var(--vds-text-subdued);">Tình trạng:</span>
+                <strong id="sidebar-bio-status" style="color: var(--vds-text-positive-regular);">Sẵn sàng thi đấu</strong>
+              </div>
+            </div>
+          </div>
+        
+        <aside class="vne-news-ad" aria-label="Khu vực quảng cáo"><span>ADS (300×600)</span></aside>
+</aside>
+
+      </div>
+    </div>
+
+
+    <!-- =========================================================================
+         TAB 2: THỐNG KÊ (IN-DEPTH STATS, TOURNAMENT BREAKDOWN & POSITIONAL ORDERING)
+         ========================================================================= -->
+    <div id="tab-pane-thong-ke" class="vne-tab-pane" style="display: none;">
+      <div style="margin-top: var(--vds-spacing-md);margin-bottom: var(--vds-spacing-xl);">
+        
+        <!-- Tournament Breakdown Section -->
+        <section class="vne-thongke-section">
+          <div class="vne-thongke-sec-header">
+            <h2 class="vne-thongke-sec-title">
+              <i data-lucide="trophy" style="width: 20px; height: 20px;color: var(--vds-text-warning-regular);"></i>
+              <span>Thống kê chi tiết theo từng giải đấu mùa giải 2025/2026</span>
+            </h2>
+            <span class="vne-thongke-sec-sub" id="table-total-matches-summary">Tổng cộng: 28 trận</span>
+          </div>
+
+          <div class="vne-table-scroll-wrapper">
+            <table class="vne-stats-table" id="tournament-stats-table">
+              <thead>
+                <tr>
+                  <th class="td-left" style="min-width: 180px;">Giải đấu</th>
+                  <th class="td-left">Đội bóng</th>
+                  <th>Trận (Đá chính)</th>
+                  <th>Số phút</th>
+                  <th id="th-stat-goals">Bàn thắng</th>
+                  <th id="th-stat-assists">Kiến tạo</th>
+                  <th id="th-stat-shots">Sút (Trúng đích)</th>
+                  <th>Chuyền % (Key)</th>
+                  <th id="th-stat-duels">Tranh chấp %</th>
+                  <th>Điểm TB</th>
+                </tr>
+              </thead>
+              <tbody id="tournament-stats-tbody">
+                <!-- Dynamically populated from API stats -->
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- In-Depth Metric Categories (Ordered strictly by player position) -->
+        <section class="vne-thongke-section">
+          <div class="vne-thongke-sec-header">
+            <h2 class="vne-thongke-sec-title">
+              <i data-lucide="activity" style="width: 20px; height: 20px; color: var(--vne-red);"></i>
+              <span>Chỉ số kỹ thuật & Đóng góp chuyên sâu</span>
+            </h2>
+            <span class="vne-thongke-sec-sub" id="categories-ordering-badge">Ưu tiên theo vị trí thi đấu</span>
+          </div>
+
+          <div class="vne-deep-categories-grid" id="deep-categories-grid">
+            <!-- Dynamically populated from statCategories array (Attacking first for FW/MF, Defending first for DF, Goalkeeping first for GK) -->
+          </div>
+        </section>
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- VnExpress Footer -->
+  <footer class="vne-footer">
+    <div class="vne-container">
+      <div class="vne-footer-inner">
+        <div class="vne-footer-left">
+          <a href="/" class="vne-footer-logo">
+            <vds-logo name="Logo__VnExpress__Standard" aria-label="VnExpress" class="vds-header-logo"></vds-logo>
+          </a>
+          <span class="vne-footer-text">Báo tiếng Việt nhiều người xem nhất • Chuyên trang Dữ liệu Bóng đá & Hồ sơ Cầu thủ</span>
+        </div>
+        <div class="vne-footer-right">
+          <span>© 2026 VnExpress. Toàn bộ bản quyền thuộc VnExpress.</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script for Player Detail App -->
+  <script src="/js/player-detail.js"></script>
+</body>
+</html>

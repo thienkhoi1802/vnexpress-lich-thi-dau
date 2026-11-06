@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lịch thi đấu & Kết quả bóng đá - VnExpress Thể Thao</title>
+  <link rel="icon" type="image/x-icon" href="https://s1.vnecdn.net/vnexpress/restruct/i/v9525/logo/favicon.ico">
+  <!-- VnExpress Design System (VDS) Core -->
+  <link rel="stylesheet" href="/vds-0.5.0/fonts/vds-fonts.css">
+  <link rel="stylesheet" href="/vds-0.5.0/tokens/vds.css">
+  <link rel="stylesheet" href="/vds-0.5.0/components/vds-components.css">
+  <link rel="stylesheet" href="/css/style.css?v=34">
+  <link rel="stylesheet" href="/css/vds-adaptations.css?v=278">
+  <script src="/vds-0.5.0/components/vds-components.js" defer></script>
+  <script src="/vds/vds-helper.js?v=3"></script>
+  <!-- Lucide icons fallback -->
+  <script src="/js/vds-icons.js?v=1"></script>
+</head>
+<body>
+
+  <!-- Pinned / Sticky Header -->
+  <header class="vne-header-wrapper">
+    <div class="vne-container">
+      <div class="vne-topbar">
+        <div class="vne-header-left">
+          <div class="vne-breadcrumbs">
+            <a href="/" class="vds-logo-link" title="Báo điện tử VnExpress">
+              <vds-logo name="Logo__VnExpress__Standard" aria-label="VnExpress" class="vds-header-logo"></vds-logo>
+            </a>
+            <span class="vne-breadcrumb-slash">/</span>
+            <a href="/">Thể thao</a>
+            <span class="vne-breadcrumb-slash">/</span>
+            <a href="/" style="color: var(--vds-text-regular); font-weight: 700;">Bóng đá</a>
+          </div>
+
+          <div class="vne-nav-tabs" role="tablist" aria-label="Điều hướng dữ liệu bóng đá">
+            <a href="/lich-thi-dau" class="vne-tab-btn" id="tab-future" onclick="switchMode('future', true, event)" role="tab" aria-selected="false">
+              <vds-icon name="Calendar__Regular__16" size="16"></vds-icon>
+              <span>Lịch thi đấu</span>
+            </a>
+            <a href="/ket-qua" class="vne-tab-btn" id="tab-past" onclick="switchMode('past', true, event)" role="tab" aria-selected="false">
+              <vds-icon name="SportSoccer__Regular__16" size="16"></vds-icon>
+              <span>Kết quả</span>
+            </a>
+            <a href="/live" class="vne-tab-btn" id="tab-live" onclick="switchMode('live', true, event)" role="tab" aria-selected="false">
+              <span class="live-dot-pulse"></span>
+              <span>LIVE</span>
+              <span class="vne-live-pill-badge" id="live-count-badge">0</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="vne-header-right">
+          <span id="current-datetime-display"></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="vne-container">
+    <div class="vne-main-layout">
+      <section class="vne-news-section">
+        <div class="vne-news-layout">
+          <div class="vne-news-column">
+          <div class="vne-schedule-heading">
+            <h1 class="vne-page-title vne-title-tabs">
+            <a href="/lich-thi-dau" class="vne-title-tab" data-title-mode="future" onclick="switchMode('future', true, event)">Lịch thi đấu</a>
+            <span class="vne-title-sep" aria-hidden="true">|</span>
+            <a href="/ket-qua" class="vne-title-tab" data-title-mode="past" onclick="switchMode('past', true, event)">Kết quả</a>
+          </h1>
+            <div class="vne-search-input-wrapper vne-schedule-search">
+              <vds-icon name="Search__Regular__16" size="16" class="vne-search-icon"></vds-icon>
+              <input aria-keyshortcuts="Meta+K Control+K" type="text" id="schedule-search-input" class="vne-search-input" placeholder="Tìm đội bóng, giải đấu..." readonly role="button" aria-haspopup="dialog" onclick="openFilterPicker('leagues')" onkeydown="if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); openFilterPicker('leagues'); }">
+              <kbd class="vne-kbd" id="search-kbd" aria-hidden="true">⌘K</kbd>
+            </div>
+          </div>
+      <section class="vne-content-middle">
+        
+        <!-- Mobile Quick League Chips (Visible on Mobile only) -->
+        <div class="vne-mobile-league-chips" id="mobile-league-chips-container">
+          <!-- Populated dynamically via renderMobileLeagueChips() -->
+        </div>
+
+        <!-- Date Navigation Bar -->
+        <div class="vne-schedule-toolbar">
+        <div class="vne-date-nav-bar">
+          <div class="vne-range-presets" id="range-presets" role="group" aria-label="Khoảng thời gian"></div>
+          <button class="vne-nav-arrow-btn" id="btn-date-prev" onclick="slideDates(-1)" title="Ngày trước" hidden>
+            <vds-icon name="Chevron__Left__Regular__12" size="12" aria-label="Trước"></vds-icon>
+          </button>
+
+          <div class="vne-date-slider" id="date-slider-container">
+            <!-- Dynamically populated date tabs -->
+          </div>
+
+          <button class="vne-nav-arrow-btn" id="btn-date-next" onclick="slideDates(1)" title="Ngày sau">
+            <vds-icon name="Chevron__Right__Regular__12" size="12" aria-label="Sau"></vds-icon>
+          </button>
+
+          <div class="vne-cal-wrap">
+            <button type="button" class="vne-calendar-btn" id="btn-calendar" onclick="toggleCalendar()" title="Chọn ngày" aria-label="Chọn ngày" aria-haspopup="dialog" aria-expanded="false" aria-controls="cal-popover">
+              <vds-icon name="Calendar__Regular__16" size="16"></vds-icon>
+            </button>
+            <div class="vne-cal" id="cal-popover" role="dialog" aria-label="Chọn ngày" hidden></div>
+          </div>
+        </div>
+
+        <nav class="vne-league-tabs" id="league-tabs" aria-label="Lọc theo giải đấu"></nav>
+        </div>
+
+        <!-- Matches Container (Rendered dynamically) -->
+        <div id="matches-main-container">
+          <div style="text-align: center;padding: var(--vds-spacing-xl); color: var(--vne-text-muted);">
+            <div class="live-dot-pulse" style="margin-bottom: var(--vds-spacing-2xs);"></div>
+            <div>Đang tải dữ liệu lịch thi đấu & kết quả từ VnExpress...</div>
+          </div>
+        </div>
+
+      </section>
+
+              <div class="vne-news-header">
+                <span class="vne-news-title">TIN TỨC BÓNG ĐÁ</span>
+                <span class="vne-news-info" id="news-page-info">Trang 1 / 2 (40 tin bài)</span>
+              </div>
+
+              <div class="vne-news-list" id="news-list-container">
+                <!-- News items loaded dynamically -->
+              </div>
+
+              <div class="vne-pagination">
+                <span id="news-display-range">Hiển thị 1 - 20 trên 40 bài viết</span>
+                <div class="vne-pagination-btns" id="news-pagination-controls">
+                  <!-- Pagination buttons -->
+                </div>
+              </div>
+            </div>
+            <div class="vne-news-rail">
+              <aside class="vne-sidebar-left">
+                <div class="vne-card-box">
+                  <div class="vne-sidebar-title vne-sidebar-leagues-title">
+                    <span>GIẢI ĐẤU</span>
+                    <span class="vne-count-badge" id="league-count-badge">4/28</span>
+                  </div>
+                  <ul class="vne-filter-list vne-sidebar-leagues-list" id="league-filter-list"></ul>
+                  <button class="vne-show-more-btn vne-sidebar-leagues-more" id="btn-toggle-more-leagues" onclick="openFilterPicker('leagues')">
+                    <span id="txt-more-leagues">Xem thêm (24 giải khác)</span>
+                  </button>
+                  <div class="vne-sidebar-title" style="margin-top: var(--vds-spacing-xs);">
+                    <span>ĐỘI BÓNG</span>
+                    <span class="vne-count-badge" id="team-count-badge">6/18</span>
+                  </div>
+                  <ul class="vne-filter-list vne-team-filter-grid" id="team-filter-list"></ul>
+                  <button class="vne-show-more-btn" id="btn-toggle-more-teams" onclick="openFilterPicker('teams')">
+                    <span id="txt-more-teams">Xem thêm (12 đội khác)</span>
+                  </button>
+                  <div id="reset-filter-box" style="display: none;margin-top: var(--vds-spacing-xs);padding-top: var(--vds-spacing-2xs); border-top: 1px dashed var(--vne-border);">
+                    <button onclick="clearFilters()" style="width: 100%;background: var(--vds-surface-100);border: 1px solid var(--vds-border-subdued);padding: var(--vds-spacing-3xs);border-radius: var(--vds-radii-lg);font-size: var(--vds-typography-font-size-100); font-weight: 600; cursor: pointer;color: var(--vds-text-info-regular);">
+                      ✕ Xoá tất cả bộ lọc
+                    </button>
+                  </div>
+                </div>
+              </aside>
+            <aside class="vne-news-ad" aria-label="Khu vực quảng cáo">
+              <span>ADS (300×600)</span>
+            </aside>
+            </div>
+          </div>
+        </section>
+
+    </div>
+  </main>
+
+  <div class="vne-modal-backdrop" id="modal-filter-picker" inert onclick="closeModalOnBackdrop(event, 'modal-filter-picker')">
+    <div class="vne-modal-content vne-filter-picker-modal" role="dialog" aria-modal="true" aria-labelledby="filter-picker-title">
+      <div class="vne-modal-header">
+        <div class="vne-modal-title" id="filter-picker-title">Tìm đội bóng, giải đấu</div>
+        <button class="vne-modal-close-btn" onclick="closeModal('modal-filter-picker')" aria-label="Đóng">&times;</button>
+      </div>
+      <div class="vne-filter-picker-search">
+        <input id="filter-picker-search" type="search" placeholder="Gõ tên đội bóng hoặc giải đấu..." autocomplete="off" oninput="renderFilterPickerOptions()">
+      </div>
+      <div class="vne-modal-body vne-filter-picker-options" id="filter-picker-options"></div>
+      <div class="vne-keyhints" aria-hidden="true"><span><kbd>Esc</kbd> đóng</span><span><kbd>↑</kbd><kbd>↓</kbd> di chuyển</span><span><kbd>Enter</kbd> chọn</span><span class="vne-hint-right"><kbd class="vne-mod-key">⌘K</kbd> mở nhanh</span></div>
+    </div>
+  </div>
+
+  <!-- Full Standings Modal -->
+  <div class="vne-modal-backdrop" id="modal-standings" onclick="closeModalOnBackdrop(event, 'modal-standings')">
+    <div class="vne-modal-content">
+      <div class="vne-modal-header">
+        <div class="vne-modal-title" id="modal-standings-title">BẢNG XẾP HẠNG CHI TIẾT</div>
+        <button class="vne-modal-close-btn" onclick="closeModal('modal-standings')">&times;</button>
+      </div>
+      <div class="vne-modal-body" id="modal-standings-body">
+        <!-- Full table rendered dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Video Highlight Simulator Modal -->
+  <div class="vne-modal-backdrop" id="modal-highlight" onclick="closeModalOnBackdrop(event, 'modal-highlight')">
+    <div class="vne-modal-content" style="max-width: 680px;">
+      <div class="vne-modal-header">
+        <div class="vne-modal-title" id="modal-highlight-title">VIDEO HIGHLIGHT TRẬN ĐẤU</div>
+        <button class="vne-modal-close-btn" onclick="closeModal('modal-highlight')">&times;</button>
+      </div>
+      <div class="vne-modal-body" style="padding: 0;">
+        <div style="position: relative; padding-bottom: 56.25%; height: 0;background-color: var(--vds-surface-dark-000); display: flex; align-items: center; justify-content: center;">
+          <div style="position: absolute; top:0; left:0; width:100%; height:100%; display: flex; flex-direction: column; align-items: center; justify-content: center;color: var(--vds-text-on-color-regular);">
+            <div style="width: 60px; height: 60px;background: var(--vds-icon-background-contrast);border-radius: var(--vds-radii-circle); display: flex; align-items: center; justify-content: center; cursor: pointer;box-shadow: none;">
+              <i data-lucide="play" style="width: 28px; height: 28px;margin-left: var(--vds-spacing-3xs);"></i>
+            </div>
+            <div id="highlight-match-banner" style="margin-top: var(--vds-spacing-sm); font-weight: 700;font-size: var(--vds-typography-font-size-500);"></div>
+            <div style="font-size: var(--vds-typography-font-size-100);color: var(--vds-text-subdued-lighter);margin-top: var(--vds-spacing-3xs);">Bản quyền video thuộc VnExpress Thể Thao</div>
+          </div>
+        </div>
+        <div style="padding: var(--vds-spacing-xs) var(--vds-spacing-sm);" id="highlight-meta-info">
+          <!-- match meta -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer (scs.jpeg & demo-final.jpeg) -->
+  <footer class="vne-footer">
+    <div class="vne-container">
+      <div class="vne-footer-links">
+        <a href="javascript:filterLeague(39)">Ngoại hạng Anh</a>
+        <a href="javascript:filterLeague(2)">Champions League</a>
+        <a href="javascript:filterLeague(140)">La Liga</a>
+        <a href="javascript:filterLeague(78)">Bundesliga</a>
+        <a href="javascript:filterLeague(135)">Serie A</a>
+        <a href="javascript:filterLeague(61)">Ligue 1</a>
+        <a href="javascript:filterLeague(340)">V-League</a>
+        <a href="javascript:filterLeague(5)">Nations League</a>
+        <a href="javascript:filterLeague(307)">Saudi Pro League</a>
+        <a href="javascript:filterLeague(253)">MLS</a>
+      </div>
+
+      <div class="vne-footer-banner">
+        <span>DỰ ĐOÁN TỶ SỐ BÓNG ĐÁ</span>
+        <div style="display: flex;gap: var(--vds-spacing-2xs);">
+          <a href="#">Tham gia nhận thưởng &gt;</a>
+        </div>
+      </div>
+
+      <div class="vne-footer-info">
+        <div style="font-weight: 700; color: var(--vne-text-main);">Báo điện tử VnExpress</div>
+        <div>Báo tiếng Việt nhiều người xem nhất. Thuộc Bộ Khoa học và Công nghệ.</div>
+        <div>Số giấy phép: 548/GP-BTTTT do Bộ Thông tin và Truyền thông cấp ngày 24/08/2021.</div>
+        <div style="margin-top: var(--vds-spacing-3xs);">&copy; 1997-2026. Toàn bộ bản quyền thuộc VnExpress.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js?v=78"></script>
+</body>
+</html>

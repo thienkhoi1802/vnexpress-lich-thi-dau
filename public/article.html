@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tin tức Thể thao - VnExpress</title>
+  <link rel="icon" type="image/x-icon" href="https://s1.vnecdn.net/vnexpress/restruct/i/v9525/logo/favicon.ico">
+  
+  <!-- VnExpress Design System 0.5.0 (self-hosted) -->
+  <link rel="stylesheet" href="/vds-0.5.0/fonts/vds-fonts.css">
+  <link rel="stylesheet" href="/vds-0.5.0/tokens/vds.css">
+  <link rel="stylesheet" href="/vds-0.5.0/components/vds-components.css">
+  <script src="/vds-0.5.0/components/vds-components.js" defer></script>
+  <script src="/js/vds-icons.js?v=1"></script>
+
+  <!-- Core Design System CSS -->
+  <link rel="stylesheet" href="/css/style.css?v=34">
+  <link rel="stylesheet" href="/css/vds-adaptations.css?v=278">
+  <link rel="stylesheet" href="/css/article.css">
+</head>
+<body class="vne-article-page">
+
+  <!-- Topbar Header -->
+  <header class="vne-header-wrapper">
+    <div class="vne-container">
+      <div class="vne-topbar">
+        <div class="vne-header-left">
+          <div class="vne-breadcrumbs">
+            <a href="/" class="vds-logo-link" title="Báo điện tử VnExpress">
+              <vds-logo name="Logo__VnExpress__Standard" aria-label="VnExpress" class="vds-header-logo"></vds-logo>
+            </a>
+            <span class="vne-breadcrumb-slash">/</span>
+            <a href="/" class="vne-sub-brand">Thể thao</a>
+            <span class="vne-breadcrumb-slash">/</span>
+            <a href="/" class="vne-sub-brand" style="font-weight: 700;">Bóng đá</a>
+          </div>
+        </div>
+
+        <nav class="vne-header-nav" aria-label="Điều hướng chính">
+          <a href="/" class="vne-nav-item">Trang chủ</a>
+          <a href="/lich-thi-dau" class="vne-nav-item">Lịch thi đấu</a>
+          <a href="/ket-qua" class="vne-nav-item">Kết quả</a>
+          <a href="/giai-dau/ngoai-hang-anh/bang-xep-hang" class="vne-nav-item">Bảng xếp hạng</a>
+          <a href="/live" class="vne-nav-item">
+            <span class="vne-live-dot"></span>Trực tiếp
+          </a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Article Page Content -->
+  <div class="vne-article-container">
+    
+    <!-- Breadcrumb -->
+    <nav class="vne-article-breadcrumb" id="article-breadcrumb" aria-label="Breadcrumb">
+      <span><a href="/">Trang chủ</a></span>
+      <span class="sep">&rsaquo;</span>
+      <span><a href="/">Thể thao</a></span>
+      <span class="sep">&rsaquo;</span>
+      <span><a href="/" id="crumb-category">Bóng đá</a></span>
+      <span class="sep">&rsaquo;</span>
+      <span class="active" id="crumb-league">Chi tiết bài viết</span>
+    </nav>
+
+    <!-- 2-Column Article Layout -->
+    <div class="vne-article-layout">
+      
+      <!-- Left Column: Main Content -->
+      <main class="vne-article-main">
+        
+        <!-- Publish Date -->
+        <div class="vne-article-date" id="article-date">
+          Đang cập nhật...
+        </div>
+
+        <!-- H1 Headline -->
+        <h1 class="vne-article-title" id="article-title">
+          Đang tải bài viết...
+        </h1>
+
+        <!-- Social & Quick Action Bar -->
+        <div class="vne-article-social-bar">
+          <div class="vne-social-left">
+            <button class="vne-social-btn facebook" onclick="shareFacebook()" title="Chia sẻ bài viết lên Facebook">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              <span>Chia sẻ</span>
+            </button>
+            <button class="vne-social-btn" onclick="copyArticleUrl()" title="Sao chép liên kết">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+              <span>Lưu liên kết</span>
+            </button>
+            <a href="#article-comments" class="vne-social-btn comment-badge" title="Xem bình luận">
+              💬 <span id="social-comment-count">18</span>
+            </a>
+          </div>
+
+          <div class="vne-social-right">
+            <button class="vne-audio-btn" id="audio-read-btn" onclick="toggleAudioReading()">
+              <span>🔊</span>
+              <span id="audio-btn-label">Nghe đọc báo</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Lead Paragraph -->
+        <div class="vne-article-lead" id="article-lead"></div>
+
+        <!-- Article Body Content -->
+        <article class="vne-article-body fck_detail" id="article-body">
+          <p class="Normal">Nội dung bài viết đang được tải từ hệ thống...</p>
+        </article>
+
+        <!-- Author Signature -->
+        <div class="vne-article-author" id="article-author"></div>
+
+        <!-- ===================================================================
+             EMBEDDED MATCH WIDGET (100% IDENTICAL TO IMAGE 2 + USER REQUIREMENT)
+             - Cuối nội dung chính của bài chèn thêm widget Lịch thi đấu - Kết quả
+             - Bỏ button 'Xem tất cả'
+             - Thêm điều hướng về trang Kết quả
+             - Thêm điều hướng về trang Lịch thi đấu
+             =================================================================== -->
+        <section class="vne-embedded-widget" id="embedded-match-widget" aria-label="Lịch đấu – Kết quả">
+          <div class="vne-ew-header">
+            <h3 class="vne-ew-title" id="ew-title">Lịch đấu – Kết quả</h3>
+          </div>
+          <div class="vne-ew-date-row" id="ew-date-row">
+            Thứ bảy, ngày 31/10/2026
+          </div>
+          <div class="vne-ew-match-list" id="ew-match-list">
+            <!-- Dynamic Match Rows inserted here -->
+          </div>
+          <div class="vne-ew-footer">
+            <a href="#" id="ew-btn-results" class="vne-ew-nav-link">
+              <span>Xem toàn bộ Kết quả</span>
+              <span aria-hidden="true">&rsaquo;</span>
+            </a>
+            <a href="#" id="ew-btn-fixtures" class="vne-ew-nav-link">
+              <span>Xem toàn bộ Lịch thi đấu</span>
+              <span aria-hidden="true">&rsaquo;</span>
+            </a>
+          </div>
+        </section>
+
+        <!-- Tags / Topics Section -->
+        <div class="vne-article-tags-wrap" id="article-tags-wrap">
+          <div class="vne-article-tags">
+            <span class="vne-tag-label">Chủ đề:</span>
+            <div class="vne-tag-list" id="article-tags-list">
+              <!-- Tag pills inserted here -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Share & Actions -->
+        <div class="vne-article-bottom-actions">
+          <button class="vne-action-btn" onclick="copyArticleUrl()">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            <span>Sao chép đường dẫn bài viết</span>
+          </button>
+          <button class="vne-action-btn" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+            <span>↑ Lên đầu trang</span>
+          </button>
+        </div>
+
+        <!-- Comments Section ("Ý kiến bạn đọc") -->
+        <section class="vne-comments-section" id="article-comments">
+          <div class="vne-comments-header">
+            <h3 class="vne-comments-title">Ý kiến bạn đọc (<span id="comments-total">18</span>)</h3>
+            <span class="vne-comments-filter">Quan tâm nhất • Mới nhất</span>
+          </div>
+
+          <div class="vne-comment-input-box">
+            <div class="vne-comment-avatar">👤</div>
+            <div class="vne-comment-form">
+              <textarea id="user-comment-input" class="vne-comment-textarea" placeholder="Chia sẻ ý kiến của bạn về bài viết này..." rows="3"></textarea>
+              <div class="vne-comment-submit-row">
+                <span class="vne-comment-policy">Ý kiến của bạn sẽ được hiển thị ngay sau khi gửi.</span>
+                <button class="vne-btn-submit-comment" onclick="postComment()">Gửi bình luận</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="vne-comments-list" id="article-comments-list">
+            <!-- Dynamic comments list inserted here -->
+          </div>
+        </section>
+
+        <!-- Related Articles Grid ("Tin cùng chuyên mục") -->
+        <section class="vne-related-section">
+          <h3 class="vne-related-title">TIN CÙNG CHUYÊN MỤC</h3>
+          <div class="vne-related-grid" id="article-related-grid">
+            <!-- Related news cards inserted here -->
+          </div>
+        </section>
+
+      </main>
+
+      <!-- Right Column: Sidebar (ZERO ADVERTISEMENTS) -->
+      <aside class="vne-article-sidebar" aria-label="Tin nổi bật">
+        
+        <!-- Most Viewed News ("Xem nhiều") -->
+        <div class="vne-sidebar-block">
+          <h3 class="vne-sidebar-heading">XEM NHIỀU</h3>
+          <div class="vne-most-viewed-list" id="sidebar-most-viewed">
+            <!-- Most viewed articles inserted here -->
+          </div>
+        </div>
+
+        <!-- League Quick Nav Box -->
+        <div class="vne-sidebar-league-box" id="sidebar-league-box">
+          <div class="vne-slb-header">
+            <img src="https://is.vnecdn.net/objects/leagues/39.png?v=1" alt="Logo" class="vne-slb-logo" id="slb-logo">
+            <div class="vne-slb-name" id="slb-name">Ngoại hạng Anh</div>
+          </div>
+          <div class="vne-slb-links">
+            <a href="#" id="slb-link-results" class="vne-slb-link">
+              <span>Xem Kết quả giải đấu</span>
+              <span>&rsaquo;</span>
+            </a>
+            <a href="#" id="slb-link-fixtures" class="vne-slb-link">
+              <span>Xem Lịch thi đấu giải đấu</span>
+              <span>&rsaquo;</span>
+            </a>
+            <a href="#" id="slb-link-standings" class="vne-slb-link">
+              <span>Bảng xếp hạng đầy đủ</span>
+              <span>&rsaquo;</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Latest News ("Tin mới nhận") -->
+        <div class="vne-sidebar-block">
+          <h3 class="vne-sidebar-heading">TIN MỚI NHẬN</h3>
+          <div class="vne-latest-list" id="sidebar-latest-news">
+            <!-- Latest news items inserted here -->
+          </div>
+        </div>
+
+      </aside>
+
+    </div>
+  </div>
+
+  <!-- Footer (Clean, Standard VnExpress footer without ads) -->
+  <footer class="vne-footer" style="margin-top: var(--vds-spacing-2xl);">
+    <div class="vne-container">
+      <div class="vne-footer-links">
+        <a href="/giai-dau/ngoai-hang-anh">Ngoại hạng Anh</a>
+        <a href="/giai-dau/champions-league">Champions League</a>
+        <a href="/giai-dau/la-liga">La Liga</a>
+        <a href="/giai-dau/bundesliga">Bundesliga</a>
+        <a href="/giai-dau/serie-a">Serie A</a>
+        <a href="/giai-dau/ligue-1">Ligue 1</a>
+        <a href="/giai-dau/v-league">V-League</a>
+        <a href="/giai-dau/carabao-cup">Carabao Cup</a>
+        <a href="/giai-dau/fa-cup">FA Cup</a>
+      </div>
+      <div class="vne-footer-bottom">
+        <p class="vne-copyright">© 2026 Báo điện tử VnExpress. Toàn bộ thông tin được cập nhật theo thời gian thực.</p>
+        <p class="vne-info-sub">Đường dây nóng: 083.888.0123 (Hà Nội) | 082.233.3555 (TP.HCM)</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Article JavaScript Client Controller -->
+  <script src="/js/article.js"></script>
+</body>
+</html>
